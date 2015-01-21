@@ -30,6 +30,28 @@ Meteor.methods({
 
 				Rooms.insert(roomData);
 		},
+		insertRoomSensor: function(sensorId, roomId) {
+			var room = Rooms.findOne(roomId);
+
+			if (!room) {
+				return;
+			}
+
+			if (room.sensors === undefined) {
+				console.log('adding empty array');
+				Rooms.update(room._id, {
+					$set: {
+						sensors: []
+					}
+				});
+			}
+
+			Rooms.update(room._id, {
+				$push: {
+					sensors: sensorId
+				}
+			});
+		},
 		insertSensor: function(sensor) {
 			// Does this module already exist
 			var existingSensor = Sensors.findOne({

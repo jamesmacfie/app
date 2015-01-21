@@ -1,24 +1,24 @@
 <template name="roomAddSensor">
 	{{ > roomSensorItemPartial room}}
 
-	<div class="panel panel-padded">
+		<div class="panel panel-padded">
 		<p class="lead">Which sensor do you want to add to this room?</p>
 
-		<select class="form-control">
-			<option>Which sensor do you want to add to this room?</option>
-			{{#each sensors}}
-			<option value="{{_id}}">{{moduleId}}</option>
-			{{/each}}
-
-		</select>
-
-		<div class="marginTop10">
-			<button type="button" class="btn btn-primary">Save</button>
-			<a href="{{pathFor 'roomList'}}" class="btn btn-default" role="button">Cancel</a>
-		</div>
-
+		<form id="roomInsertSensorForm">
+			<fieldset>
+				<select name="sensor" class="form-control js-formSensor">
+					<option></option>
+					{{#each sensors}}
+					<option value="{{_id}}">{{moduleId}}</option>
+					{{/each}}
+				</select>
+				<input type="hidden" name="room" value="{{room._id}}" class="js-formRoom"/>
+				<div class="marginTop10">
+					<button type="submit" class="btn btn-primary">Add</button>
+					<a href="{{pathFor 'roomList'}}" class="btn btn-default" role="button">Cancel</a>
+				</div>
+			</fieldset>
+		</form>
 	</div>
-
-
 
 </template>
