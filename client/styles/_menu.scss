@@ -1,0 +1,53 @@
+.menuIcon {
+	color: #fff;
+	font-size: $titleHeight / 2;
+}
+
+.mainMenu {
+	background-color: $death;
+	height: 100vh;
+}
+
+.mainMenu--list {
+	margin: 0;
+	padding: 0;
+
+}
+
+.mainMenu--item {
+	color: #d6d4dc;
+	height: $menuItemHeight;
+	line-height: $menuItemHeight;
+	list-style: none;
+}
+
+.mainMenu--item--link {
+	color: #d6d4dc;
+	display: block;
+	height: 100%;
+	padding-left: 10px;
+	width: 100%;
+
+	&:hover, &:focus {
+		background-color: $almostDead;
+		color: inherit;
+	}
+}
+
+.mainMenu--item--icon {
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+.menuUser {
+	display: flex;
+	margin-bottom: 40px;
+}
+
+.menuUser--userAvatar {
+	margin: 10px;
+}
+
+.menuUser--userName {
+	margin: 20px 0 0 10px;
+}

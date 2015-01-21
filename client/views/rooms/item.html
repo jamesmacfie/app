@@ -1,0 +1,39 @@
+<template name="roomItem">
+		<h1>{{name}}</h1>
+
+		{{#if sensors}}
+				<p>yip</p>
+		{{else}}
+				{{#autoForm schema=Schemas.roomSensor id="roomSensorInsertForm" type="method" meteormethod="insertRoomSensor"}}
+						<fieldset>
+								{{> afQuickField name="sensor"}}
+								<div>
+										<button type="submit" class="btn btn-primary">Submit</button>
+										<button type="reset" class="btn btn-default">Reset</button>
+								</div>
+						</fieldset>
+				{{/autoForm}}
+		{{/if}}
+
+		<p><a href="{{pathFor 'roomList'}}">Return to rooms</a></p>
+</template>
+
+<template name="roomSummary">
+		<p>{{name}}</p>
+</template>
+
+<!-- <p><a href="{{pathFor 'roomItem'}}">{{name}}</a></p> -->
+
+<template name="roomItemPartial">
+	<div class="panel panel-default sensor">
+		<div class="sensor--background"></div>
+		<div class="sensorIconHolder sensorIconHolder-left">
+			{{#each sensors}}
+				<i class="md md-home sensorIcon sensorIconHolder--sensorIcon"></i>
+			{{/each}}
+		</div>
+		<div class="sensorIconHolder sensorIconHolder-right">
+			<a href="{{pathFor 'roomAddSensor'}}"><i class="md md-add sensorIcon sensorIcon-add sensorIconHolder--sensorIcon"></i></a>
+		</div>
+	</div>
+</template>

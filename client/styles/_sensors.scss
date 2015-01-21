@@ -1,0 +1,66 @@
+.sensor {
+	min-height: 200px;
+	position: relative;
+}
+
+.sensor--background {
+	background-image: url('/images/testBackground.jpg');
+	background-size: cover;
+	height: 200px; /* temp */
+	width: 100%;
+
+	&:after {
+		background: linear-gradient(transparent, $death);
+		bottom: 0;
+		content: '';
+		height: 50px;
+		left: 0;
+		position: absolute;
+		right: 0;
+	}
+}
+
+.sensor--background--h1 {
+	bottom: 10px;
+	color: $offWhite;
+	font-size: 18px;
+	position: absolute;
+	left: 10px;
+	z-index: 2;
+}
+
+.sensorIconHolder {
+	bottom: 10px;
+	position: absolute;
+
+	&-left {
+		left: 10px;
+	}
+
+	&-right {
+		right: 10px;
+	}
+}
+
+.sensorIconHolder--sensorIcon {
+	display: inline-block;
+	margin-right: 5px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.sensorIcon {
+	background-color: red;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 17px;
+	height: 25px;
+	text-align: center;
+	width: 25px;
+
+	&-add {
+		background-color: #f85240;
+	}
+}

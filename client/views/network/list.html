@@ -1,0 +1,6 @@
+<template name="networkList">
+	<a href="{{pathFor 'home'}}">Home</a>
+	{{#each networks}}
+		{{> networkItemPartial}}
+	{{/each}}
+</template>

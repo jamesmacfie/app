@@ -1,0 +1,23 @@
+html, body {
+	background-color: $offWhite;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+body {
+	font-family: 'Open Sans';
+	font-weight: 100;
+	min-height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 26px;
+}
+
+h2 {
+	font-size: 22px;
+}

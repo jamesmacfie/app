@@ -1,0 +1,11 @@
+<template name="menu">
+	<div class="menuUser">
+		<img class="userAvatar menuUser--userAvatar" src="/images/testAvatar.png" />
+		<p class="userName menuUser--userName">James Macfie</p>
+	</div>
+	<ul class="mainMenu--list">
+		{{#each menuItems}}
+			{{ > menuItem}}
+		{{/each}}
+	</ul>
+</template>

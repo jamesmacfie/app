@@ -1,0 +1,17 @@
+<template name="sensorInsert">
+	<div class="panel panel-padded">
+		<h1>Add sensor - not for public consumption</h1>
+
+		{{#autoForm collection="Sensors" id="sensorInsertForm" type="method" meteormethod="insertSensor"}}
+			{{> afQuickField name='moduleId'}}
+			{{> afQuickField name='type'}}
+			{{> afQuickField name='hub'}}
+
+			<div class="marginTop10">
+				<button type="submit" class="btn btn-primary">Insert</button>
+				<a href="{{pathFor 'sensorList'}}" class="btn btn-default">Cancel</a>
+			</div>
+		{{/autoForm}}
+	</div>
+
+</template>

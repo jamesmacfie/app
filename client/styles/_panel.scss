@@ -1,0 +1,18 @@
+.panel {
+	/* Bootstrap overrides */
+	background-color: transparent;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.panel-form {
+	margin: 0 auto;
+	max-width: 300px;
+	text-align: center;
+}
+
+.panel-padded {
+	padding: 10px;
+}

@@ -1,0 +1,10 @@
+<template name="roomList">
+		{{#if hasRooms}}
+				{{#each rooms}}
+						{{> roomItemPartial}}
+				{{/each}}
+				<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
+		{{else}}
+				<a href="{{pathFor 'roomInsert'}}">No rooms. Insert one?</a>
+		{{/if}}
+</template>

@@ -1,0 +1,11 @@
+<template name="hubInsert">
+	<h1>Hub insert</h1>
+	<a href="{{pathFor 'home'}}">Home</a>
+
+	{{#autoForm collection="Hubs" id="hubInsertForm" type="method" meteormethod="insertHub"}}
+		{{> afQuickField name='hubId'}}
+		{{> afQuickField name='name'}}
+		{{> afQuickField name='network'}}
+		<button type="submit" class="btn btn-primary">Insert</button>
+	{{/autoForm}}
+</template>

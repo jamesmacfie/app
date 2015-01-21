@@ -1,0 +1,24 @@
+.titleHolder {
+	background-color: $death;
+	height: $titleHeight;
+	left: 0;
+	position: fixed;
+	right: 0;
+	text-align: center;
+	top: 0;
+	z-index: 1;
+}
+
+.title {
+	color: #fff;
+	font-size: $titleHeight / 2;
+	font-weight: 100;
+	line-height: $titleHeight;
+	margin: 0;
+}
+
+.titleHolder--menuIcon {
+	left: 10px;
+	position: absolute;
+	top: 5px;
+}

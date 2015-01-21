@@ -1,0 +1,48 @@
+/**
+ * CONTENTS
+ *
+ * Colours...............Common colours used throughout the app
+ * Actions...............Maps for grouped actions and their properties
+ * Title.................The page title bar
+ * User avatar...........The user's avatar
+ * Menu..................Details for any menus
+ */
+
+/*------------------------------------*\
+	#COLOURS
+\*------------------------------------*/
+$angel: #555965;
+$death: #32353a;
+$almostDead: #343a50;
+
+$offWhite: #f0f2f5;
+$hotPink: #ff2c67;
+$fastRed: #d22042;
+
+/*------------------------------------*\
+	#ACTIONS
+\*------------------------------------*/
+$primaryActions: (
+	background: #27ccc0,
+	text: #fff
+);
+
+$error: (
+	messageText: $fastRed
+);
+
+/*------------------------------------*\
+	#TITLE
+\*------------------------------------*/
+$titleHeight: 40px;
+
+/*------------------------------------*\
+	#USER AVATAR
+\*------------------------------------*/
+$avatarHeight: 40px;
+
+/*------------------------------------*\
+	#MENU
+\*------------------------------------*/
+$menuWidth: 270px;
+$menuItemHeight: 40px;

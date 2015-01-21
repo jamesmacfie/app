@@ -1,0 +1,12 @@
+<template name="hubList">
+		<a href="{{pathFor 'home'}}">Home</a>
+		{{#if hasHubs}}
+				{{#each hubs}}
+						<p>{{name}}</p>
+				{{/each}}
+				<p><a href="{{pathFor 'hubInsert'}}">Insert another?</a></p>
+		{{else}}
+				<p><a href="{{pathFor 'hubInsert'}}">No hubs. Insert one?</a></p>
+		{{/if}}
+
+</template>

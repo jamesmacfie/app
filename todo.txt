@@ -1,0 +1,24 @@
+	Menu
+ - Home
+ - Rooms
+ - Sensors
+ - Networks
+ - Settings
+
+Next:
+ - Decide on layout for both sensors and rooms. How will it look in different situations?
+ - Create home page with panels. First create mockup in straight HTML. Hard code the images etc in.
+ - Code it up based on dummy information. Leave the images and graphs
+ - Code up the graphs
+ - Design edit screen
+ - Come up with image select design
+ - Add default image select functionality to both sensors and zones
+ - Get the image displaying on the homescreen
+ -
+
+Wed
+ - Add sensor
+	- Cancel link
+	- Background of room up the top
+	- Forms with correct details
+	- Save and return to the room screen

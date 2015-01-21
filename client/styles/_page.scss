@@ -1,0 +1,37 @@
+.pageHolder {
+	left: 0;
+	position: relative;
+	top: $titleHeight;
+
+	&.menuActive {
+		.pageHolder--menu {
+			left: 0;
+		}
+
+		.pageHolder--main, .pageHolder--title {
+			left: $menuWidth;
+		}
+	}
+}
+
+.pageHolder--menu, .pageHolder--main, .pageHolder--title {
+	transition: all 0.2s ease;
+}
+
+.pageHolder--menu {
+	left: -$menuWidth;
+	position: fixed;
+	width: $menuWidth;
+}
+
+.pageHolder--main, .pageHolder--title {
+	left: 0px;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	width: 100vw;
+}
+
+.pageHolder--main {
+	min-height: calc(100vh - 40px);
+}

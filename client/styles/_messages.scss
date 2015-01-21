@@ -1,0 +1,7 @@
+.message {
+	margin: 10px 0;
+}
+
+.message-error {
+	color: map-get($error, 'messageText');
+}
