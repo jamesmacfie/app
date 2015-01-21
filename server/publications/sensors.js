@@ -1,6 +1,6 @@
 'use strict';
 
-Meteor.publish('userSensors', function() {
+Meteor.publish('userHubSensors', function() {
 		var networkHubs = _.flatten(Networks.find({
 						users: {
 								$in: [this.userId]
@@ -15,22 +15,39 @@ Meteor.publish('userSensors', function() {
 				}).map(function mapHubSensor(h) {
 					return h.sensors;
 				}));
-
-				// roomSensors = Rooms.find({
-				// 		hub: {
-				// 				$in: networks
-				// 		}
-				// }).map(function mapRoomSensorId(r) {
-				// 		return r.sensors;
-				// });
-				console.log(hubSensors);
-
+				
 				return Sensors.find({
 						_id: {
 								$in: hubSensors
 						}
 				});
 });
+
+Meteor.publish('userRoomSensors', function() {
+	var roomHubs = _.flatten(Networks.find({
+		users: {
+			$in: [this.userId]
+		}
+	}).map(function mapNetworkId(n) {
+		return n._hubs;
+	})),
+	roomSensors = _.flatten(rooms.find({
+		network: {
+			$in: roomHubs
+		}
+	}).map(function mapHubSensor(r) {
+		return r.sensors;
+	}));
+
+	return Sensors.find({
+		_id: {
+			$in: RoomSensors
+		}
+	});
+});
+
+
+
 
 Meteor.publish('sensorTypes', function() {
 		return SensorTypes.find();
