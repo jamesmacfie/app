@@ -1,0 +1,20 @@
+<template name="sensorSummary">
+	{{> Template.dynamic template = getTemplate}}
+</template>
+
+<template name="tempSensorSummary">
+	<div class="sensorSummary panel panel-padded panel-borderRadius panel-green">
+		<h4 class="sensorSummary--title"><i class="md md-home sensorIcon sensorIcon-temp sensorIconHolder--sensorIcon"></i>Some name</h4>
+		<div class="summaryChart">
+			<h5 class="summaryChart--title">{{latestTemp}}&#186;C</h5>
+			<div class="chart summaryChart--chart ct-chart" id="chart-{{_id}}"></div>
+		</div>
+	</div>
+</template>
+
+<template name="irSensorSummary">
+	<div class="sensorSummmary">
+		<h5 class="sensorSummary--title"><i class="md md-layers sensorIcon sensorIcon-ir sensorIconHolder--sensorIcon"></i>Some name</h5>
+		<p>{{type}} - {{moduleId}}</p>
+	</div>
+</template>

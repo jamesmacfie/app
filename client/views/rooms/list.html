@@ -1,10 +1,12 @@
 <template name="roomList">
-		{{#if hasRooms}}
-				{{#each rooms}}
-						{{> roomItemPartial}}
-				{{/each}}
-				<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
-		{{else}}
-				<a href="{{pathFor 'roomInsert'}}">No rooms. Insert one?</a>
-		{{/if}}
+	{{#if hasRooms}}
+		<div class="panel panel-default">
+			{{#each rooms}}
+				{{> roomItemSummary}}
+			{{/each}}
+		</div>
+		<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
+	{{else}}
+		<a href="{{pathFor 'roomInsert'}}">No rooms. Insert one?</a>
+	{{/if}}
 </template>

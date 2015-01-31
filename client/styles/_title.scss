@@ -6,7 +6,7 @@
 	right: 0;
 	text-align: center;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 }
 
 .title {
@@ -19,6 +19,12 @@
 
 .titleHolder--menuIcon {
 	left: 10px;
+	position: absolute;
+	top: 5px;
+}
+
+.titleHolder--prevIcon {
+	right: 10px;
 	position: absolute;
 	top: 5px;
 }

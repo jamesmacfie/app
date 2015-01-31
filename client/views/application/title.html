@@ -1,4 +1,7 @@
 <template name="title">
 	<i class="md md-menu titleHolder--menuIcon menuIcon js-toggleMenu"></i>
 	<h1 class="title">{{title}}</h1>
+	{{#if prev}}
+		<i class="md md-chevron-left titleHolder--prevIcon menuIcon js-goBack"></i>
+	{{/if}}
 </template>

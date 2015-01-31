@@ -1,0 +1,12 @@
+.roomSummary {
+	background-color: $almostDead;
+	padding: 10px;
+	padding-bottom: 45px;
+	position: relative;
+}
+
+.roomSummaryText {
+	color: lighten($angel, 40%);
+	font-size: 12px;
+	margin: 0;
+}

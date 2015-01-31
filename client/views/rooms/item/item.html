@@ -1,0 +1,20 @@
+<template name="roomItem">
+	<div class="sensor">
+		<div class="sensor--background">
+			<h1 class="sensor--background--h1">{{room.name}}</h1>
+			<div class="sensorIconHolder sensorIconHolder-right">
+				<a href="{{pathFor 'roomItemEdit' room}}"><i class="md md-edit sensorIcon sensorIcon-edit sensorIconHolder--sensorIcon"></i></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel panel-padded">
+		{{#if sensorCount}}
+			{{#each sensors}}
+				{{> sensorSummary}}
+				{{/each}}
+		{{else}}
+			<p>This room doesn't seem to have any sensors in it. Did you want to <a href="{{pathFor 'roomAddSensor' _id=room._id}}">add one</a>?</p>
+		{{/if}}
+	</div>
+</template>
