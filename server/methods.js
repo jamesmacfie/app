@@ -95,10 +95,11 @@ Meteor.methods({
 				});
 			}
 		},
-		insertDataPoint: function(data) {
-				DataPoint.insert({
-						value: data.value,
-						timeStamp: new Date()
-				});
+		insertFakeSensorData: function(data, query, id) {
+			DataPoints.insert({
+				sensor: data.sensor,
+				value: data.value,
+				createdAt: new Date()
+			});
 		}
 });

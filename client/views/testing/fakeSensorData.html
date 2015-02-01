@@ -1,0 +1,16 @@
+<template name="fakeSensorData">
+	<div class="panel panel-padded">
+		<h1>Add datapoint - not for public consumption</h1>
+
+		{{#autoForm collection="DataPoints" id="fakeSensorDataForm" type="method" meteormethod="insertFakeSensorData"}}
+		{{> afQuickField name='value'}}
+		{{> afQuickField name='sensor'}}
+
+		<div class="marginTop10">
+			<button type="submit" class="btn btn-primary">Insert</button>
+			<a href="{{pathFor 'home'}}" class="btn btn-default">Cancel</a>
+		</div>
+		{{/autoForm}}
+	</div>
+
+</template>
