@@ -61,3 +61,9 @@ Meteor.publish('roomSensors', function(id) {
 Meteor.publish('sensorTypes', function() {
 		return SensorTypes.find();
 });
+
+Meteor.publish('sensor', function(id) {
+	return Sensors.find({
+		_id: id
+	});
+});
