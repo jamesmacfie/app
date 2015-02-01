@@ -78,7 +78,7 @@ Meteor.methods({
 				}
 			});
 		},
-		updateSensor: function(sensor, query, id) {
+		updateSensorName: function(sensor, query, id) {
 			// Validation!
 			return Sensors.update(id, {
 				$set: {

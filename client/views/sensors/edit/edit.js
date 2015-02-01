@@ -1,4 +1,4 @@
-AutoForm.addHooks('sensorItemEditForm', {
+AutoForm.addHooks('sensorItemNameEditForm', {
 	onSubmit: function() {
 		console.log(arguments);
 	},
@@ -11,7 +11,7 @@ AutoForm.addHooks('sensorItemEditForm', {
 });
 
 
-Template.sensorItemEdit.helpers({
+Template.sensorItemNameEdit.helpers({
 	test: function() {
 		//debugger;
 	}

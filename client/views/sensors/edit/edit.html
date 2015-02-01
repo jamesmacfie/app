@@ -1,7 +1,7 @@
-<template name="sensorItemEdit">
+<template name="sensorItemNameEdit">
 	<div class="panel panel-padded">
 		{{test}}
-		{{#autoForm schema=Schemas.sensor doc=sensor id="sensorItemEditForm" type="method" meteormethod="updateSensor" validation="none"}}
+		{{#autoForm schema=Schemas.sensor doc=sensor id="sensorItemNameEditForm" type="method" meteormethod="updateSensorName" validation="none"}}
 		<fieldset>
 			{{> afQuickField name="name"}}
 			<div>
