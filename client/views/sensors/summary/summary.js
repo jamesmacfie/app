@@ -90,3 +90,13 @@ Template.tempSensorSummary.rendered = function() {
 
 	new Chartist.Line('#chart-' + this.data._id, data, options);
 }
+
+Template.irSensorSummary.helpers({
+	nickname: function() {
+		if (this.name) {
+			return this.name;
+		}
+
+		return 'Movement';
+	}
+})
