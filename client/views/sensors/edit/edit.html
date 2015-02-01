@@ -1,3 +1,14 @@
 <template name="sensorItemEdit">
-	Edit sensor {{_id}}
+	<div class="panel panel-padded">
+		{{test}}
+		{{#autoForm schema=Schemas.sensor doc=sensor id="sensorItemEditForm" type="method" meteormethod="updateSensor" validation="none"}}
+		<fieldset>
+			{{> afQuickField name="name"}}
+			<div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<button class="btn btn-transparent js-goBack">Cancel</button>
+			</div>
+		</fieldset>
+		{{/autoForm}}
+	</div>
 </template>

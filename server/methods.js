@@ -78,6 +78,14 @@ Meteor.methods({
 				}
 			});
 		},
+		updateSensor: function(sensor, query, id) {
+			// Validation!
+			return Sensors.update(id, {
+				$set: {
+					name: sensor.name
+				}
+			});
+		},
 		insertDataPoint: function(data) {
 				DataPoint.insert({
 						value: data.value,
