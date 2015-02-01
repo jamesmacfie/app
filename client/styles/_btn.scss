@@ -21,3 +21,14 @@
 .btnHolder {
 	margin: 10px;
 }
+
+.btn-transparent {
+	background: transparent;
+	border: none;
+	color: #279AE7;
+
+	&:hover, &:active {
+		box-shadow: none;
+		color: darken(#279AE7, 10%);
+	}
+}

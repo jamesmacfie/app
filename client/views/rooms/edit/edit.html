@@ -1,3 +1,17 @@
 <template name="roomItemEdit">
-	Edit page
+	<div class="panel panel-padded">
+
+		{{#autoForm schema=Schemas.room doc=room id="roomItemEditForm" type="method" meteormethod="updateRoom"}}
+		<fieldset>
+			{{> afQuickField name="name"}}
+			{{> afQuickField name="homepage.show"}}
+			{{> afQuickField name="hub"}}
+			<p>Something about a photo should go here</p>
+			<div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+				<a href="{{pathFor 'roomItem' _id=room._id}}" class="btn btn-transparent">Cancel</a>
+			</div>
+		</fieldset>
+		{{/autoForm}}
+	</div>
 </template>

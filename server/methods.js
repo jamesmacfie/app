@@ -24,11 +24,15 @@ Meteor.methods({
 
 		},
 		insertRoom: function(room) {
-				var roomData = _.extend(room, {
-						users: [this.userId]
-				});
+			var roomData = _.extend(room, {
+					users: [this.userId]
+			});
 
-				Rooms.insert(roomData);
+			Rooms.insert(roomData);
+		},
+		updateRoom: function(room, query, id) {
+			// Man, def need some sort of validation here
+			return Rooms.update(id, query);
 		},
 		insertRoomSensor: function(sensorId, roomId) {
 			var room = Rooms.findOne(roomId);

@@ -1,5 +1,4 @@
 <template name="roomInsert">
-	<a href="{{pathFor 'home'}}">Home</a>
 	{{#autoForm schema=Schemas.room id="roomInsertForm" type="method" meteormethod="insertRoom"}}
 	<fieldset>
 		{{> afQuickField name="name"}}
