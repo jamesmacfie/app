@@ -12,6 +12,13 @@ Template.sensorSummary.helpers({
 });
 
 Template.tempSensorSummary.helpers({
+	nickname: function() {
+		if (this.name) {
+			return this.name;
+		}
+
+		return 'Temperature';
+	},
 	latestTemp: function() {
 		var sensorId = this._id,
 			latest = DataPoints.find({
