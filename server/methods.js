@@ -103,30 +103,34 @@ Meteor.methods({
 			});
 		},
 		insertMotionFakeSensorData: function() {
-			var nextChange = Math.ceil(Math.random() * 120),
-				nextValue = false,
-				nextMoment = new moment(),
-				arr = []
+			// var nextChange = Math.ceil(Math.random() * 120),
+			// 	nextValue = false,
+			// 	nextMoment = new moment(),
+			// 	arr = []
+			//
+			// for (var i = 0; i < 10; i++) {
+			//
+			// 	arr.push({
+			// 		sensor: 'a8oawhjFz25anXyQW',
+			// 		value: nextValue,
+			// 		createdAt: new moment(nextMoment.toDate()).toDate()
+			// 	});
+			//
+			// 	nextChange = nextChange += Math.ceil(Math.random() * 120);
+			// 	nextValue = !nextValue;
+			// 	nextMoment.subtract(nextChange, 's');
+			//
+			// }
+			//
+			// _.each(arr, function(a) {
+			// 	console.log(a);
+			// 	DataPoints.insert(a);
+			// })
 
-			for (var i = 0; i < 10; i++) {
-
-				arr.push({
-					sensor: 'a8oawhjFz25anXyQW',
-					value: nextValue,
-					createdAt: new moment(nextMoment.toDate()).toDate()
-				});
-
-				nextChange = nextChange += Math.ceil(Math.random() * 120);
-				nextValue = !nextValue;
-				nextMoment.subtract(nextChange, 's');
-
-			}
-
-			_.each(arr, function(a) {
-				console.log(a);
-				DataPoints.insert(a);
-			})
-
-
+		// DataPoints.insert({
+		// 		sensor: 'a8oawhjFz25anXyQW',
+		// 		value: false,
+		// 		createdAt: new moment().subtract(2, 'h').toDate()
+		// 	});
 		}
 });
