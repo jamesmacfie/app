@@ -1,5 +1,32 @@
 'use strict';
 
+
+Meteor.publish('sensorDataPoints', function(id) {
+	var yesterdaysDate = new moment().subtract(24, 'h').toDate(),
+		starDataPoint = DataPoints.find({
+			sensor: id,
+			createdAt: {
+				$lt: yesterdaysDate
+			}
+		}, {
+			sort: {
+				createdAt: -1
+			},
+			limit: 1
+		}),
+		todaysDataPoints = DataPoints.find({
+			sensor: id,
+			createdAt: {
+				$gt: yesterdaysDate
+			}
+		}, {
+			sort: {
+				createdAt: -1
+			}
+		});
+});
+
+
 Meteor.publish('userRoomDataPoints', function(id) {
 	var roomSensors = _.flatten(Rooms.find({
 			_id: id

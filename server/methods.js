@@ -101,5 +101,32 @@ Meteor.methods({
 				value: data.value,
 				createdAt: new Date()
 			});
+		},
+		insertMotionFakeSensorData: function() {
+			var nextChange = Math.ceil(Math.random() * 120),
+				nextValue = false,
+				nextMoment = new moment(),
+				arr = []
+
+			for (var i = 0; i < 10; i++) {
+
+				arr.push({
+					sensor: 'a8oawhjFz25anXyQW',
+					value: nextValue,
+					createdAt: new moment(nextMoment.toDate()).toDate()
+				});
+
+				nextChange = nextChange += Math.ceil(Math.random() * 120);
+				nextValue = !nextValue;
+				nextMoment.subtract(nextChange, 's');
+
+			}
+
+			_.each(arr, function(a) {
+				console.log(a);
+				DataPoints.insert(a);
+			})
+
+
 		}
 });
