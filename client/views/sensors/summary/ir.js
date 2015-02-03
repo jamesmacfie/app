@@ -7,25 +7,34 @@ Template.irSensorSummary.helpers({
 		}
 
 		return 'Movement';
+	},
+	currentStatus: function() {
+		var latest = DataPoints.find({
+				sensor: this._id
+			}, {
+				sort: {
+					createdAt: -1
+				},
+				limit: 1
+			}).fetch();
+
+		if (!latest.length) {
+			return '--';
+		}
+
+		if (latest[0].value === 'true') {
+			return 'Movement';
+		} else {
+			return 'No movement';
+		}
 	}
 });
 
 Template.irSensorSummary.rendered = function() {
-	// Dear god this is just the worst
-	var yesterdaysDate = new moment().subtract(24, 'h'),
-		startDataPoint = DataPoints.find({
-			sensor: this.data._id,
-			createdAt: {
-				$lt: yesterdaysDate.toDate()
-			}
-		}, {
-			sort: {
-				createdAt: -1
-			},
-			limit: 1
-		}).fetch(),
+	var template = this,
+		yesterdaysDate = new moment().subtract(24, 'h'),
 		todaysDataPoints = DataPoints.find({
-			sensor: this.data._id,
+			sensor: template.data._id,
 			createdAt: {
 				$gt: yesterdaysDate.toDate()
 			}
@@ -33,51 +42,69 @@ Template.irSensorSummary.rendered = function() {
 			sort: {
 				createdAt: -1
 			}
-		}).fetch(),
-		arr = Array.apply(null, new Array(1440)).map(function() { return false; }),
-		lastDate = lastDate = new moment(yesterdaysDate.toDate()),
-		value,
-		finalData = [];
+		}),
+		seriesData = function(latestDataPoints) {
+		// Dear god this is just the worst
+		var startDataPoint = DataPoints.find({
+				sensor: template.data._id,
+				createdAt: {
+					$lt: yesterdaysDate.toDate()
+				}
+			}, {
+				sort: {
+					createdAt: -1
+				},
+				limit: 1
+			}).fetch(),
+			latestDataPointsArr = latestDataPoints.fetch(),
+			arr = Array.apply(null, new Array(1440)).map(function() { return false; }),
+			lastDate  = new moment(yesterdaysDate.toDate()),
+			value,
+			finalData = [];
 
-	if (!startDataPoint.length) {
-		value = false;
-	} else {
-		value = startDataPoint[0].value;
-	}
+		if (!startDataPoint.length) {
+			value = false;
+		} else {
+			value = startDataPoint[0].value;
+		}
 
-	arr.forEach(function(item, idx) {
-		var nextDate = new moment(yesterdaysDate).add((idx * 60), 's'),
+		arr.forEach(function(item, idx) {
+			var nextDate = new moment(yesterdaysDate).add((idx * 60), 's'),
 			currDataPoint,
 			currDate;
 
-		for (var i = 0; i < todaysDataPoints.length; i++) {
-			currDataPoint = todaysDataPoints[i];
-			currDate = new moment(currDataPoint.createdAt);
-			if (currDate.isAfter(lastDate) && currDate.isBefore(nextDate) &&
-				currDataPoint.value !== value) {
-				value = currDataPoint.value === 'true' ? true : false;
-				lastDate = currDate;
-				break;
-			}
-		}
+			for (var i = 0; i < latestDataPointsArr.length; i++) {
+				currDataPoint = latestDataPointsArr[i];
+				currDate = new moment(currDataPoint.createdAt);
+				if (currDate.isAfter(lastDate) && currDate.isBefore(nextDate) &&
+					currDataPoint.value !== value) {
+						value = currDataPoint.value === 'true' ? true : false;
+						lastDate = currDate;
+						break;
+					}
+				}
 
-		arr[idx] = value;
-	});
+				arr[idx] = value;
+			});
 
-	for (var i = 0, len = arr.length; i < len; i += 60) {
-		var count = 0;
-		for (var j = i; j < i + 60; j++) {
-			if (arr[j] === true) {
-				count++;
+			for (var i = 0, len = arr.length; i < len; i += 60) {
+				var count = 0;
+				for (var j = i; j < i + 60; j++) {
+					if (arr[j] === true) {
+						count++;
+					}
+				}
+				finalData.push(count);
 			}
-		}
-		finalData.push(count);
-	}
+
+		return finalData;
+	};
+
 
 	var data = {
-		labels: [],
+			labels: [],
 			series: [
-				finalData
+				seriesData(todaysDataPoints)
 			]
 		},
 		options = {
@@ -98,7 +125,8 @@ Template.irSensorSummary.rendered = function() {
 			centerBars: false
 		};
 
-
 	new Chartist.Bar('#chart-' + this.data._id, data, options);
+
+	// Need to change with the data here
 
 };
