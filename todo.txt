@@ -1,19 +1,23 @@
 	Menu
- - Home
- - Rooms
- - Sensors
- - Networks
- - Settings
 
-Next:
- - Code up the graphs
- - Design edit screen
- - Come up with image select design
- - Add default image select functionality to both sensors and zones
- - Get the image displaying on the homescreen
- -
-
-Room:
- - Image up the top
- - List of sensors
- - Edit link
+ - Remove sensor from a room
+ - Add rooms to homepage
+ - Change movement from true/false to 0/1
+ - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
+ - Rename and organise template partials
+ - Style form inputs better (i.e more inline with current design)
+ - Test plan
+ - Add sensor to a room (move icon from the list screen)
+ - Upload/select image
+ - Default image schema
+ - Image selection with paging
+ - Think up flow for setting up networks/hubs etc
+ - Finish user signup flow
+ - Email notifications etc
+ - Better CSS architecture
+ - Assign users to networks (settings)
+ - Have multiple roles for users
+ - Ensure security with users and the sensors/rooms/etc
+ - Set user email and password from settings page
+ - Get user avatar from gravatar
+ - Remove hub from network (settings) - warn about loss of sensor data
