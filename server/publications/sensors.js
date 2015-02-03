@@ -20,24 +20,29 @@ Meteor.publish('userHubSensors', function() {
 			_id: {
 				$in: hubSensors
 			}
+		}, {
+			sort: {
+				name: 1,
+				createdAt: -1
+			}
 		});
 });
 
 Meteor.publish('userRoomSensors', function() {
 	var roomHubs = _.flatten(Networks.find({
-		users: {
-			$in: [this.userId]
-		}
-	}).map(function mapNetworkId(n) {
-		return n._hubs;
-	})),
-	roomSensors = _.flatten(rooms.find({
-		network: {
-			$in: roomHubs
-		}
-	}).map(function mapHubSensor(r) {
-		return r.sensors;
-	}));
+			users: {
+				$in: [this.userId]
+			}
+		}).map(function mapNetworkId(n) {
+			return n._hubs;
+		})),
+		roomSensors = _.flatten(rooms.find({
+			network: {
+				$in: roomHubs
+			}
+		}).map(function mapHubSensor(r) {
+			return r.sensors;
+		}));
 
 	return Sensors.find({
 		_id: {
