@@ -42,7 +42,6 @@ Meteor.methods({
 			}
 
 			if (room.sensors === undefined) {
-				console.log('adding empty array');
 				Rooms.update(room._id, {
 					$set: {
 						sensors: []
@@ -52,6 +51,19 @@ Meteor.methods({
 
 			Rooms.update(room._id, {
 				$push: {
+					sensors: sensorId
+				}
+			});
+		},
+		removeRoomSensor: function(sensorId, roomId) {
+			var room = Rooms.findOne(roomId);
+
+			if (!room) {
+				return;
+			}
+
+			Rooms.update(room._id, {
+				$pull: {
 					sensors: sensorId
 				}
 			});
@@ -95,7 +107,7 @@ Meteor.methods({
 				});
 			}
 		},
-		insertFakeSensorData: function(data, query, id) {
+		insertFakeSensorData: function(data) {
 			DataPoints.insert({
 				sensor: data.sensor,
 				value: data.value,
@@ -130,7 +142,13 @@ Meteor.methods({
 		DataPoints.insert({
 				sensor: 'a8oawhjFz25anXyQW',
 				value: true,
-				createdAt: new moment().subtract(2, 'h').toDate()
+				createdAt: new moment().subtract(3, 'h').toDate()
 			});
-		}
+
+		DataPoints.insert({
+			sensor: 'a8oawhjFz25anXyQW',
+			value: false,
+			createdAt: new moment().subtract(2, 'h').toDate()
+		});
+	}
 });

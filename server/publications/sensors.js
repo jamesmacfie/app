@@ -51,14 +51,18 @@ Meteor.publish('userRoomSensors', function() {
 	});
 });
 
-Meteor.publish('roomSensors', function(id) {
-	var roomSensors = _.flatten(Rooms.find(id).map(function mapHubSensor(r) {
-		return r.sensors;
-	}));
+Meteor.reactivePublish('roomSensors', function(id) {
+	var room = Rooms.findOne(id, {
+		reactive: true
+	});
+
+	if (!room) {
+		return [];
+	}
 
 	return Sensors.find({
 		_id: {
-			$in: roomSensors
+			$in: room.sensors
 		}
 	});
 });
