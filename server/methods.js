@@ -141,14 +141,14 @@ Meteor.methods({
 
 		DataPoints.insert({
 				sensor: 'a8oawhjFz25anXyQW',
-				value: true,
-				createdAt: new moment().subtract(3, 'h').toDate()
+				value: 0,
+				createdAt: new moment().subtract(135, 'm').toDate()
 			});
-
-		DataPoints.insert({
-			sensor: 'a8oawhjFz25anXyQW',
-			value: false,
-			createdAt: new moment().subtract(2, 'h').toDate()
-		});
+		//
+		// DataPoints.insert({
+		// 	sensor: 'a8oawhjFz25anXyQW',
+		// 	value: 0,
+		// 	createdAt: new moment().subtract(2, 'h').toDate()
+		// });
 	}
 });

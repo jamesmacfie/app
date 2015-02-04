@@ -3,7 +3,6 @@
 Meteor.reactivePublish('userRoomDataPoints', function(id) {
 	/* Temp -> last hour */
 	function getLastTempDataPoint(id) {
-		console.log('temp', id);
 		var oneHourAgo = new moment().subtract(1, 'h').toDate(),
 			datapoint = DataPoints.findOne({
 				sensor: id,
@@ -11,13 +10,11 @@ Meteor.reactivePublish('userRoomDataPoints', function(id) {
 					$lt: oneHourAgo
 				}
 			});
-		console.log(datapoint);
 		return datapoint;
 	}
 
 	/* IR - yesterday's most recent */
 	function getLastIRDataPoint(id) {
-		console.log('ir', id);
 		var yesterday = new moment().subtract(24, 'h').toDate(),
 			datapoint = DataPoints.findOne({
 				sensor: id,
@@ -25,7 +22,6 @@ Meteor.reactivePublish('userRoomDataPoints', function(id) {
 					$lt: yesterday
 				}
 			});
-		console.log(datapoint);
 		return  datapoint;
 	}
 
@@ -42,7 +38,6 @@ Meteor.reactivePublish('userRoomDataPoints', function(id) {
 		ors = [];
 
 	roomSensors.forEach(function(s) {
-		console.log('sensor', s);
 		var dp;
 		if (s.type === 't') {
 			dp = getLastTempDataPoint(s._id);
@@ -61,8 +56,6 @@ Meteor.reactivePublish('userRoomDataPoints', function(id) {
 
 	});
 
-	console.log('ors', ors);
-
 	if (!ors.length) {
 		return [];
 	}
@@ -70,9 +63,7 @@ Meteor.reactivePublish('userRoomDataPoints', function(id) {
 	return DataPoints.find({
 		$or: ors
 	});
-
 });
-
 
 Meteor.publish('userHubDataPoints', function() {
 	var networkHubs = _.flatten(Networks.find({
