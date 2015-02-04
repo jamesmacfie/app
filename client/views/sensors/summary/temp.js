@@ -1,3 +1,5 @@
+'use strict';
+
 Template.tempSensorSummary.helpers({
 	nickname: function() {
 		if (this.name) {
@@ -20,7 +22,7 @@ Template.tempSensorSummary.helpers({
 
 		if (latest) {
 			try {
-				return parseFloat(latest.value, 2)
+				return parseFloat(latest.value, 2);
 			} catch(e) {
 				console.error(latest.value + ' is not a valid number');
 				return 0;
@@ -28,8 +30,14 @@ Template.tempSensorSummary.helpers({
 		}
 
 		return '--';
+	},
+	removeMessage: function() {
+		var nameText = this.name ? 'the sensor \'' + this.name + '\'' : 'this temperature sensor';
+
+		return 'Are you sure you want to remove ' + name + ' from this room?';
 	}
 });
+
 
 
 Template.tempSensorSummary.rendered = function() {
@@ -48,7 +56,7 @@ Template.tempSensorSummary.rendered = function() {
 		series: [
 		dataPoints.map(function(d) {
 			try {
-				return parseFloat(d.value, 2)
+				return parseFloat(d.value, 2);
 			} catch(e) {
 				console.error(d.value + ' is not a valid number');
 				return 0;
@@ -72,8 +80,8 @@ Template.tempSensorSummary.rendered = function() {
 		},
 		fullWidth: true,
 		showPoint: false
-	}
+	};
 
 
 	new Chartist.Line('#chart-' + this.data._id, data, options);
-}
+};

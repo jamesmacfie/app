@@ -1,45 +1,76 @@
 'use strict';
 
+Meteor.reactivePublish('userRoomDataPoints', function(id) {
+	/* Temp -> last hour */
+	function getLastTempDataPoint(id) {
+		console.log('temp', id);
+		var oneHourAgo = new moment().subtract(1, 'h').toDate(),
+			datapoint = DataPoints.findOne({
+				sensor: id,
+				createdAt: {
+					$lt: oneHourAgo
+				}
+			});
+		console.log(datapoint);
+		return datapoint;
+	}
 
-Meteor.publish('sensorDataPoints', function(id) {
-	var yesterdaysDate = new moment().subtract(24, 'h').toDate(),
-		starDataPoint = DataPoints.find({
-			sensor: id,
-			createdAt: {
-				$lt: yesterdaysDate
-			}
-		}, {
-			sort: {
-				createdAt: -1
-			},
-			limit: 1
-		}),
-		todaysDataPoints = DataPoints.find({
-			sensor: id,
-			createdAt: {
-				$gt: yesterdaysDate
-			}
-		}, {
-			sort: {
-				createdAt: -1
-			}
-		});
-});
+	/* IR - yesterday's most recent */
+	function getLastIRDataPoint(id) {
+		console.log('ir', id);
+		var yesterday = new moment().subtract(24, 'h').toDate(),
+			datapoint = DataPoints.findOne({
+				sensor: id,
+				createdAt: {
+					$lt: yesterday
+				}
+			});
+		console.log(datapoint);
+		return  datapoint;
+	}
 
-
-Meteor.publish('userRoomDataPoints', function(id) {
-	var roomSensors = _.flatten(Rooms.find({
+	var room = Rooms.findOne({
 			_id: id
-		}).map(function mapHubSensor(r) {
-			return r.sensors;
-		}));
+		}, {
+			reactive: true
+		}),
+		roomSensors = room ? Sensors.find({
+			_id: {
+				$in: room.sensors
+			}
+		}) : [],
+		ors = [];
 
+	roomSensors.forEach(function(s) {
+		console.log('sensor', s);
+		var dp;
+		if (s.type === 't') {
+			dp = getLastTempDataPoint(s._id);
+		} else if (s.type === 'i') {
+			dp = getLastIRDataPoint(s._id);
+		}
+
+		if (dp) {
+			ors.push({
+				sensor: s._id,
+				createdAt: {
+					$gte: dp.createdAt
+				}
+			});
+		}
+
+	});
+
+	console.log('ors', ors);
+
+	if (!ors.length) {
+		return [];
+	}
 
 	return DataPoints.find({
-		sensor: {
-			$in: roomSensors
-		}
+		$or: ors
 	});
+
 });
 
 

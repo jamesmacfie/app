@@ -1,6 +1,7 @@
 	Menu
 
  - Remove sensor from a room
+ - Edit room sensor should be in a popup
  - Add rooms to homepage
  - Change movement from true/false to 0/1
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
