@@ -2,15 +2,10 @@
 		<div class="page">
 			{{#if belongsToNetworks}}
 				{{#each rooms}}
-					{{> roomName}}
-					{{/each}}
+					{{> roomItemSummary}}
+				{{/each}}
 			{{else}}
 				{{ > noNetworks}}
 			{{/if}}
-
-			<p><a href="{{pathFor 'networkList'}}">View all networks</a></p>
-			<p><a href="{{pathFor 'hubList'}}">View all hubs</a></p>
-			<p><a href="{{pathFor 'roomList'}}">View all rooms</a></p>
-			<p><a href="{{pathFor 'sensorList'}}">View all sensors</a></p>
 		</div>
 </template>

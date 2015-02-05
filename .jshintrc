@@ -45,6 +45,7 @@
 				"describe": false,
 				"it": false,
 				"chai": false,
-				"Chartist": false
+				"Chartist": false,
+				"SubsManager": false
 		}
 }

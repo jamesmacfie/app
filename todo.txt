@@ -20,3 +20,4 @@
  - Remove hub from network (settings) - warn about loss of sensor data
  - Rearrange publications/subscriptions to be faster and/or more relevant
  - Better icons
+ - A better 'No-network' UI (prob something a bit better for all error states)
