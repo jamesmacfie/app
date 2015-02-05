@@ -23,6 +23,19 @@ h2 {
 	font-size: 22px;
 }
 
+label {
+	font-weight: normal;
+}
+
+select {
+	position: relative;
+	-webkit-appearance: none;
+
+	&.form-control {
+		background: #fff url('/images/select-dropdown.png') right center no-repeat;
+	}
+}
+
 .lead {
 	margin-bottom: 10px;
 }

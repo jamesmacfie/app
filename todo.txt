@@ -1,9 +1,6 @@
 	Menu
 
- - Remove sensor from a room
- - Edit room sensor should be in a popup
  - Add rooms to homepage
- - Change movement from true/false to 0/1
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
  - Rename and organise template partials
  - Style form inputs better (i.e more inline with current design)
@@ -22,3 +19,4 @@
  - Set user email and password from settings page
  - Get user avatar from gravatar
  - Remove hub from network (settings) - warn about loss of sensor data
+ - Rearrange publications/subscriptions to be faster and/or more relevant
