@@ -21,3 +21,4 @@ ixdi:material-design-iconic-font
 mrt:reactive-publish
 meteorhacks:aggregate
 meteorhacks:fast-render
+meteorhacks:subs-manager

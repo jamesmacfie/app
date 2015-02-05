@@ -47,6 +47,8 @@ Meteor.publish('userRoomSensors', function() {
 	return Sensors.find({
 		_id: {
 			$in: roomSensors
+		}, sort: {
+			name: 1
 		}
 	});
 });

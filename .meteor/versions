@@ -49,6 +49,7 @@ meteorhacks:collection-utils@1.0.0
 meteorhacks:fast-render@2.3.1
 meteorhacks:inject-data@1.2.2
 meteorhacks:picker@1.0.1
+meteorhacks:subs-manager@1.2.4
 mfpierre:chartist-js@1.3.1
 minifiers@1.1.3
 minimongo@1.0.6
