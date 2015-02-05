@@ -90,23 +90,6 @@ Meteor.methods({
 				}
 			});
 		},
-		updateSensorName: function(sensor, query, id) {
-			if (sensor.name) {
-				console.log('updating');
-				return Sensors.update(id, {
-					$set: {
-						name: sensor.name
-					}
-				});
-			} else {
-				console.log('removing');
-				return Sensors.update(id, {
-					$unset: {
-						name: ''
-					}
-				});
-			}
-		},
 		insertFakeSensorData: function(data) {
 			DataPoints.insert({
 				sensor: data.sensor,

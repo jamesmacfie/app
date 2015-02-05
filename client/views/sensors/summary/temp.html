@@ -5,7 +5,7 @@
 			<button class="btn btn-default dropdown-toggle dropdown-toggle-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><i class="md md-more-vert"></i>
 			</button>
 			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="{{pathFor 'sensorItemNameEdit' _ie = this.data._id}}">Edit</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#editSensor-{{_id}}">Set nickname</a></li>
 				<li role="presentation"><a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#removeSensor-{{_id}}" href="#">Remove</a></li>
 			</ul>
 		</div>
@@ -20,7 +20,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">Modal title</h4>
+					<h4 class="modal-title">Remove this sensor?</h4>
 				</div>
 				<div class="modal-body">
 					{{removeMessage}}
@@ -28,6 +28,29 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-transparent" data-dismiss="modal">No</button>
 					<button type="button" class="btn btn-primary js-removeSensor">Yes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" tabindex="-1" id="editSensor-{{_id}}">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Change this sensor's nickname</h4>
+				</div>
+				<div class="modal-body">
+					<fieldset>
+						<div class="form-group">
+							<label class="control-label">Name</label>
+							<input type="text" name="name" maxlength="200" class="form-control" value="{{name}}"/>
+						</div>
+					</fieldset>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-transparent" data-dismiss="modal">No</button>
+					<button type="button" class="btn btn-primary js-saveSensor">Yes</button>
 				</div>
 			</div>
 		</div>
