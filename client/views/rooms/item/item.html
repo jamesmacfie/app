@@ -12,7 +12,8 @@
 		{{#if sensorCount}}
 			{{#each sensors}}
 				{{> sensorSummary}}
-				{{/each}}
+			{{/each}}
+			{{ > sensorSummaryEditModals}}
 		{{else}}
 			<p>This room doesn't seem to have any sensors in it. Did you want to <a href="{{pathFor 'roomAddSensor' _id=room._id}}">add one</a>?</p>
 		{{/if}}

@@ -30,11 +30,6 @@ Template.tempSensorSummary.helpers({
 		}
 
 		return '--';
-	},
-	removeMessage: function() {
-		var nameText = this.name ? 'the sensor \'' + this.name + '\'' : 'this temperature sensor';
-
-		return 'Are you sure you want to remove ' + nameText + ' from this room?';
 	}
 });
 

@@ -46,6 +46,7 @@
 				"it": false,
 				"chai": false,
 				"Chartist": false,
-				"SubsManager": false
+				"SubsManager": false,
+				"UI": false
 		}
 }

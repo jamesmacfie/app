@@ -2,11 +2,11 @@
 	<div class="sensorSummary panel panel-padded panel-borderRadius panel-blue">
 		<h4 class="sensorSummary--title"><i class="md md-home sensorIcon sensorIcon-ir sensorIconHolder--sensorIcon"></i>{{nickname}}</h4>
 		<div class="dropdown dropdown-iconOnly sensorSummary--dropdown">
-			<button class="btn btn-default dropdown-toggle dropdown-toggle-white" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"><i class="md md-more-vert"></i>
+			<button class="btn btn-default dropdown-toggle dropdown-toggle-white" type="button" id="dropdownMenu-{{_id}}" data-toggle="dropdown" aria-expanded="true"><i class="md md-more-vert"></i>
 			</button>
-			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Edit</a></li>
-				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Remove</a></li>
+			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu-{{_id}}">
+				<li role="presentation" class="js-editSensor"><a href="javascript:void(0)">Set nickname</a></li>
+				<li role="presentation" class="js-removeSensor"><a href="javascript:void(0)">Remove</a></li>
 			</ul>
 		</div>
 		<div class="summaryChart">
