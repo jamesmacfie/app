@@ -9,7 +9,7 @@
 				<select name="sensor" class="form-control js-formSensor">
 					<option></option>
 					{{#each sensors}}
-					<option value="{{_id}}">{{moduleId}}</option>
+						<option value="{{_id}}">{{name}}</option>
 					{{/each}}
 				</select>
 				<input type="hidden" name="room" value="{{room._id}}" class="js-formRoom"/>

@@ -1,11 +1,5 @@
 'use strict';
 
-Meteor.publish('room', function(id) {
-		return Rooms.find({
-				_id: id
-		});
-});
-
 Meteor.publish('userRooms', function() {
 		/*
 		 * A room should probably belong to a network, not a hub. What's going on with
