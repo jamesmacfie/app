@@ -1,7 +1,6 @@
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
  - Rename and organise template partials
  - Test plan
- - Add sensor to a room (move icon from the list screen)
  - Upload/select image
  - Default image schema
  - Image selection with paging
@@ -14,7 +13,6 @@
  - Set user email and password from settings page
  - Get user avatar from gravatar
  - Remove hub from network (settings) - warn about loss of sensor data
- - Rearrange publications/subscriptions to be faster and/or more relevant
  - Better icons
  - A better 'No-network' UI (prob something a bit better for all error states)
  - Better model etc for sensor type data (icon, name, colour, etc)
