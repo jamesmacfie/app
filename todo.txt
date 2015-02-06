@@ -1,7 +1,5 @@
-	Menu
-
- - Add rooms to homepage
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
+ - Come up with a decent subscription plan
  - Rename and organise template partials
  - Test plan
  - Add sensor to a room (move icon from the list screen)
@@ -21,3 +19,10 @@
  - Rearrange publications/subscriptions to be faster and/or more relevant
  - Better icons
  - A better 'No-network' UI (prob something a bit better for all error states)
+
+
+Subscription plan
+ userRooms
+ userHubSensors
+ userRoomSensors
+ userDataPoints
