@@ -62,7 +62,6 @@ mrt:reactive-publish@0.1.6
 mrt:server-deps@0.1.2
 npm-bcrypt@0.7.7
 observe-sequence@1.0.4
-ongoworks:security@1.0.1
 ordered-dict@1.0.2
 random@1.0.2
 reactive-dict@1.0.5

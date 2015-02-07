@@ -29,6 +29,6 @@ Template.menu.helpers({
 				route: 'settings',
 				text: 'Settings'
 			}
-		]
+		];
 	}
 });
