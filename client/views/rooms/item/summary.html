@@ -15,8 +15,22 @@
 		<p class="roomSummaryText">Sed posuere consectetur est at lobortis. Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum.</p>
 		<div class="sensorIconHolder sensorIconHolder-left">
 			{{#each sensors}}
-			{{ > sensorIcon}}
+				{{ > sensorIcon}}
 			{{/each}}
 		</div>
 	</div>
+</template>
+
+<template name="roomSummaryBrief">
+	<div class="sensor">
+		<div class="sensor--background">
+			<h1 class="sensor--background--h1">{{name}}</h1>
+			<div class="sensorIconHolder sensorIconHolder-right">
+				<a href="{{pathFor 'room'}}"><i class="md md-navigate-next sensorIcon sensorIcon-next sensorIconHolder--sensorIcon"></i></a>
+			</div>
+		</div>
+	</div>
+	{{#each roomSensors}}
+		{{ > sensorSummaryBrief}}
+	{{/each}}
 </template>

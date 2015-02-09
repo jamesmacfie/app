@@ -1,3 +1,5 @@
+'use strict';
+
 function getSensor(id) {
 	return Sensors.findOne(id.toString()); /* WTF is going on here with this ID? */
 }

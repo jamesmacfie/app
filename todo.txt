@@ -1,6 +1,5 @@
  - login should have it's own page and we should navigate there when a user isn't logged in (not just render it with the same url)
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
- - Rename and organise template partials
  - Test plan
  - Upload/select image
  - Default image schema

@@ -91,5 +91,35 @@ Template.irSensorSummary.rendered = function() {
 	// 	};
 	//
 	// new Chartist.Bar('#chart-' + this.data._id, data, options);
-
 };
+
+Template.irSensorSummaryBrief.helpers({
+	nickname: function() {
+		console.log(this);
+		if (this.name) {
+			return this.name;
+		}
+
+		return 'Movement';
+	},
+	currentStatus: function() {
+		var latest = DataPoints.find({
+			sensor: this._id
+		}, {
+			sort: {
+				createdAt: -1
+			},
+			limit: 1
+		}).fetch();
+
+		if (!latest.length) {
+			return '--';
+		}
+
+		if (latest[0].value === 'true') {
+			return 'Movement detected';
+		} else {
+			return 'No movement detected';
+		}
+	}
+});

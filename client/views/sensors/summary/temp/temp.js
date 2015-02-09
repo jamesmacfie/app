@@ -78,3 +78,36 @@ Template.tempSensorSummary.rendered = function() {
 
 	new Chartist.Line('#chart-' + this.data._id, data, options);
 };
+
+Template.tempSensorSummaryBrief.helpers({
+	nickname: function() {
+		if (this.name) {
+			return this.name;
+		}
+
+		return 'Temperature';
+	},
+	latestTemp: function() {
+		var sensorId = this._id,
+			latest = DataPoints.find({
+				sensor: sensorId
+			},
+			{
+				sort: {
+					createdAt : -1
+				},
+				limit: 1
+			}).fetch()[0];
+
+		if (latest) {
+			try {
+				return parseFloat(latest.value, 2);
+			} catch(e) {
+				console.error(latest.value + ' is not a valid number');
+				return 0;
+			}
+		}
+
+		return '--';
+	}
+});

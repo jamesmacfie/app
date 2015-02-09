@@ -14,5 +14,11 @@
 			<div class="chart summaryChart--chart ct-chart" id="chart-{{_id}}"></div>
 		</div>
 	</div>
+</template>
 
+<template name="tempSensorSummaryBrief">
+	<div class="sensorSummary panel panel-padded panel-borderRadius panel-green">
+		<h5 class="sensorSummaryBrief--title"><i class="md md-home sensorIcon sensorIcon-temp sensorIconHolder--sensorIcon"></i>{{nickname}}</h5>
+		<h4>Current temperature: {{latestTemp}}&#186;C</h4>
+	</div>
 </template>
