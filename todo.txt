@@ -1,6 +1,4 @@
  - login should have it's own page and we should navigate there when a user isn't logged in (not just render it with the same url)
- - login page shouldn't have the menu etc
- - logout should redirect to you a login page (with success message or something)
  - Get even more stripped down sensor summary for home page. Just latest temp || last movement etc
  - Rename and organise template partials
  - Test plan
@@ -19,5 +17,3 @@
  - Better icons
  - A better 'No-network' UI (prob something a bit better for all error states)
  - Better model etc for sensor type data (icon, name, colour, etc)
- - Login
- - Forgot password stuff needs to be styled and work (might need the email stuff done first)

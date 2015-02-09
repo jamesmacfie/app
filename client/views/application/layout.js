@@ -1,9 +1,19 @@
+'use strict';
+
 Template.layout.events({
 	'click .js-toggleMenu': function() {
-		$('#pageHolder').toggleClass('menuActive');
+		var pageHolder = $('#pageHolder');
+
+		if (pageHolder) {
+			pageHolder.toggleClass('menuActive');
+		}
 	},
 	'click .js-hideMenu': function() {
-		$('#pageHolder').removeClass('menuActive');
+		var pageHolder = $('#pageHolder');
+
+		if (pageHolder) {
+			pageHolder.removeClass('menuActive');	
+		}
 	},
 	'click .js-goBack': function() {
 		history.back();

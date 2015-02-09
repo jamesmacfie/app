@@ -1,4 +1,6 @@
-Template.roomAddSensor.events({
+'use strict';
+
+Template.sensorAssign.events({
 	'submit #roomInsertSensorForm': function(event) {
 		event.preventDefault();
 
@@ -12,7 +14,7 @@ Template.roomAddSensor.events({
 		Meteor.call('insertRoomSensor', sensorId, roomId, function() {
 			Router.go('roomItem', {
 				_id: roomId
-			})
+			});
 		});
 	}
-})
+});
