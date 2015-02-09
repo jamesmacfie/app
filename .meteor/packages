@@ -22,3 +22,4 @@ meteorhacks:aggregate
 meteorhacks:fast-render
 meteorhacks:subs-manager
 accounts-base
+mrt:flash-messages
