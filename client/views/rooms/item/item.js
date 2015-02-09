@@ -1,6 +1,6 @@
 'use strict';
 
-Template.roomItem.helpers({
+Template.room.helpers({
 	sensorCount: function() {
 		return this.sensors.count();
 	}

@@ -1,6 +1,8 @@
-AutoForm.addHooks('roomItemEditForm', {
+'use strict';
+
+AutoForm.addHooks('roomEditForm', {
 	onSuccess: function(operation, result, template) {
-		Router.go('roomItem', template.data.doc);
+		Router.go('room', template.data.doc);
 	},
 	onError: function(operation, error, template) {
 		console.log(error);

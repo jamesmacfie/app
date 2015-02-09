@@ -12,7 +12,7 @@ Template.sensorAssign.events({
 		}
 
 		Meteor.call('insertRoomSensor', sensorId, roomId, function() {
-			Router.go('roomItem', {
+			Router.go('room', {
 				_id: roomId
 			});
 		});

@@ -2,7 +2,7 @@
 	{{#if hasRooms}}
 		<div class="panel panel-default">
 			{{#each rooms}}
-				{{> roomItemSummary}}
+				{{> roomSummary}}
 			{{/each}}
 		</div>
 		<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
