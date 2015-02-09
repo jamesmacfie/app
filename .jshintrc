@@ -48,9 +48,6 @@
 				"Chartist": false,
 				"SubsManager": false,
 				"UI": false,
-				"AccountsEntry": false,
-				"t9n": false,
-				"T9NHelper": false,
 				"FlashMessages": false
 		}
 }
