@@ -1,18 +1,28 @@
-.dropdown-iconOnly, .dropdown-iconOnly.open {
+/**
+ * CONTENTS
+ *
+ * Icon only.............A dropdown that only has the icon. No border, text etc.
+ */
+
+/*------------------------------------*\
+	#ICON ONLY
+
+	1.	Styles the bootstrap dropdown to only have an icon. Bootstrap... hence the nesting
+\*------------------------------------*/
+
+.dropdown-iconOnly, .dropdown-iconOnly.open { /* 1. */
 	.dropdown-toggle {
 		background-color: transparent;
 		border: none;
 		margin: 0;
 		padding: 0;
+
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.dropdown-toggle-white {
 		color: #fff;
 	}
-}
-
-.sensorSummary--dropdown {
-	position: absolute;
-	top: 10px;
-	right: 10px;
 }

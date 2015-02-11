@@ -1,8 +1,26 @@
-.mammoth-icon {
+/**
+ * CONTENTS
+ *
+ * Mammoth...............The big ass icon on the signin page(s)
+ * Title.................Icons that live in the main page title
+ */
+
+/*------------------------------------*\
+	#MAMMOTH
+\*------------------------------------*/
+.mammothIcon {
 	background-color: $hotPink; /* TEMP - until I make a logo*/
-	border-radius: 100%;
+	border-radius: 50%;
 	display: block;
-	height: 150px;
-	margin: 70px auto;
-	width: 150px;
+	height: map-get($mammothIcon, height);
+	margin: map-get($mammothIcon, margin);
+	width: map-get($mammothIcon, width);
+}
+
+/*------------------------------------*\
+	#TITLE
+\*------------------------------------*/
+.titleIcon {
+	color: #fff;
+	font-size: $titleHeight / 2;
 }

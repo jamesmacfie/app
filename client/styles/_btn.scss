@@ -1,34 +1,45 @@
+/**
+ * CONTENTS
+ *
+ * Base..................Default button state
+ * Modifiers.............Different button types
+ */
+
+/*------------------------------------*\
+	#BASE
+\*------------------------------------*/
 .btn {
-	border-radius: 3px;
+	border-radius: $borderRadius;
 }
 
+/*------------------------------------*\
+	#MODIFIERS
+
+	1.	Makes the button all big ass ;)
+\*------------------------------------*/
 .btn-primary {
-	background-color: map-get($primaryActions, 'background');
+	background-color: map-get($primaryButton, 'background');
 	border: none;
-	color: map-get($primaryActions, 'text');
+	color: map-get($primaryButton, 'text');
 
 	&:hover, &:focus, &:active {
-		background-color: #11afa4;
+		background-color: darken(map-get($primaryButton, 'background'), 10%);
 	}
-}
-
-.btn-badass {
-	margin: 30px 0;
-	padding: 12px;
-	width: 100%;
-}
-
-.btnHolder {
-	margin: 10px;
 }
 
 .btn-transparent {
 	background: transparent;
 	border: none;
-	color: #279AE7;
+	color: $link;
 
 	&:hover, &:active {
 		box-shadow: none;
-		color: darken(#279AE7, 10%);
+		color: darken($link, 10%);
 	}
+}
+
+.btn-badass { /* 1. */
+	margin: map-get($badassButton, margin);
+	padding: map-get($badassButton, padding);
+	width: map-get($badassButton, width);
 }

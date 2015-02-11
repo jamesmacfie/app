@@ -2,10 +2,15 @@
  * CONTENTS
  *
  * Colours...............Common colours used throughout the app
- * Actions...............Maps for grouped actions and their properties
+ * Borders...............Common border details
+ * Measurements..........App dimensions, margins, paddings etc
+ * Type..................Type sizes
  * Title.................The page title bar
  * User avatar...........The user's avatar
  * Menu..................Details for any menus
+ * Buttons...............Maps for the different buttons
+ * Charts................Maps for chart options
+ * Icons.................Icon details maps
  */
 
 /*------------------------------------*\
@@ -19,22 +24,37 @@ $offWhite: #f0f2f5;
 $hotPink: #ff2c67;
 $fastRed: #d22042;
 
-/*------------------------------------*\
-	#ACTIONS
-\*------------------------------------*/
-$primaryActions: (
-	background: #27ccc0,
-	text: #fff
-);
+$link: #279ae7;
 
-$error: (
-	messageText: $fastRed
-);
+$primary: #27ccc0;
+
+/*------------------------------------*\
+	#BORDERS
+\*------------------------------------*/
+$borderRadius: 3px;
+$inputBorderRadius: borderRadius - 1;
+
+/*------------------------------------*\
+	#MEASUREMENTS
+\*------------------------------------*/
+$defaultSpacing: 10px;
+
+/*------------------------------------*\
+	#TYPE
+\*------------------------------------*/
+$alpha: 26px;
+$beta: 22px;
+$cappa: 20px;
+$delta: 18px;
+$epsilon: 16px;
+$foxtrot: 15px;
 
 /*------------------------------------*\
 	#TITLE
+
+	1.	The main title up the top of the page
 \*------------------------------------*/
-$titleHeight: 40px;
+$titleHeight: 40px; /* 1. */
 
 /*------------------------------------*\
 	#USER AVATAR
@@ -44,5 +64,58 @@ $avatarHeight: 40px;
 /*------------------------------------*\
 	#MENU
 \*------------------------------------*/
-$menuWidth: 270px;
-$menuItemHeight: 40px;
+$menu: (
+	color: $offWhite,
+	iconSize: 20px,
+	itemHeight: 40px,
+	width: 270px
+);
+
+/*------------------------------------*\
+	#BUTTONS
+\*------------------------------------*/
+$primaryButton: (
+	background: $primary,
+	text: #fff
+);
+
+$badassButton: (
+	margin: ($defaultSpacing * 3) 0,
+	padding: $defaultSpacing + 2,
+	width: 100%
+);
+
+/*------------------------------------*\
+	#CHARTS
+\*------------------------------------*/
+$barChart: (
+	width: 5px
+);
+
+$barChartWhite: (
+	color: #fff
+);
+
+$lineChart: (
+	width: 2px
+);
+
+$lineChartWhite: (
+	color: #fff
+);
+
+/*------------------------------------*\
+	#ICONS
+\*------------------------------------*/
+$inputIcon: (
+	color: $angel,
+	font-size: $cappa
+);
+
+$mammothIconDimension: 150px;
+
+$mammothIcon: (
+	height: $mammothIconDimension,
+	margin: ($mammothIconDimension / 2) auto,
+	width: $mammothIconDimension
+);

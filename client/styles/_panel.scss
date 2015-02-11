@@ -1,5 +1,15 @@
+/**
+ * CONTENTS
+ *
+ * Overrides.............Bootstrap overrides for panels
+ * Form..................Form containers
+ * Modifiers.............Panel modifiers
+ */
+
+/*------------------------------------*\
+	#OVERRIDES
+\*------------------------------------*/
 .panel {
-	/* Bootstrap overrides */
 	background-color: transparent;
 	border: none;
 	border-radius: 0;
@@ -8,11 +18,18 @@
 	position: relative;
 }
 
+/*------------------------------------*\
+	#FORM
+\*------------------------------------*/
 .panel-form {
 	margin: 0 auto;
 	max-width: 300px;
 	text-align: center;
 }
+
+/*------------------------------------*\
+	#MODIFIERS
+\*------------------------------------*/
 
 .panel-padded {
 	padding: 10px;
@@ -27,5 +44,5 @@
 }
 
 .panel-borderRadius {
-	border-radius: 3px;
+	border-radius: $borderRadius;
 }

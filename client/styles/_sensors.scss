@@ -1,56 +1,42 @@
-.sensor {
-	min-height: 100px;
-	position: relative;
-}
+/**
+ * CONTENTS
+ *
+ * Summary.............The summary for a particular sensor
+ * Chart...............Small charts for the datapoint summary
+ * Icons...............Any icons that have to do with the summary info
+ */
 
-.sensor--background {
-	background-image: url('/images/testBackground.jpg');
-	background-size: cover;
-	height: 100px; /* temp */
-	width: 100%;
+/*------------------------------------*\
+	#SUMMARY
 
-	&:after {
-		background: linear-gradient(transparent, $death);
-		bottom: 0;
-		content: '';
-		height: 50px;
-		left: 0;
-		opacity: 0.8;
-		position: absolute;
-		right: 0;
-	}
-}
+	1.	For room pages etc
+	2.	For the homepage. Smaller.
+\*------------------------------------*/
 
-.sensor--background--h1 {
-	bottom: 10px;
-	color: $offWhite;
-	font-size: 18px;
-	position: absolute;
-	left: 10px;
-	z-index: 1;
-}
-
-.sensorSummmary {
+.sensorSummmary { /* 1. */
 	position: relative;
 }
 
 .sensorSummary--title {
-	font-size: 18px;
 	font-weight: 100;
 	line-height: 25px;
 	margin-top: 0;
 }
 
-.sensorSummaryBrief {
-	margin: 10px 10px 0 10px;
+.sensorSummaryBrief { /* 2. */
+	margin: $defaultSpacing;
+	margin-bottom: 0;
 }
 
 .sensorSummaryBrief--title {
-	font-size: 14px;
 	font-weight: 100;
-	line-height: 20px;
+	line-height: 24px;
 	margin-top: 0;
 }
+
+/*------------------------------------*\
+	#CHART
+\*------------------------------------*/
 
 .summaryChart {
 	position: relative;
@@ -66,9 +52,12 @@
 }
 
 .summaryChart--title {
-	font-size: 42px;
 	font-weight: 100;
 }
+
+/*------------------------------------*\
+	#ICONS
+\*------------------------------------*/
 
 .sensorIconHolder {
 	bottom: 10px;

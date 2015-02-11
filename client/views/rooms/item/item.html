@@ -1,7 +1,7 @@
 <template name="room">
-	<div class="sensor">
-		<div class="sensor--background">
-			<h1 class="sensor--background--h1">{{room.name}}</h1>
+	<div class="room">
+		<div class="room--background">
+			<h1 class="roomTitle delta absoluteBottomLeft">{{room.name}}</h1>
 			<div class="sensorIconHolder sensorIconHolder-right">
 				<a href="{{pathFor 'roomEdit' _id=room._id}}"><i class="md md-edit sensorIcon sensorIcon-edit sensorIconHolder--sensorIcon"></i></a>
 				<a href="{{pathFor 'sensorAssign' _id=room._id}}"><i class="md md-add sensorIcon sensorIcon-add sensorIconHolder--sensorIcon"></i></a>

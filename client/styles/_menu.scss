@@ -1,28 +1,45 @@
-.menuIcon {
-	color: #fff;
-	font-size: $titleHeight / 2;
-}
+/**
+ * CONTENTS
+ *
+ * Base..................Base styles for the main menu
+ * Items.................The menu and it's child items
+ * Icons.................Icon's associated with each item
+ * User..................Styles for the user info at the top of the menu
+ */
+
+/*------------------------------------*\
+	#BASE
+\*------------------------------------*/
 
 .mainMenu {
 	background-color: $death;
 	height: 100vh;
+	left: map-get($menu, width) * -1;
+	position: fixed;
+	width: map-get($menu, width);
 }
 
-.mainMenu--list {
+/*------------------------------------*\
+	#ITEMS
+
+	1.	The unordered list
+	2.	The unordered list's items
+\*------------------------------------*/
+
+.mainMenu--list { /* 1. */
 	margin: 0;
 	padding: 0;
-
 }
 
-.mainMenu--item {
-	color: #d6d4dc;
-	height: $menuItemHeight;
-	line-height: $menuItemHeight;
+.mainMenu--item { /* 2. */
+	color: map-get($menu, color);
+	height: map-get($menu, itemHeight);
+	line-height: map-get($menu, itemHeight);
 	list-style: none;
 }
 
 .mainMenu--item--link {
-	color: #d6d4dc;
+	color: map-get($menu, color);
 	display: block;
 	height: 100%;
 	padding-left: 10px;
@@ -34,20 +51,26 @@
 	}
 }
 
+/*------------------------------------*\
+	#ICON
+\*------------------------------------*/
 .mainMenu--item--icon {
-	font-size: 20px;
-	margin-right: 10px;
+	font-size: map-get($menu, iconSize);
+	margin-right: $defaultSpacing;
 }
 
+/*------------------------------------*\
+	#USER
+\*------------------------------------*/
 .menuUser {
 	display: flex;
 	margin-bottom: 40px;
 }
 
 .menuUser--userAvatar {
-	margin: 10px;
+	margin: $defaultSpacing;
 }
 
 .menuUser--userName {
-	margin: 20px 0 0 10px;
+	margin: ($defaultSpacing * 2) 0 0 $defaultSpacing;
 }

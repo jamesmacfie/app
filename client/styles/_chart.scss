@@ -1,13 +1,35 @@
+/**
+ * CONTENTS
+ *
+ * Overrides..............Chartist class overrides
+ * Modifiers..............Chartist chart component modifiers
+ */
+
+/*------------------------------------*\
+	#BASE
+\*------------------------------------*/
 .ct-chart {
 	.ct-line {
-		stroke-width: 2px;
+		stroke-width: map-get($lineChart, width);
 	}
 
 	.ct-bar {
-		stroke-width: 5px;
+		stroke-width: map-get($barChart, width);
+	}
+}
+
+
+/*------------------------------------*\
+	#MODIFIERS
+
+	1.	The selectors for Chartist are a bit... eager.
+\*------------------------------------*/
+.ct-chart {
+	.ct-line-white {
+		stroke: map-get($lineChartWhite, color)!important; /* 1. */
 	}
 
-	.ct-line-white, .ct-bar-white {
-		stroke: #fff!important;
+	.ct-bar-white {
+		stroke: map-get($barChartWhite, color)!important; /* 1. */
 	}
 }

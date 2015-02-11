@@ -1,6 +1,48 @@
+/**
+ * CONTENTS
+ *
+ * Base................The component that sits up the top if the room pages
+ * Summary.............The summary for a particular room (still not sure whether this should be abstracted out more)
+ */
+
+/*------------------------------------*\
+	#ROOM
+\*------------------------------------*/
+.room {
+	min-height: 100px;
+	position: relative;
+}
+
+.room--background {
+	background-image: url('/images/testBackground.jpg');
+	background-size: cover;
+	height: 100px;
+	width: 100%;
+
+	&:after {
+		background: linear-gradient(transparent, $death);
+		bottom: 0;
+		content: '';
+		height: 50px;
+		left: 0;
+		opacity: 0.8;
+		position: absolute;
+		right: 0;
+	}
+}
+
+.roomTitle {
+	color: $offWhite;
+	margin: 0;
+	z-index: 1;
+}
+
+/*------------------------------------*\
+	#SUMMARY
+\*------------------------------------*/
 .roomSummary {
 	background-color: $almostDead;
-	padding: 10px;
+	padding: $defaultSpacing;
 	padding-bottom: 45px;
 	position: relative;
 }

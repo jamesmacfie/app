@@ -1,29 +1,42 @@
+/**
+ * CONTENTS
+ *
+ * Holder.............Container for all pages. Mainly deals with the menu state
+ * Transitions........Deal with the easing of the menu for all components involved
+ * Components.........Other parts of the page (main content and title)
+ */
+
+/*------------------------------------*\
+	#HOLDER
+
+	1.	This class is added to the page holder when the menu is open
+\*------------------------------------*/
 .pageHolder {
 	left: 0;
 	position: relative;
 	top: $titleHeight;
 
-	&.menuActive {
+	&.menuActive { /* 1. */
 		.pageHolder--menu {
 			left: 0;
 		}
 
 		.pageHolder--main, .pageHolder--title {
-			left: $menuWidth;
+			left: map-get($menu, width);
 		}
 	}
 }
 
+/*------------------------------------*\
+	#TRANSITIONS
+\*------------------------------------*/
 .pageHolder--menu, .pageHolder--main, .pageHolder--title {
 	transition: all 0.2s ease;
 }
 
-.pageHolder--menu {
-	left: -$menuWidth;
-	position: fixed;
-	width: $menuWidth;
-}
-
+/*------------------------------------*\
+	#COMPONENTS
+\*------------------------------------*/
 .pageHolder--main, .pageHolder--title {
 	left: 0px;
 	position: relative;

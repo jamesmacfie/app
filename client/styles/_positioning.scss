@@ -1,0 +1,36 @@
+/**
+ * CONTENTS
+ *
+ * Absolute.............Absolute positioning of things with the base margin as offsets
+ */
+
+/*------------------------------------*\
+	#ABSOLUTE
+\*------------------------------------*/
+%absolute {
+	position: absolute;
+}
+
+.absoluteTopLeft {
+	@extend %absolute;
+	left: $defaultSpacing;
+	top: $defaultSpacing;
+}
+
+.absoluteTopRight {
+	@extend %absolute;
+	right: $defaultSpacing;
+	top: $defaultSpacing;
+}
+
+.absoluteBottomRight {
+	@extend %absolute;
+	bottom: $defaultSpacing;
+	right: $defaultSpacing;
+}
+
+.absoluteBottomLeft {
+	@extend %absolute;
+	bottom: $defaultSpacing;
+	left: $defaultSpacing;
+}
