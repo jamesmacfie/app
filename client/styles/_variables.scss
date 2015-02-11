@@ -119,3 +119,13 @@ $mammothIcon: (
 	margin: ($mammothIconDimension / 2) auto,
 	width: $mammothIconDimension
 );
+
+$buttonHeight: 25px;
+
+$buttonIcon: (
+	color: #fff,
+	font-size: $epsilon,
+	height: $buttonHeight,
+	line-height: $buttonHeight,
+	width: $buttonHeight
+);

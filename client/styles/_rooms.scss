@@ -37,13 +37,20 @@
 	z-index: 1;
 }
 
+.roomIcon {
+	z-index: 1;
+}
+
+.roomIcon--buttonIcon {
+	margin-right: 5px;
+}
+
 /*------------------------------------*\
 	#SUMMARY
 \*------------------------------------*/
 .roomSummary {
 	background-color: $almostDead;
 	padding: $defaultSpacing;
-	padding-bottom: 45px;
 	position: relative;
 }
 

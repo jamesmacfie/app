@@ -1,3 +1,14 @@
+/**
+ * CONTENTS
+ *
+ * Holder..............Container for the page title
+ * Title...............The page title
+ * Icons...............Any icons that live in the title
+ */
+
+/*------------------------------------*\
+	#HOLDER
+\*------------------------------------*/
 .titleHolder {
 	background-color: $death;
 	height: $titleHeight;
@@ -9,22 +20,29 @@
 	z-index: 2;
 }
 
+/*------------------------------------*\
+	#TITLE
+\*------------------------------------*/
 .title {
 	color: #fff;
 	font-size: $titleHeight / 2;
-	font-weight: 100;
 	line-height: $titleHeight;
 	margin: 0;
 }
 
-.titleHolder--menuIcon {
-	left: 10px;
+/*------------------------------------*\
+	#ICONS
+\*------------------------------------*/
+.titleHolder--menuIcon, .titleHolder--prevIcon {
 	position: absolute;
-	top: 5px;
+	top: $titleHeight / 8;
+}
+
+.titleHolder--menuIcon {
+	left: $titleHeight / 4;
 }
 
 .titleHolder--prevIcon {
-	right: 10px;
-	position: absolute;
-	top: 5px;
+	right: $titleHeight / 4;
+
 }

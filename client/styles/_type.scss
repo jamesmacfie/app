@@ -8,28 +8,37 @@
 	#HEADINGS
 \*------------------------------------*/
 
+h1, .alpha,
+h2, .beta,
+h3, .cappa,
+h4, .delta,
+h5, .epsilon,
+h6, .foxtrot {
+	font-weight: 100;
+}
+
 h1, .alpha {
-	font-size: 26px;
+	font-size: $alpha;
 }
 
 h2, .beta {
-	font-size: 22px;
+	font-size: $beta;
 }
 
 h3, .cappa {
-	font-size: 20px;
+	font-size: $cappa;
 }
 
 h4, .delta {
-	font-size: 18px;
+	font-size: $delta;
 }
 
 h5, .epsilon {
-	font-size: 16px;
+	font-size: $epsilon;
 }
 
 h6, .foxtrot {
-	font-size: 15px;
+	font-size: $foxtrot;
 }
 
 .wowza {
