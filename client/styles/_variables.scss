@@ -11,6 +11,7 @@
  * Buttons...............Maps for the different buttons
  * Charts................Maps for chart options
  * Icons.................Icon details maps
+ * Images................Images
  */
 
 /*------------------------------------*\
@@ -129,3 +130,8 @@ $buttonIcon: (
 	line-height: $buttonHeight,
 	width: $buttonHeight
 );
+
+/*------------------------------------*\
+	#IMAGES
+\*------------------------------------*/
+$thumbnailDimension: 90px;

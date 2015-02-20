@@ -1,0 +1,13 @@
+<template name="imageThumbs">
+	<ul class="thumbHolder">
+		{{#each images}}
+			{{ > imageThumb }}
+		{{/each}}
+	</ul>
+</template>
+
+<template name="imageThumb">
+	<li class="thumbHolder--item">
+		<img class="thumb thumb-selectable" src="/images/roomBackgrounds/{{thumbUrl}}" />
+	</li>
+</template>

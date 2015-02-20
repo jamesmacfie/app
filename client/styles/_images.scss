@@ -1,0 +1,51 @@
+/**
+ * CONTENTS
+ *
+ * Container............The container for the image thumbs
+ * Images...............The images (thumbnails)
+ */
+
+/*------------------------------------*\
+	#CONTAINER
+\*------------------------------------*/
+
+.thumbHolder {
+	list-style: none;
+	margin: 0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 0;
+	white-space:nowrap;
+}
+
+/*------------------------------------*\
+	#CONTAINER
+
+	1.	For the list
+	2.	When the user can interact with a thumbnail in some way
+	3.	A 'selected' state
+\*------------------------------------*/
+
+.thumbHolder--item { /* 1. */
+	display: inline;
+	padding-right: $defaultSpacing;
+
+	&:last-child {
+		padding-right: 0;
+	}
+}
+
+.thumb {
+	border-radius: $borderRadius;
+	height: $thumbnailDimension;
+	width: $thumbnailDimension;
+}
+
+.thumb-selectable { /* 2. */
+	cursor: pointer;
+}
+
+.thumb-selected { /* 2. */
+	-webkit-filter: sepia(0.3);
+	border: 3px solid lighten($angel, 25%);
+}

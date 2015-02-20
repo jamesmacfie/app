@@ -67,6 +67,7 @@ if (Images.find().count() === 0) {
 	Images.insert({
 		default: true,
 		url: 'beans.jpg',
+		thumbUrl: 'beans--thumb.jpg',
 		users: []
 	});
 
@@ -75,52 +76,60 @@ if (Images.find().count() === 0) {
 		url: 'car.jpg',
 		users: []
 	});
-	
+
 	Images.insert({
 		default: true,
 		url: 'cow.jpg',
+		thumbUrl: 'cow--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'cups.jpg',
+		thumbUrl: 'cups--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'default.jpg',
+		thumbUrl: 'default--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'leaf.jpg',
+		thumbUrl: 'leaf--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'rocks.jpg',
+		thumbUrl: 'rocks--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'table.jpg',
+		thumbUrl: 'table--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'trees.jpg',
+		thumbUrl: 'trees--thumb.jpg',
 		users: []
 	});
 
 	Images.insert({
 		default: true,
 		url: 'vespa.jpg',
+		thumbUrl: 'vespa--thumb.jpg',
 		users: []
 	});
 }
