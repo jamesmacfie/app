@@ -1,6 +1,6 @@
 'use strict';
 
-Meteor.publish('userImages', function() {
+Meteor.reactivePublish('userImages', function() {
 	var idMapper = function(i) {
 			return i._id;
 		},
@@ -16,6 +16,8 @@ Meteor.publish('userImages', function() {
 			users: {
 				$in: [this.userId]
 			}
+		}, {
+			reactive: true
 		}).map(idMapper),
 		allImageIds = _.union(defaultImageIds, userImageIds);
 
