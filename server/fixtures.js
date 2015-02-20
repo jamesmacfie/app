@@ -66,7 +66,61 @@ if (Sensors.find().count() === 0) {
 if (Images.find().count() === 0) {
 	Images.insert({
 		default: true,
+		url: 'beans.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'car.jpg',
+		users: []
+	});
+	
+	Images.insert({
+		default: true,
 		url: 'cow.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'cups.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'default.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'leaf.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'rocks.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'table.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'trees.jpg',
+		users: []
+	});
+
+	Images.insert({
+		default: true,
+		url: 'vespa.jpg',
 		users: []
 	});
 }
