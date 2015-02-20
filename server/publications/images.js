@@ -12,6 +12,7 @@ Meteor.publish('userImages', function() {
 			}
 		}).map(idMapper),
 		userImageIds = Images.find({
+			'default': false,
 			users: {
 				$in: [this.userId]
 			}
