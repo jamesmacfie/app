@@ -62,3 +62,11 @@ if (Sensors.find().count() === 0) {
 			createAt: createdAt.add(210, 's').toDate()
 		});
 }
+
+if (Images.find().count() === 0) {
+	Images.insert({
+		default: true,
+		url: 'cow.jpg',
+		users: []
+	});
+}

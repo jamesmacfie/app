@@ -35,6 +35,7 @@
 				"DataPoints": false,
 				"Sensors": false,
 				"SensorTypes": false,
+				"Images": false,
 				"Rooms": false,
 				"Session": false,
 				"Router": false,
