@@ -94,13 +94,6 @@ if (Images.find().count() === 0) {
 
 	Images.insert({
 		default: true,
-		url: 'default.jpg',
-		thumbUrl: 'default--thumb.jpg',
-		users: []
-	});
-
-	Images.insert({
-		default: true,
 		url: 'leaf.jpg',
 		thumbUrl: 'leaf--thumb.jpg',
 		users: []
