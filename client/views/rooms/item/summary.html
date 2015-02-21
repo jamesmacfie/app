@@ -4,7 +4,7 @@
 
 <template name="roomSummary">
 	<div class="room">
-		<div class="room--background">
+		<div class="room--background" style='{{backgroundImageStyle}}'>
 			<h1 class="roomTitle delta absoluteBottomLeft">{{name}}</h1>
 			<div class="roomIcon absoluteBottomRight">
 				<a href="{{pathFor 'room'}}"><i class="md md-navigate-next buttonIcon buttonIcon-next"></i></a>
@@ -23,7 +23,7 @@
 
 <template name="roomSummaryBrief">
 	<div class="room">
-		<div class="room--background">
+		<div class="room--background" style="{{backgroundImageStyle}}">
 			<h1 class="roomTitle delta absoluteBottomLeft">{{name}}</h1>
 			<div class="roomIcon absoluteBottomRight">
 				<a href="{{pathFor 'room'}}"><i class="md md-navigate-next buttonIcon buttonIcon-next"></i></a>

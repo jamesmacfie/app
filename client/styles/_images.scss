@@ -46,6 +46,7 @@
 }
 
 .thumb-selected { /* 2. */
-	-webkit-filter: sepia(0.3);
 	border: 3px solid lighten($angel, 25%);
+	height: $thumbnailDimension + $defaultSpacing;
+	width: $thumbnailDimension + $defaultSpacing;
 }

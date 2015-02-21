@@ -74,6 +74,7 @@ if (Images.find().count() === 0) {
 	Images.insert({
 		default: true,
 		url: 'car.jpg',
+		thumbUrl: 'car--thumb.jpg',
 		users: []
 	});
 

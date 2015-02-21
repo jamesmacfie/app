@@ -1,4 +1,5 @@
 <template name="imageThumbs">
+	{{setSelectedImage}}
 	<ul class="thumbHolder">
 		{{#each images}}
 			{{ > imageThumb }}
@@ -8,6 +9,6 @@
 
 <template name="imageThumb">
 	<li class="thumbHolder--item">
-		<img class="thumb thumb-selectable" src="/images/roomBackgrounds/{{thumbUrl}}" />
+		<img class="thumb thumb-selectable js-selectImage {{selectedClass}}" data-id="{{_id}}" src="/images/roomBackgrounds/{{thumbUrl}}" />
 	</li>
 </template>

@@ -1,6 +1,12 @@
 'use strict';
 
 Template.room.helpers({
+	backgroundImageStyle: function() {
+		if (this.room.image) {
+			var image = Images.findOne(this.room.image);
+			return 'background-image: url(\'/images/roomBackgrounds/' + image.url + '\');';
+		}
+	},
 	sensorCount: function() {
 		return this.sensors.count();
 	}
