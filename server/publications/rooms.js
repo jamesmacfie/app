@@ -15,7 +15,7 @@ Meteor.publish('userRooms', function() {
 		});
 
 		return Rooms.find({
-				hub: {
+				network: {
 						$in: networks
 				}
 		}, {
