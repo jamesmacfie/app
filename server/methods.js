@@ -90,48 +90,34 @@ Meteor.methods({
 				}
 			});
 		},
-		insertFakeSensorData: function(data) {
-			DataPoints.insert({
-				sensor: data.sensor,
-				value: data.value,
-				createdAt: new Date()
-			});
-		},
-		insertMotionFakeSensorData: function() {
-			// var nextChange = Math.ceil(Math.random() * 120),
-			// 	nextValue = false,
-			// 	nextMoment = new moment(),
-			// 	arr = []
-			//
-			// for (var i = 0; i < 10; i++) {
-			//
-			// 	arr.push({
-			// 		sensor: 'a8oawhjFz25anXyQW',
-			// 		value: nextValue,
-			// 		createdAt: new moment(nextMoment.toDate()).toDate()
-			// 	});
-			//
-			// 	nextChange = nextChange += Math.ceil(Math.random() * 120);
-			// 	nextValue = !nextValue;
-			// 	nextMoment.subtract(nextChange, 's');
-			//
-			// }
-			//
-			// _.each(arr, function(a) {
-			// 	console.log(a);
-			// 	DataPoints.insert(a);
-			// })
+		insertDataPoint: function(params) {
+			console.log(arguments);
+			try {
+				var sensor = Sensors.findOne({
+						moduleId: parseInt(params.moduleId)
+					}),
+					moduleId = params.moduleId,
+					value = params.value;
 
-		DataPoints.insert({
-				sensor: 'a8oawhjFz25anXyQW',
-				value: 0,
-				createdAt: new moment().subtract(135, 'm').toDate()
-			});
-		//
-		// DataPoints.insert({
-		// 	sensor: 'a8oawhjFz25anXyQW',
-		// 	value: 0,
-		// 	createdAt: new moment().subtract(2, 'h').toDate()
-		// });
-	}
+				if (!sensor) {
+					console.log('No sensor with the mooduleId `' + moduleId + '` found');
+					return;
+				}
+
+				if (value === undefined) {
+					console.log('A dataPoint value needs to be passed through');
+					return;
+				}
+
+				DataPoints.insert({
+					sensor: sensor._id,
+					value: value
+				});
+
+			} catch(e) {
+				console.log('Something went terribly wrong' + e.message);
+			}
+
+
+		}
 });
