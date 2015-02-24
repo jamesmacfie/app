@@ -1,4 +1,5 @@
 <template name="roomList">
+	{{> flashMessages}}
 	{{#if hasRooms}}
 		<div class="panel panel-default">
 			{{#each rooms}}

@@ -4,6 +4,7 @@
 			<h1 class="roomTitle delta absoluteBottomLeft">{{room.name}}</h1>
 			<div class="roomIcon absoluteBottomRight">
 				<i class="md md-edit buttonIcon buttonIcon-edit roomIcon--buttonIcon js-editRoom"></i>
+				<i class="md md-delete buttonIcon buttonIcon-remove roomIcon--buttonIcon js-removeRoom"></i>
 				<a href="{{pathFor 'sensorAssign' _id=room._id}}"><i class="md md-add buttonIcon buttonIcon-add"></i></a>
 			</div>
 		</div>
@@ -20,4 +21,5 @@
 		{{/if}}
 	</div>
 	{{ > roomEditModal}}
+	{{ > roomRemoveModal}}
 </template>

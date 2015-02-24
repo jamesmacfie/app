@@ -24,5 +24,13 @@ Template.room.events({
 		$modal.find('input[name="name"]').val(name);
 		$modal.find('input[name="homepage.show"]').attr('checked', showOnHomePage);
 		$modal.modal('show');
+	},
+	'click .js-removeRoom': function(event, view) {
+		var $modal = jQuery('#removeRoom'),
+			room = view.data.room,
+			id = room._id;
+
+		$modal.find('input[name="_id"]').val(id);
+		$modal.modal('show');
 	}
 });
