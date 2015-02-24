@@ -52,9 +52,9 @@ Template.sensorSummary.events({
 
 Template.sensorSummaryEditModals.events({
 	'click .js-saveSensor': function(event, view) {
-		var id = view.find('input[name="_id"]').value,
-			name = view.find('input[name="name"]').value;
-
+		var id = view.find('#editSensor input[name="_id"]').value,
+			name = view.find('#editSensor input[name="name"]').value;
+debugger;
 		Sensors.update({
 			_id: id
 		}, {
@@ -66,8 +66,8 @@ Template.sensorSummaryEditModals.events({
 		jQuery('#editSensor').modal('hide');
 	},
 	'click .js-removeSensor': function(event, view) {
-		var id = view.find('input[name="_id"]').value,
-			roomId = view.find('input[name="room_id"]').value;
+		var id = view.find('#removeSensor input[name="_id"]').value,
+			roomId = view.find('#removeSensor input[name="room_id"]').value;
 
 		Meteor.call('removeRoomSensor', id, roomId, function() {
 			$('.modal').hide();

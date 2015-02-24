@@ -4,6 +4,7 @@
 				{{#each sensors}}
 					{{> sensorSummary}}
 				{{/each}}
+				{{ > sensorSummaryEditModals}}
 				<a href="{{pathFor 'sensorInsert'}}">Insert another?</a>
 		{{else}}
 				<a href="{{pathFor 'sensorInsert'}}">No sensors. Insert one?</a>
