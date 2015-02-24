@@ -54,7 +54,7 @@ Template.sensorSummaryEditModals.events({
 	'click .js-saveSensor': function(event, view) {
 		var id = view.find('#editSensor input[name="_id"]').value,
 			name = view.find('#editSensor input[name="name"]').value;
-debugger;
+
 		Sensors.update({
 			_id: id
 		}, {
