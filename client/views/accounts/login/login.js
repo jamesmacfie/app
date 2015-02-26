@@ -12,13 +12,24 @@ Template.login.events({
 		var email = trimInput(template.find('#login-email').value),
 			password = trimInput(template.find('#login-password').value);
 
-		// Trim and validate your fields here....
+		if (!email.length && !password.length) {
+			FlashMessages.sendError('Please enter your email address and password.');
+			return;
+		} else if (!email.length) {
+			FlashMessages.sendError('Please enter your email address.');
+			return;
+		} else if (!password.length) {
+			FlashMessages.sendError('Please enter your password.');
+			return;
+		}
 
-		// If validation passes, supply the appropriate fields to the
-		// Meteor.loginWithPassword() function.
 		Meteor.loginWithPassword(email, password, function(err){
 			if (err) {
-				debugger;
+				if (err.reason === 'User not found.') {
+					FlashMessages.sendError('No user with that email address exists.');
+				} else if (err.reason === 'Incorrect password') {
+					FlashMessages.sendError('The entered password is incorrect.');
+				}
 			} else {
 				Router.go('home');
 			}

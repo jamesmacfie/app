@@ -1,0 +1,19 @@
+<template name="home">
+		<div class="page">
+			{{#if belongsToNetworks}}
+				{{#if newNetwork}}
+					<p>New network</p>
+				{{else}}
+					{{#if hasRooms}}
+						{{#each rooms}}
+							{{> roomSummaryBrief}}
+						{{/each}}
+					{{else}}
+						<p>No rooms - do something</p>
+					{{/if}}
+				{{/if}}
+			{{else}}
+				{{ > noNetworks}}
+			{{/if}}
+		</div>
+</template>

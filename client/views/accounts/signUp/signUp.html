@@ -1,0 +1,26 @@
+<template name="signUp">
+	<main class="page page-full page-dark">
+		<div class="container-fluid">
+			<div class="panel-form">
+				<i class="mammothIcon"></i>
+
+				<form id="signUp-form" action="action">
+					{{> flashMessages}}
+					<p>Enter your email address and a password to create your account.</p>
+					<div class="iconInput">
+						<i class="md md-email iconInput--icon"></i>
+						<label for="signUp-email" class="hidden">Email address</label>
+						<input class="input-transparent input-ogre input-fatass iconInput--input" id="signUp-email" type="email" placeholder="Email address"/>
+					</div>
+					<div class="iconInput">
+						<i class="md md-lock iconInput--icon"></i>
+						<label for="signUp-password" class="hidden">Password</label>
+						<input class="input-transparent input-ogre input-fatass iconInput--input" id="signUp-password" type="password" placeholder="Password"/>
+					</div>
+					<input type="submit" class="btn btn-primary btn-badass" id="signUp-button" value="Create Account" />
+				</form>
+				<p><a href="{{pathFor 'login'}}">Return to login</a></p>
+			</div>
+		</div>
+	</main>
+</template>

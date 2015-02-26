@@ -95,7 +95,6 @@ Template.irSensorSummary.rendered = function() {
 
 Template.irSensorSummaryBrief.helpers({
 	nickname: function() {
-		console.log(this);
 		if (this.name) {
 			return this.name;
 		}

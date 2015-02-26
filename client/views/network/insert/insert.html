@@ -1,12 +1,10 @@
 <template name="networkInsert">
-	<a href="{{pathFor 'home'}}">Home</a>
-
 	{{#autoForm schema=Schemas.network id="networkInsertForm" type="method" meteormethod="insertNetwork"}}
 	<fieldset>
 		{{> afQuickField name="name"}}
-		<div>
+		<div class="text-right">
+			<button type="reset" class="btn btn-transparent">Reset</button>
 			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="reset" class="btn btn-default">Reset</button>
 		</div>
 	</fieldset>
 	{{/autoForm}}

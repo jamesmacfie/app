@@ -2,11 +2,11 @@
 
 Meteor.methods({
 		insertNetwork: function(network) {
-				var networkData = _.extend(network, {
-						users: [this.userId]
-				});
+			var networkData = _.extend(network, {
+					users: [this.userId]
+			});
 
-				Networks.insert(networkData);
+			Networks.insert(networkData);
 		},
 		insertHub: function(hub) {
 				var network = Networks.findOne(hub.network),
@@ -117,7 +117,5 @@ Meteor.methods({
 			} catch(e) {
 				console.log('Something went terribly wrong' + e.message);
 			}
-
-
 		}
 });

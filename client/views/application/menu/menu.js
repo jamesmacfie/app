@@ -1,4 +1,8 @@
 Template.menu.helpers({
+	username: function() {
+		//TEMP
+		return Meteor.user().emails[0].address;
+	},
 	menuItems: function() {
 		var currentRoute = Router.current(),
 			routeName = currentRoute.route.getName();

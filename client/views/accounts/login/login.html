@@ -9,7 +9,7 @@
 					<div class="iconInput">
 						<i class="md md-email iconInput--icon"></i>
 						<label for="login-email" class="hidden">Email address</label>
-						<input class="input-transparent input-ogre input-fatass iconInput--input" id="login-email" type="email" placeholder="Email address"/>
+						<input class="input-transparent input-ogre input-fatass iconInput--input" id="login-email" type="email" placeholder="Email address" value="{{emailAddress}}"/>
 					</div>
 					<div class="iconInput">
 						<i class="md md-lock iconInput--icon"></i>
@@ -18,7 +18,7 @@
 					</div>
 					<input type="submit" class="btn btn-primary btn-badass" id="login-button" value="Sign in" />
 				</form>
-				<p><a href="#" id="forgot-password-link">Forgotten password</a> or you <a href="#" id="signup-link"> need an account?</a></p>
+				<p><a href="#">Forgotten password</a> or you <a href="{{pathFor 'signUp'}}"> need an account?</a></p>
 			</div>
 		</div>
 	</main>
