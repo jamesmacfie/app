@@ -19,6 +19,7 @@ Meteor.publish('hub', function(id) {
 });
 
 Meteor.publish('userHubs', function() {
+	console.log(this.userId);
 		var hubIds = _.flatten(Networks.find({
 				users: {
 						$in: [this.userId]

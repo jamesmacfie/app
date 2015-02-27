@@ -10,15 +10,22 @@ Meteor.methods({
 		},
 		insertHub: function(hub) {
 				var network = Networks.findOne(hub.network),
-					hubId;
+					hub;
 
 				delete hub.network;
 
-				hubId = Hubs.insert(hub);
+				hub = Hubs.findOne({
+					hubId: hub.hubId
+				});
+
+				if (!hub) {
+					console.log('No hubId');
+					return false;
+				}
 
 				Networks.update(network._id, {
 					$push: {
-						hubs: hubId
+						hubs: hub._id
 					}
 				});
 

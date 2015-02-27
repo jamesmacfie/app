@@ -2,14 +2,14 @@
 		<div class="page">
 			{{#if belongsToNetworks}}
 				{{#if newNetwork}}
-					<p>New network</p>
+					{{> homeNewNetwork}}
 				{{else}}
 					{{#if hasRooms}}
 						{{#each rooms}}
 							{{> roomSummaryBrief}}
 						{{/each}}
 					{{else}}
-						<p>No rooms - do something</p>
+						{{ > homeNoRooms}}
 					{{/if}}
 				{{/if}}
 			{{else}}
