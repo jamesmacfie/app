@@ -1,7 +1,14 @@
+'use strict';
+
+
 Template.menu.helpers({
 	username: function() {
 		//TEMP
-		return Meteor.user().emails[0].address;
+		var user = Meteor.user();
+		if (user) {
+			return user.emails[0].address;
+		}
+		return '';
 	},
 	menuItems: function() {
 		var currentRoute = Router.current(),
