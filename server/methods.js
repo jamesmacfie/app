@@ -98,6 +98,7 @@ Meteor.methods({
 			});
 		},
 		insertDataPoint: function(params) {
+			console.log('insertDataPoint');
 			console.log(arguments);
 			try {
 				var sensor = Sensors.findOne({
