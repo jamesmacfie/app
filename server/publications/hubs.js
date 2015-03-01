@@ -14,22 +14,24 @@ Meteor.publish('hub', function(id) {
 	}
 
 	return Hubs.find({
-			_id: id
+		_id: id
 	});
 });
 
-Meteor.publish('userHubs', function() {
-		var hubIds = _.flatten(Networks.find({
-				users: {
-						$in: [this.userId]
-				}
-		}).map(function(n) {
-				return n.hubs;
-		}));
+Meteor.reactivePublish('userHubs', function() {
+	var hubIds = _.flatten(Networks.find({
+		users: {
+			$in: [this.userId]
+		}
+	}, {
+		reactive: true
+	}).map(function(n) {
+		return n.hubs;
+	}));
 
-		return Hubs.find({
-				_id: {
-						$in: hubIds
-				}
-		});
+	return Hubs.find({
+		_id: {
+			$in: hubIds
+		}
+	});
 });

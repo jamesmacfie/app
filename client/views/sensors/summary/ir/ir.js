@@ -9,23 +9,30 @@ Template.irSensorSummary.helpers({
 		return 'Movement';
 	},
 	currentStatus: function() {
-		var latest = DataPoints.find({
-				sensor: this._id
-			}, {
-				sort: {
-					createdAt: -1
-				},
-				limit: 1
-			}).fetch();
+		var latest = DataPoints.findOne({
+			sensor: this._id
+		}, {
+			sort: {
+				createdAt: -1
+			}
+		}),
+		value;
 
-		if (!latest.length) {
+		if (!latest) {
 			return '--';
 		}
 
-		if (latest[0].value === 'true') {
-			return 'Movement';
+		try {
+			value = parseInt(latest.value);
+		} catch(e) {
+			console.error(latest.value + ' is not a valid number');
+			return 0;
+		}
+
+		if (value === 1) {
+			return 'Movement detected';
 		} else {
-			return 'No movement';
+			return 'No movement detected';
 		}
 	}
 });
@@ -102,20 +109,27 @@ Template.irSensorSummaryBrief.helpers({
 		return 'Movement';
 	},
 	currentStatus: function() {
-		var latest = DataPoints.find({
-			sensor: this._id
-		}, {
-			sort: {
-				createdAt: -1
-			},
-			limit: 1
-		}).fetch();
+		var latest = DataPoints.findOne({
+				sensor: this._id
+			}, {
+				sort: {
+					createdAt: -1
+				}
+			}),
+			value;
 
-		if (!latest.length) {
+		if (!latest) {
 			return '--';
 		}
 
-		if (latest[0].value === 'true') {
+		try {
+			value = parseInt(latest.value);
+		} catch(e) {
+			console.error(latest.value + ' is not a valid number');
+			return 0;
+		}
+
+		if (value === 1) {
 			return 'Movement detected';
 		} else {
 			return 'No movement detected';

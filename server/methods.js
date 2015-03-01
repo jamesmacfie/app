@@ -2,30 +2,35 @@
 
 Meteor.methods({
 		insertNetwork: function(network) {
+			console.log(this.userId);
 			var networkData = _.extend(network, {
 					users: [this.userId]
 			});
 
 			Networks.insert(networkData);
 		},
-		insertHub: function(hub) {
-				var network = Networks.findOne(hub.network),
-					hub;
-
-				delete hub.network;
+		insertHub: function(hubDetails) {
+				var network = Networks.findOne(hubDetails.network),
+					hub,
+					hubId;
 
 				hub = Hubs.findOne({
-					hubId: hub.hubId
+					hubId: hubDetails.hubId
 				});
 
-				if (!hub) {
-					console.log('No hubId');
-					return false;
+				if (hub) {
+					console.log('Hub already exists'); // Better error message
+					return;
 				}
+
+				hubId = Hubs.insert({
+					hubId: hubDetails.hubId,
+					name: hubDetails.name
+				});
 
 				Networks.update(network._id, {
 					$push: {
-						hubs: hub._id
+						hubs: hubId
 					}
 				});
 

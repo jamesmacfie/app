@@ -10,15 +10,14 @@ Template.tempSensorSummary.helpers({
 	},
 	latestTemp: function() {
 		var sensorId = this._id,
-			latest = DataPoints.find({
+			latest = DataPoints.findOne({
 				sensor: sensorId
 			},
 		{
 			sort: {
 				createdAt : -1
-			},
-			limit: 1
-		}).fetch()[0];
+			}
+		});
 
 		if (latest) {
 			try {
