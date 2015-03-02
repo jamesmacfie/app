@@ -1,10 +1,12 @@
 'use strict';
 
-Meteor.publish('userHubSensors', function() {
+Meteor.reactivePublish('userHubSensors', function() {
 	var networkHubs = _.flatten(Networks.find({
 				users: {
 					$in: [this.userId]
 				}
+			}, {
+				reactive: true
 			}).map(function mapNetworkHubsId(n) {
 				return n._hubs;
 			})
@@ -13,6 +15,8 @@ Meteor.publish('userHubSensors', function() {
 				network: {
 					$in: networkHubs
 				}
+			}, {
+				reactive: true
 			}).map(function mapHubSensor(h) {
 				return h.sensors;
 			})
