@@ -19,10 +19,8 @@ mizzao:bootstrap-3
 ixdi:material-design-iconic-font
 mrt:reactive-publish
 meteorhacks:aggregate
-meteorhacks:fast-render
 meteorhacks:subs-manager
 accounts-base
 mrt:flash-messages
-browser-policy
 meteorhacks:kadira
 meteorhacks:zones
