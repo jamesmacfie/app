@@ -33,49 +33,51 @@ Template.tempSensorSummary.helpers({
 });
 
 Template.tempSensorSummary.rendered = function() {
-	// var sensorId = this.data._id,
-	// 	dataPoints = DataPoints.find({
-	// 		sensor: sensorId
-	// 	});
-	//
-	// if (!dataPoints.count()) {
-	// 	return;
-	// }
-	//
-	// // Create a simple line chart
-	// var data = {
-	// 	labels: [],
-	// 	series: [
-	// 	dataPoints.map(function(d) {
-	// 		try {
-	// 			return parseFloat(d.value, 2);
-	// 		} catch(e) {
-	// 			console.error(d.value + ' is not a valid number');
-	// 			return 0;
-	// 		}
-	// 	})
-	// 	]
-	// },
-	// options = {
-	// 	axisX: {
-	// 		offset: 0,
-	// 		showLabel: false,
-	// 		showGrid: false
-	// 	},
-	// 	axisY: {
-	// 		offset: 0,
-	// 		showLabel: false,
-	// 		showGrid: false
-	// 	},
-	// 	classNames: {
-	// 		line: 'ct-line ct-line-white'
-	// 	},
-	// 	fullWidth: true,
-	// 	showPoint: false
-	// };
-	//
-	//
-	// new Chartist.Line('#chart-' + this.data._id, data, options);
+	var id =  this.data._id;
+
+	Meteor.call('getGraphData', id, function(err, result) {
+		if (err) {
+			console.log(err);
+			return;
+		}
+		if (!result.length) {
+			return;
+		}
+
+		// Create a simple line chart
+		var data = {
+			labels: result.map(function() { return ''; }),
+			series: [
+			result.map(function(d) {
+				try {
+					return parseFloat(d, 2);
+				} catch(e) {
+					console.error(d + ' is not a valid number');
+					return 0;
+				}
+			})
+			]
+		},
+		options = {
+			axisX: {
+				offset: 0,
+				showLabel: false,
+				showGrid: false
+			},
+			axisY: {
+				offset: 0,
+				showLabel: false,
+				showGrid: false
+			},
+			classNames: {
+				line: 'ct-line ct-line-white'
+			},
+			fullWidth: true,
+			showPoint: false
+		};
+
+		new Chartist.Line('#chart-' + id, data, options);
+	});
 };
 
 Template.tempSensorSummaryBrief.helpers({
