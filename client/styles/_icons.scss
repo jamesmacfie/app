@@ -1,65 +1,67 @@
-/**
- * CONTENTS
- *
- * Mammoth...............The big ass icon on the signin page(s)
- * Title.................Icons that live in the main page title
- * Button................Small icons
- */
 
-/*------------------------------------*\
-	#MAMMOTH
-\*------------------------------------*/
-.mammothIcon {
-	background-color: $hotPink; /* TEMP - until I make a logo*/
-	border-radius: 50%;
-	display: block;
-	height: map-get($mammothIcon, height);
-	margin: map-get($mammothIcon, margin);
-	width: map-get($mammothIcon, width);
-}
 
-/*------------------------------------*\
-	#TITLE
-\*------------------------------------*/
-.titleIcon {
-	color: #fff;
-	font-size: $titleHeight / 2;
-}
-
-/*------------------------------------*\
-	#BUTTON
-\*------------------------------------*/
-.buttonIcon {
-	border-radius: 50%;
-	color: map-get($buttonIcon, color);
-	font-size: map-get($buttonIcon, font-size);
-	height: map-get($buttonIcon, height);
-	line-height: map-get($buttonIcon, line-height);
-	text-align: center;
-	width: map-get($buttonIcon, width);
-
-	&-add {
-		background-color: #f85240;
-	}
-
-	&-ir {
-		background-color: #279ae7;
-	}
-
-	&-temp {
-		background-color: #6cb735;
-	}
-
-	&-next {
-		background-color: #9b2c4c;
-	}
-
-	&-remove {
-		background-color: #ff2460;
-	}
-
-	&-edit {
-		background-color: #6ec1b0;
-	}
-
-}
+// /**
+//  * CONTENTS
+//  *
+//  * Mammoth...............The big ass icon on the signin page(s)
+//  * Title.................Icons that live in the main page title
+//  * Button................Small icons
+//  */
+//
+// /*------------------------------------*\
+// 	#MAMMOTH
+// \*------------------------------------*/
+// .mammothIcon {
+// 	background-color: $hotPink; /* TEMP - until I make a logo*/
+// 	border-radius: 50%;
+// 	display: block;
+// 	height: map-get($mammothIcon, height);
+// 	margin: map-get($mammothIcon, margin);
+// 	width: map-get($mammothIcon, width);
+// }
+//
+// /*------------------------------------*\
+// 	#TITLE
+// \*------------------------------------*/
+// .titleIcon {
+// 	color: #fff;
+// 	font-size: $titleHeight / 2;
+// }
+//
+// /*------------------------------------*\
+// 	#BUTTON
+// \*------------------------------------*/
+// .buttonIcon {
+// 	border-radius: 50%;
+// 	color: map-get($buttonIcon, color);
+// 	font-size: map-get($buttonIcon, font-size);
+// 	height: map-get($buttonIcon, height);
+// 	line-height: map-get($buttonIcon, line-height);
+// 	text-align: center;
+// 	width: map-get($buttonIcon, width);
+//
+// 	&-add {
+// 		background-color: #f85240;
+// 	}
+//
+// 	&-ir {
+// 		background-color: #279ae7;
+// 	}
+//
+// 	&-temp {
+// 		background-color: #6cb735;
+// 	}
+//
+// 	&-next {
+// 		background-color: #9b2c4c;
+// 	}
+//
+// 	&-remove {
+// 		background-color: #ff2460;
+// 	}
+//
+// 	&-edit {
+// 		background-color: #6ec1b0;
+// 	}
+//
+// }

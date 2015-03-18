@@ -1,3 +1,48 @@
+.shadow {
+	box-shadow: rgba(0, 0, 0, 0.156863) 0px 5px 4px -5px, rgba(0, 0, 0, 0.117647) 10px 5px 4px -1px;
+}
+
+.navbar {
+	align-items: center;
+	background-image: linear-gradient(90deg, #5c616c, #464b59);
+	display: flex;
+	height: 56px;
+}
+
+.navbar_i {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 25px;
+	padding: 15px;
+}
+
+.title {
+	font-size: $cappa;
+	flex: 1;
+	line-height: 56px;
+	margin: 0;
+	padding-left: 10px;
+}
+
+.tabs {
+	position: relative;
+}
+
+.tab, .tab-item {
+	color: #fff;
+	cursor: pointer;
+	flex-grow: 1;
+	font-size: $epsilon;
+	line-height: 56px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+
+	&.active {
+		border-bottom: 3px solid #fff;
+	}
+}
+
 /**
  * CONTENTS
  *
@@ -9,40 +54,40 @@
 /*------------------------------------*\
 	#HOLDER
 \*------------------------------------*/
-.titleHolder {
-	background-color: $death;
-	height: $titleHeight;
-	left: 0;
-	position: fixed;
-	right: 0;
-	text-align: center;
-	top: 0;
-	z-index: 2;
-}
-
-/*------------------------------------*\
-	#TITLE
-\*------------------------------------*/
-.title {
-	color: #fff;
-	font-size: $titleHeight / 2;
-	line-height: $titleHeight;
-	margin: 0;
-}
-
-/*------------------------------------*\
-	#ICONS
-\*------------------------------------*/
-.titleHolder--menuIcon, .titleHolder--prevIcon {
-	position: absolute;
-	top: $titleHeight / 8;
-}
-
-.titleHolder--menuIcon {
-	left: $titleHeight / 4;
-}
-
-.titleHolder--prevIcon {
-	right: $titleHeight / 4;
-
-}
+// .titleHolder {
+// 	background-color: $death;
+// 	height: $titleHeight;
+// 	left: 0;
+// 	position: fixed;
+// 	right: 0;
+// 	text-align: center;
+// 	top: 0;
+// 	z-index: 2;
+// }
+//
+// /*------------------------------------*\
+// 	#TITLE
+// \*------------------------------------*/
+// .title {
+// 	color: #fff;
+// 	font-size: $titleHeight / 2;
+// 	line-height: $titleHeight;
+// 	margin: 0;
+// }
+//
+// /*------------------------------------*\
+// 	#ICONS
+// \*------------------------------------*/
+// .titleHolder--menuIcon, .titleHolder--prevIcon {
+// 	position: absolute;
+// 	top: $titleHeight / 8;
+// }
+//
+// .titleHolder--menuIcon {
+// 	left: $titleHeight / 4;
+// }
+//
+// .titleHolder--prevIcon {
+// 	right: $titleHeight / 4;
+//
+// }

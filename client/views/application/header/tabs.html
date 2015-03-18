@@ -1,0 +1,14 @@
+<template name="autumnTabs">
+	<div class="navbar tabs">
+		{{#each tabs}}
+			<span class="tab-item {{isActiveTab slug}}">{{name}}</span>
+		{{/each}}
+	</div>
+
+	<div class="tabContentContainer">
+		{{> UI.contentBlock
+			context=__context__
+		}}
+	</div>
+
+</template>

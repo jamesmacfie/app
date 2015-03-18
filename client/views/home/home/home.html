@@ -1,19 +1,15 @@
 <template name="home">
-		<div class="page">
-			{{#if belongsToNetworks}}
-				{{#if newNetwork}}
-					{{> homeNewNetwork}}
-				{{else}}
-					{{#if hasRooms}}
-						{{#each rooms}}
-							{{> roomSummaryBrief}}
-						{{/each}}
-					{{else}}
-						{{ > homeNoRooms}}
-					{{/if}}
-				{{/if}}
-			{{else}}
-				{{ > homeNoNetworks}}
-			{{/if}}
-		</div>
+	{{#autumnTabs name="" tabs=tabs}}
+		{{#tabContent slug="sensors"}}
+			{{#with ..}}
+				{{#each sensors}}
+					{{> sensorSummaryBrief}}
+				{{/each}}
+			{{/with}}
+		{{/tabContent}}
+
+		{{#tabContent slug="rooms"}}
+			<h2>Rooms</h2>
+		{{/tabContent}}
+	{{/autumnTabs}}
 </template>

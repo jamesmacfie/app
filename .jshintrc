@@ -50,6 +50,8 @@
 				"Chartist": false,
 				"SubsManager": false,
 				"UI": false,
-				"FlashMessages": false
+				"FlashMessages": false,
+				"Package": false,
+				"ReactiveTabs": false
 		}
 }

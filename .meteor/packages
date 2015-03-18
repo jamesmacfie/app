@@ -15,7 +15,6 @@ aldeed:collection2
 aldeed:autoform
 accounts-password
 fourseven:scss
-mizzao:bootstrap-3
 ixdi:material-design-iconic-font
 mrt:reactive-publish
 meteorhacks:aggregate
@@ -24,3 +23,4 @@ accounts-base
 mrt:flash-messages
 meteorhacks:kadira
 meteorhacks:zones
+templates:tabs
