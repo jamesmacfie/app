@@ -1,41 +1,36 @@
 'use strict';
 
-
 Template.menu.helpers({
-	username: function() {
-		//TEMP
-		var user = Meteor.user();
-		if (user) {
-			return user.emails[0].address;
-		}
-		return '';
-	},
 	menuItems: function() {
-		var currentRoute = Router.current(),
+		function getActiveClass(name) {
+			var currentRoute = Router.current(),
 			routeName = currentRoute.route.getName();
+
+			return routeName === name ? 'isActive' : '';
+		}
 
 		// There must be a better place to store these
 		return [
 			{
-				class: routeName === 'home' ? 'menuItem-active' : '',
+				class: getActiveClass('home'),
 				icon: 'home',
 				route: 'home',
 				text: 'Home'
 			},
 			{
-				class: routeName === 'roomList' ? 'menuItem-active' : '',
+				class: getActiveClass('roomList'),
 				icon: 'room',
 				route: 'roomList',
 				text: 'Rooms'
 			},
 			{
-				class: routeName === 'sensoList' ? 'menuItem-active' : '',
+				class: getActiveClass('sensorList'),
 				icon: 'filter-list',
 				route: 'sensorList',
 				text: 'Sensors'
 			},
 			{
-				class: routeName === 'settings' ? 'menuItem-active' : '',
+				class: getActiveClass('settings'),
 				icon: 'settings',
 				route: 'settings',
 				text: 'Settings'

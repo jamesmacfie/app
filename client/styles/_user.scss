@@ -2,22 +2,14 @@
  * CONTENTS
  *
  * Avatar...............A user's avatar
- * Details..............User specific detail
  */
 
 /*------------------------------------*\
 	#AVATAR
 \*------------------------------------*/
 .userAvatar {
-	border: 1px solid #fff;
+	border: 1px solid rgba(255, 255, 255, 0.2);
 	border-radius: 50%;
 	height: $avatarHeight;
 	width: $avatarHeight;
-}
-
-/*------------------------------------*\
-	#DETAILS
-\*------------------------------------*/
-.userName {
-	color: #d6d7dc;
 }

@@ -12,11 +12,26 @@
 \*------------------------------------*/
 
 .mainMenu {
-	background-color: $death;
+	background-image: linear-gradient(30deg, #4a4f5c, #5c616c);
 	height: 100vh;
 	left: map-get($menu, width) * -1;
-	position: fixed;
+	position: absolute;
+	transition: left 0.15s;
 	width: map-get($menu, width);
+	z-index: 2;
+
+	&.isVisible {
+		left: 0;
+	}
+}
+
+.overlay {
+	background-color: #000;
+	height: 100vh;
+	opacity: 0.5;
+	position: absolute;
+	width: 100vw;
+	z-index: 1;
 }
 
 /*------------------------------------*\
@@ -36,17 +51,21 @@
 	height: map-get($menu, itemHeight);
 	line-height: map-get($menu, itemHeight);
 	list-style: none;
+
+	&.isActive {
+		background-image: linear-gradient(90deg, #454a58, #383c48);
+	}
 }
 
 .mainMenu--item--link {
 	color: map-get($menu, color);
 	display: block;
 	height: 100%;
-	padding-left: 10px;
+	padding-left: 30px;
 	width: 100%;
 
 	&:hover, &:focus {
-		background-color: $almostDead;
+		background-image: linear-gradient(90deg, #454a58, #383c48);
 		color: inherit;
 	}
 }
@@ -55,22 +74,14 @@
 	#ICON
 \*------------------------------------*/
 .mainMenu--item--icon {
+	color: #aeaeae;
 	font-size: map-get($menu, iconSize);
-	margin-right: $defaultSpacing;
+	margin-right: $defaultSpacing * 2;
 }
 
 /*------------------------------------*\
 	#USER
 \*------------------------------------*/
-.menuUser {
-	display: flex;
-	margin-bottom: 40px;
-}
-
 .menuUser--userAvatar {
-	margin: $defaultSpacing;
-}
-
-.menuUser--userName {
-	margin: ($defaultSpacing * 2) 0 0 $defaultSpacing;
+	margin: $avatarHeight / 2 auto;
 }

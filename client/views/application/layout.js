@@ -26,7 +26,11 @@ Template.layout.helpers({
 });
 
 Template.layout.events({
-	'click .js-changeTab': function() {
+	'click .js-toggleMainMenu': function() {
+		var mainMenu = $('.js-mainMenu'),
+			overlay = $('.js-mainMenuOverlay');
 
+		mainMenu.toggleClass('isVisible');
+		overlay.toggle();
 	}
 });
