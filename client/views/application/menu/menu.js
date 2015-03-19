@@ -30,6 +30,12 @@ Template.menu.helpers({
 				text: 'Sensors'
 			},
 			{
+				class: getActiveClass('activity'),
+				icon: 'chat',
+				route: 'activity',
+				text: 'Activity'
+			},
+			{
 				class: getActiveClass('settings'),
 				icon: 'settings',
 				route: 'settings',

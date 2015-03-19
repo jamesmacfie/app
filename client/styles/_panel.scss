@@ -1,48 +1,56 @@
-/**
- * CONTENTS
- *
- * Overrides.............Bootstrap overrides for panels
- * Form..................Form containers
- * Modifiers.............Panel modifiers
- */
-
-/*------------------------------------*\
-	#OVERRIDES
-\*------------------------------------*/
 .panel {
-	background-color: transparent;
-	border: none;
-	border-radius: 0;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	position: relative;
-}
-
-/*------------------------------------*\
-	#FORM
-\*------------------------------------*/
-.panel-form {
-	margin: 0 auto;
-	max-width: 300px;
-	text-align: center;
-}
-
-/*------------------------------------*\
-	#MODIFIERS
-\*------------------------------------*/
-
-.panel-padded {
-	padding: 10px;
-}
-
-.panel-blue {
-	background-color: #279ae7;
-}
-
-.panel-green {
-	background-color: #6cb735;
-}
-
-.panel-borderRadius {
+	background-color: #fff;
 	border-radius: $borderRadius;
+	color: #333;
+	margin: $defaultSpacing $defaultSpacing $defaultSpacing * 2;
+	padding: $defaultSpacing * 2 $defaultSpacing;
 }
+
+// /**
+//  * CONTENTS
+//  *
+//  * Overrides.............Bootstrap overrides for panels
+//  * Form..................Form containers
+//  * Modifiers.............Panel modifiers
+//  */
+//
+// /*------------------------------------*\
+// 	#OVERRIDES
+// \*------------------------------------*/
+// .panel {
+// 	background-color: transparent;
+// 	border: none;
+// 	border-radius: 0;
+// 	box-shadow: none;
+// 	-webkit-box-shadow: none;
+// 	position: relative;
+// }
+//
+// /*------------------------------------*\
+// 	#FORM
+// \*------------------------------------*/
+// .panel-form {
+// 	margin: 0 auto;
+// 	max-width: 300px;
+// 	text-align: center;
+// }
+//
+// /*------------------------------------*\
+// 	#MODIFIERS
+// \*------------------------------------*/
+//
+// .panel-padded {
+// 	padding: 10px;
+// }
+//
+// .panel-blue {
+// 	background-color: #279ae7;
+// }
+//
+// .panel-green {
+// 	background-color: #6cb735;
+// }
+//
+// .panel-borderRadius {
+// 	border-radius: $borderRadius;
+// }

@@ -1,4 +1,48 @@
+.icon-button {
+	border-radius: 50%;
+	position: relative;
 
+	&:before {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+	}
+}
+
+.icon-light {
+	color: #fff;
+}
+
+.icon-dark {
+	color: #333;
+}
+
+.icon-teeny {
+	font-size: 12px;
+	height: 20px;
+	width: 20px;
+}
+
+.icon-temp {
+	background-color: #6cb735;
+}
+
+.icon-motion {
+	background-color: #6ec1b0;
+}
+
+.icon-cooling {
+	background-color: #279ae7;
+}
+
+.icon-warming {
+	background-color: $hotPink;
+}
+
+.icon-nomotion {
+	background-color: #333;
+}
 
 // /**
 //  * CONTENTS

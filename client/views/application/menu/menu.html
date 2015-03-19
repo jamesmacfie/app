@@ -7,12 +7,8 @@
 			{{#each menuItems}}
 				{{ > menuItem}}
 			{{/each}}
-			<li class="mainMenu--item">
-				<a class="mainMenu--item--link" href="/logout">
-					<i class="md md-keyboard-return mainMenu--item--icon"></i>Logout
-				</a>
-			</li>
 		</ul>
+		<a class="mainManu--logout" href="/logout">Logout</a>
 	</nav>
 	<div class="overlay js-mainMenuOverlay js-toggleMainMenu" style="display: none;"></div>
 </template>

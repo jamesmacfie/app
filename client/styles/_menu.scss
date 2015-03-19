@@ -61,7 +61,7 @@
 	color: map-get($menu, color);
 	display: block;
 	height: 100%;
-	padding-left: 30px;
+	padding-left: $defaultSpacing * 3;
 	width: 100%;
 
 	&:hover, &:focus {
@@ -83,5 +83,13 @@
 	#USER
 \*------------------------------------*/
 .menuUser--userAvatar {
+	display: block;
 	margin: $avatarHeight / 2 auto;
+}
+
+.mainMenu--logout {
+	position: absolute;
+	bottom: $defaultSpacing * 2;
+	left: 50%;
+	transform: translateX(-50%);
 }
