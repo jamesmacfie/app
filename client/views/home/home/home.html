@@ -9,7 +9,11 @@
 		{{/tabContent}}
 
 		{{#tabContent slug="rooms"}}
-			<h2>Rooms</h2>
+			{{#with ..}}
+				{{#each sensors}}
+					{{> roomSummary}}
+				{{/each}}
+			{{/with}}
 		{{/tabContent}}
 	{{/autumnTabs}}
 </template>

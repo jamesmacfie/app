@@ -1,61 +1,73 @@
-/**
- * CONTENTS
- *
- * Base................The component that sits up the top if the room pages
- * Summary.............The summary for a particular room (still not sure whether this should be abstracted out more)
- */
-
-/*------------------------------------*\
-	#ROOM
-\*------------------------------------*/
-.room {
-	min-height: 100px;
-	position: relative;
-}
-
-.room--background {
+.roomHeader {
 	background-image: url('/images/roomBackgrounds/default.jpg');
 	background-size: cover;
-	height: 100px;
-	width: 100%;
-
-	&:after {
-		background: linear-gradient(transparent, $death);
-		bottom: 0;
-		content: '';
-		height: 50px;
-		left: 0;
-		opacity: 0.8;
-		position: absolute;
-		right: 0;
-	}
+	border-top-left-radius: $borderRadius;
+	border-top-right-radius: $borderRadius;
+	height: 80px;
+	margin-left: $defaultSpacing * -1;
+	margin-top:  $defaultSpacing * -1;
+	margin-bottom: $defaultSpacing * 2;
+	width: calc(100% + 20px); /* 1. Can't use $defaultSpacing here :( */
 }
 
-.roomTitle {
-	color: $offWhite;
-	margin: 0;
-	z-index: 1;
-}
-
-.roomIcon {
-	z-index: 1;
-}
-
-.roomIcon--buttonIcon {
-	margin-right: 5px;
-}
-
-/*------------------------------------*\
-	#SUMMARY
-\*------------------------------------*/
-.roomSummary {
-	background-color: $almostDead;
-	padding: $defaultSpacing;
-	position: relative;
-}
-
-.roomSummaryText {
-	color: lighten($angel, 40%);
-	font-size: 12px;
-	margin: 0;
-}
+// /**
+//  * CONTENTS
+//  *
+//  * Base................The component that sits up the top if the room pages
+//  * Summary.............The summary for a particular room (still not sure whether this should be abstracted out more)
+//  */
+//
+// /*------------------------------------*\
+// 	#ROOM
+// \*------------------------------------*/
+// .room {
+// 	min-height: 100px;
+// 	position: relative;
+// }
+//
+// .room--background {
+// 	background-image: url('/images/roomBackgrounds/default.jpg');
+// 	background-size: cover;
+// 	height: 100px;
+// 	width: 100%;
+//
+// 	&:after {
+// 		background: linear-gradient(transparent, $death);
+// 		bottom: 0;
+// 		content: '';
+// 		height: 50px;
+// 		left: 0;
+// 		opacity: 0.8;
+// 		position: absolute;
+// 		right: 0;
+// 	}
+// }
+//
+// .roomTitle {
+// 	color: $offWhite;
+// 	margin: 0;
+// 	z-index: 1;
+// }
+//
+// .roomIcon {
+// 	z-index: 1;
+// }
+//
+// .roomIcon--buttonIcon {
+// 	margin-right: 5px;
+// }
+//
+// /*------------------------------------*\
+// 	#SUMMARY
+// \*------------------------------------*/
+// .roomSummary {
+// 	background-color: $almostDead;
+// 	padding: $defaultSpacing;
+// 	position: relative;
+// }
+//
+// .roomSummaryText {
+// 	color: lighten($angel, 40%);
+// 	font-size: 12px;
+// 	margin: 0;
+// }

@@ -18,16 +18,17 @@
 </template>
 
 <template name="irSensorSummaryBrief">
-	<div class="sensorSummary panel shadow">
-		<i class="sensorSummary--icon icon-button icon-light icon-motion md md-map"></i>
+	<div class="panel u-shadow">
+		<h4 class="sensorSummary--title">{{nickname}}</h4>
 		<div class="sensorSummary--info">
-			<h4 class="sensorSummary--title">{{nickname}}</h4>
-			<p class="subText">Last reading taken at 4:15pm</p>
-		</div>
-		<div class="sensorSummary--statusHolder">
-			<div class="sensorSummary--status">
-				<i class="sensorSummary--statusIcon icon-button icon-light icon-teeny icon-nomotion md md-cancel"></i>
-				<p class="sensorSummary--status--subText subText">No motion detected</p>
+			<i class="sensorSummary--icon icon-button icon-light icon-motion md md-map"></i>
+			<p class="sensorSummary--subtext subText">Last reading taken at 4:15pm</p>
+
+			<div class="sensorSummary--statusHolder">
+				<div class="sensorSummary--status">
+					<i class="sensorSummary--statusIcon icon-button icon-light icon-teeny icon-nomotion md md-cancel"></i>
+					<p class="sensorSummary--status--subText subText">No motion detected</p>
+				</div>
 			</div>
 		</div>
 

@@ -1,27 +1,31 @@
-.sensorSummary {
-		display: flex;
-}
-
 .sensorSummary--icon {
 	display: block;
 	font-size: 35px;
-	height: 50px;
-	width: 50px;
+	max-height: 50px;
+	min-height: 50px;
+	max-width: 50px;
+	min-width: 50px;
 }
 
 .sensorSummary--info {
+	display: flex;
+}
+
+.sensorSummary--subtext {
 	flex: 1;
-	padding: 0 $defaultSpacing * 2 0 $defaultSpacing;
+	padding-left: $defaultSpacing;
 }
 
 .sensorSummary--title {
 	font-weight: 400;
-	margin: 0;
+	margin-bottom: $defaultSpacing;
+	margin-top: 0;
 }
 
 .sensorSummary--status {
 	display: flex;
-	width: 140px;
+	padding-left: $defaultSpacing;
+	width: 110px;
 }
 
 .sensorSummary--statusIcon {
@@ -33,6 +37,7 @@
 	font-size: $cappa * 2;
 	font-weight: bold;
 	margin: $defaultSpacing 0 0;
+	padding-left: $defaultSpacing;
 }
 
 .subText {
