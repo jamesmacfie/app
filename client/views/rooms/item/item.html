@@ -1,25 +1,11 @@
 <template name="room">
-	<div class="room">
-		<div class="room--background" style={{backgroundImageStyle}}>
-			<h1 class="roomTitle delta absoluteBottomLeft">{{room.name}}</h1>
-			<div class="roomIcon absoluteBottomRight">
-				<i class="md md-edit buttonIcon buttonIcon-edit roomIcon--buttonIcon js-editRoom"></i>
-				<i class="md md-delete buttonIcon buttonIcon-remove roomIcon--buttonIcon js-removeRoom"></i>
-				<a href="{{pathFor 'sensorAssign' _id=room._id}}"><i class="md md-add buttonIcon buttonIcon-add"></i></a>
+	{{#if sensorCount}}
+		{{#each sensors}}
+			<div class="panel u-shadow">
+				{{> sensorSummaryBrief}}
 			</div>
-		</div>
-	</div>
-
-	<div class="panel panel-padded">
-		{{#if sensorCount}}
-			{{#each sensors}}
-				{{> sensorSummary}}
-			{{/each}}
-			{{ > sensorSummaryEditModals}}
-		{{else}}
-			<p>This room doesn't seem to have any sensors in it. Did you want to <a href="{{pathFor 'sensorAssign' _id=room._id}}">add one</a>?</p>
-		{{/if}}
-	</div>
-	{{ > roomEditModal}}
-	{{ > roomRemoveModal}}
+		{{/each}}
+	{{else}}
+		<p>This room doesn't seem to have any sensors in it. Did you want to <a href="{{pathFor 'sensorAssign' _id=room._id}}">add one</a>?</p>
+	{{/if}}
 </template>

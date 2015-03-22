@@ -1,11 +1,11 @@
 <template name="roomList">
 	{{> flashMessages}}
 	{{#if hasRooms}}
-		<div class="panel panel-default">
 			{{#each rooms}}
-				{{> roomSummary}}
+				<div class="panel u-shadow">
+					{{> roomSummary}}
+				</div>
 			{{/each}}
-		</div>
 		<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
 	{{else}}
 		<a href="{{pathFor 'roomInsert'}}">No rooms. Insert one?</a>

@@ -18,15 +18,13 @@
 		}
 	});
 
-	Template.roomSummaryBrief.helpers({
-		backgroundImageStyle: backgroundImageStyle,
-		roomSensors: function() {
-			return Sensors.find({
-				_id: {
-					$in: this.sensors
-				}
+	Template.roomSummary.events({
+		'click': function(event, view) {
+			var roomId = view.data._id;
+
+			Router.go('room', {
+				_id: roomId
 			});
 		}
-
 	});
 })();
