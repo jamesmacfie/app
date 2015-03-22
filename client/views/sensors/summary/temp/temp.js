@@ -8,6 +8,24 @@ Template.tempSensorSummary.helpers({
 
 		return 'Temperature';
 	},
+	lastReadingTimestamp: function() {
+		var latest = DataPoints.findOne({
+			sensor: this._id
+		}, {
+			sort: {
+				createdAt: -1
+			}
+		}),
+		timestamp;
+
+		if (!latest) {
+			return 'No sensor readings have been taken yet';
+		}
+
+		timestamp =  new moment(latest.createdAt).format('h:mm a');
+
+		return 'Last reading taken at ' + timestamp;
+	},
 	latestTemp: function() {
 		var sensorId = this._id,
 			latest = DataPoints.findOne({
@@ -31,6 +49,58 @@ Template.tempSensorSummary.helpers({
 		return '--';
 	}
 });
+
+Template.tempSensorSummaryBrief.helpers({
+	nickname: function() {
+		if (this.name) {
+			return this.name;
+		}
+
+		return 'Temperature';
+	},
+	lastReadingTimestamp: function() {
+		var latest = DataPoints.findOne({
+			sensor: this._id
+		}, {
+			sort: {
+				createdAt: -1
+			}
+		}),
+		timestamp;
+
+		if (!latest) {
+			return 'No sensor readings have been taken yet';
+		}
+
+		timestamp =  new moment(latest.createdAt).format('h:mm a');
+
+		return 'Last reading taken at ' + timestamp;
+	},
+	latestTemp: function() {
+		var sensorId = this._id,
+			latest = DataPoints.find({
+				sensor: sensorId
+			},
+			{
+				sort: {
+					createdAt : -1
+				},
+				limit: 1
+			}).fetch()[0];
+
+		if (latest) {
+			try {
+				return parseFloat(latest.value, 2);
+			} catch(e) {
+				console.error(latest.value + ' is not a valid number');
+				return 0;
+			}
+		}
+
+		return '--';
+}
+});
+
 
 Template.tempSensorSummary.rendered = function() {
 	var id =  this.data._id;
@@ -79,36 +149,3 @@ Template.tempSensorSummary.rendered = function() {
 		new Chartist.Line('#chart-' + id, data, options);
 	});
 };
-
-Template.tempSensorSummaryBrief.helpers({
-	nickname: function() {
-		if (this.name) {
-			return this.name;
-		}
-
-		return 'Temperature';
-	},
-	latestTemp: function() {
-		var sensorId = this._id,
-			latest = DataPoints.find({
-				sensor: sensorId
-			},
-			{
-				sort: {
-					createdAt : -1
-				},
-				limit: 1
-			}).fetch()[0];
-
-		if (latest) {
-			try {
-				return parseFloat(latest.value, 2);
-			} catch(e) {
-				console.error(latest.value + ' is not a valid number');
-				return 0;
-			}
-		}
-
-		return '--';
-	}
-});

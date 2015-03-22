@@ -8,7 +8,7 @@ Template.irSensorSummary.helpers({
 
 		return 'Movement';
 	},
-	currentStatus: function() {
+	lastReadingTimestamp: function() {
 		var latest = DataPoints.findOne({
 			sensor: this._id
 		}, {
@@ -16,7 +16,25 @@ Template.irSensorSummary.helpers({
 				createdAt: -1
 			}
 		}),
-		value;
+		timestamp;
+
+		if (!latest) {
+			return;
+		}
+
+		timestamp =  new moment(latest.createdAt).format('h:mm a');
+
+		return 'Last reading taken at ' + timestamp;
+	},
+	currentStatus: function() {
+		var latest = DataPoints.findOne({
+				sensor: this._id
+			}, {
+				sort: {
+					createdAt: -1
+				}
+			}),
+			value;
 
 		if (!latest) {
 			return '--';
@@ -107,6 +125,24 @@ Template.irSensorSummaryBrief.helpers({
 		}
 
 		return 'Movement';
+	},
+	lastReadingTimestamp: function() {
+		var latest = DataPoints.findOne({
+				sensor: this._id
+			}, {
+				sort: {
+					createdAt: -1
+				}
+			}),
+			timestamp;
+
+		if (!latest) {
+			return 'No sensor readings have been taken yet';
+		}
+
+		timestamp =  new moment(latest.createdAt).format('h:mm a');
+
+		return 'Last reading taken at ' + timestamp;
 	},
 	currentStatus: function() {
 		var latest = DataPoints.findOne({
