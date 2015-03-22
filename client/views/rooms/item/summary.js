@@ -8,7 +8,14 @@
 	};
 
 	Template.roomSummary.helpers({
-		backgroundImageStyle: backgroundImageStyle
+		backgroundImageStyle: backgroundImageStyle,
+		sensorObjects: function() {
+			return Sensors.find({
+				_id: {
+					$in: this.sensors
+				}
+			});
+		}
 	});
 
 	Template.roomSummaryBrief.helpers({

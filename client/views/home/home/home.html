@@ -3,15 +3,19 @@
 		{{#tabContent slug="sensors"}}
 			{{#with ..}}
 				{{#each sensors}}
-					{{> sensorSummaryBrief}}
+					<div class="panel u-shadow">
+						{{> sensorSummaryBrief}}
+					</div>
 				{{/each}}
 			{{/with}}
 		{{/tabContent}}
 
 		{{#tabContent slug="rooms"}}
 			{{#with ..}}
-				{{#each sensors}}
-					{{> roomSummary}}
+				{{#each rooms}}
+					<div class="panel u-shadow">
+						{{> roomSummary}}
+					</div>
 				{{/each}}
 			{{/with}}
 		{{/tabContent}}

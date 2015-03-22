@@ -17,6 +17,13 @@ App.icons({
 	'android_xhdpi': 'resources/icon-96.png'
 });
 
+App.accessRule(
+	'*',
+	{
+		launchExternal: false
+	}
+);
+
 // App.launchScreens({
 // 	// Android
 // 	'android_ldpi_portrait': 'resources/splash/splash-200x320.png',

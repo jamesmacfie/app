@@ -6,8 +6,30 @@
 	height: 80px;
 	margin-left: $defaultSpacing * -1;
 	margin-top:  $defaultSpacing * -1;
-	margin-bottom: $defaultSpacing * 2;
+	margin-bottom: $defaultSpacing;
+	position: relative;
 	width: calc(100% + 20px); /* 1. Can't use $defaultSpacing here :( */
+}
+
+.roomSummary--title {
+	bottom: $defaultSpacing;
+	color: #fff;
+	font-size: $cappa;
+	left: $defaultSpacing;
+	margin: 0;
+	position: absolute;
+}
+
+.roomSummary__sensorSummary {
+	border-bottom: 1px solid #aeaeae;
+	margin-bottom: $defaultSpacing;
+	padding-bottom: $defaultSpacing;
+
+	&:last-child {
+		border-bottom: none;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
 }
 
 // /**

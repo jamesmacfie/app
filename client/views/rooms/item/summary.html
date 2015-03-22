@@ -1,25 +1,10 @@
-<template name="roomName">
-	<p>{{name}}</p>
-</template>
-
 <template name="roomSummary">
-	<div class="panel">
-		<div class="roomHeader">
-			
-		</div>
+	<div class="roomHeader">
+		<h1 class="roomSummary--title">{{name}}</h1>
 	</div>
-</template>
-
-<template name="roomSummaryBrief">
-	<div class="room">
-		<div class="room--background" style="{{backgroundImageStyle}}">
-			<h1 class="roomTitle delta absoluteBottomLeft">{{name}}</h1>
-			<div class="roomIcon absoluteBottomRight">
-				<a href="{{pathFor 'room'}}"><i class="md md-navigate-next buttonIcon buttonIcon-next"></i></a>
-			</div>
+	{{#each sensorObjects}}
+		<div class="roomSummary__sensorSummary">
+			{{ > sensorSummaryBrief}}
 		</div>
-	</div>
-	{{#each roomSensors}}
-		{{ > sensorSummaryBrief}}
 	{{/each}}
 </template>
