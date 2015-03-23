@@ -11,13 +11,17 @@
 		{{/tabContent}}
 
 		{{#tabContent slug="rooms"}}
-			{{#with ..}}
-				{{#each rooms}}
-					<div class="panel u-shadow">
-						{{> roomSummary}}
-					</div>
-				{{/each}}
-			{{/with}}
+			{{#if Template.subscriptionsReady}}
+				{{#with ..}}
+					{{#each rooms}}
+						<div class="panel u-shadow">
+							{{> roomSummary}}
+						</div>
+					{{/each}}
+				{{/with}}
+			{{else}}
+				{{ > spinner}}
+			{{/if}}
 		{{/tabContent}}
 	{{/autumnTabs}}
 </template>
