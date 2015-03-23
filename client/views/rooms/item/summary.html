@@ -2,9 +2,13 @@
 	<div class="roomHeader">
 		<h1 class="roomSummary--title">{{name}}</h1>
 	</div>
-	{{#each sensorObjects}}
-		<div class="roomSummary__sensorSummary">
-			{{ > sensorSummaryBrief}}
-		</div>
-	{{/each}}
+	{{#if sensorCount}}
+		{{#each sensorObjects}}
+			<div class="roomSummary__sensorSummary">
+				{{ > sensorSummaryBrief}}
+			</div>
+		{{/each}}
+	{{else}}
+		<p>There are no sensors for this room.</p>
+	{{/if}}
 </template>

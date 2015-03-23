@@ -6,14 +6,22 @@
 	position: relative;
 }
 
-.margin10 {
-	margin: 10px;
+.u-flex {
+	display: flex;
 }
 
-.marginBottom10 {
-	margin-bottom: 10px;
+.u-marginBottom {
+	margin-bottom: $defaultSpacing;
 }
 
-.marginTop10 {
-	margin-top: 10px;
+.u-marginLeft {
+	margin-left: $defaultSpacing;
+}
+
+.u-marginRight {
+	margin-right: $defaultSpacing;
+}
+
+.u-marginTop {
+	margin-top: $defaultSpacing;
 }

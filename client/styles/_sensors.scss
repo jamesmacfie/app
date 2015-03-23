@@ -1,4 +1,9 @@
-.sensorSummary--icon {
+.sensorSummary, .tempSummary {
+	display: flex;
+	width: 100%;
+}
+
+.sensorSummary__icon {
 	display: block;
 	font-size: 35px;
 	max-height: 50px;
@@ -7,43 +12,60 @@
 	min-width: 50px;
 }
 
-.sensorSummary--info {
-	display: flex;
-}
-
-.sensorSummary--subtext {
+.sensorSummaryInfo {
 	flex: 1;
 	padding-left: $defaultSpacing;
 }
 
-.sensorSummary--title {
-	font-weight: 400;
-	margin-bottom: $defaultSpacing;
-	margin-top: 0;
-}
-
-.sensorSummary--status {
-	display: flex;
-	padding-left: $defaultSpacing;
-	width: 110px;
-}
-
-.sensorSummary--statusIcon {
-	display: block;
-	margin-right: $defaultSpacing / 2;
-}
-
-.sensorSummary--value {
+.sensorSummaryInfo__value {
 	font-size: $alpha;
 	font-weight: bold;
 	margin: $defaultSpacing 0 0;
 	padding-left: $defaultSpacing;
 }
 
-.subText {
-	color: #aeaeae;
-	font-size: 12px;
+.sensorSummaryInfo__status {
+	flex: 1;
+}
+
+.sensorSummary__value {
+	font-size: $alpha;
+	font-weight: bold;
+	margin: $defaultSpacing 0 0;
+	padding-left: $defaultSpacing;
+}
+
+.tempSummary {
+	margin-top: $defaultSpacing;
+	width: 100%;
+}
+
+.tempSummary__value {
 	margin: 0;
+}
+
+.sensorSummaryInfo__meta {
+	display: flex;
+	flex-direction: column;
+	margin: 0 $defaultSpacing;
+}
+
+.sensorSummary__metaValue {
+	margin: 0;
+}
+
+.sensorSummaryInfo__brief {
+	display: flex;
+	width: 110px;
+}
+
+.sensorSummaryInfo__brief--right {
+	margin: 0 $defaultSpacing;
+}
+
+.sensorSummaryInfo__briefIcon {
+	display: block;
+	margin-right: $defaultSpacing / 2;
 }
 
 // /**

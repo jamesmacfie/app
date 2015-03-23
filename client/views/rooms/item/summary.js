@@ -9,6 +9,13 @@
 
 	Template.roomSummary.helpers({
 		backgroundImageStyle: backgroundImageStyle,
+		sensorCount: function() {
+			return !!Sensors.find({
+				_id: {
+					$in: this.sensors
+				}
+			}).count();
+		},
 		sensorObjects: function() {
 			return Sensors.find({
 				_id: {

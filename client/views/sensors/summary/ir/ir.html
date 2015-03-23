@@ -1,32 +1,36 @@
 <template name="irSensorSummary">
-	<div class="sensorSummary panel panel-padded panel-borderRadius panel-blue">
-		<h4 class="sensorSummary--title delta"><i class="md md-home buttonIcon buttonIcon-ir"></i>{{nickname}}</h4>
-		<div class="dropdown dropdown-iconOnly absoluteTopRight">
-			<button class="btn btn-default dropdown-toggle dropdown-toggle-white" type="button" id="dropdownMenu-{{_id}}" data-toggle="dropdown" aria-expanded="true"><i class="md md-more-vert"></i>
-			</button>
-			<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu-{{_id}}">
-				<li role="presentation" class="js-editSensor"><a href="javascript:void(0)">Set nickname</a></li>
-				<li role="presentation" class="js-removeSensor"><a href="javascript:void(0)">Remove</a></li>
-			</ul>
-		</div>
-		<div class="summaryChart">
-			<h5>Latest detection</h5>
-			<h6>{{currentStatus}}</h6>
-			<div class="chart summaryChart--chart ct-chart" id="chart-{{_id}}"></div>
+	<h4 class="panelTitle">{{nickname}}</h4>
+
+	<div class="sensorSummary">
+		<i class="sensorSummary__icon icon-button icon-light icon-motion md md-map"></i>
+
+		<div class="sensorSummaryInfo">
+			<h4 class="panelTitle">{{currentStatus}}</h4>
+			<p class="subText">Current status</p>
+
+			<div class="sensorSummaryInfo__brief  u-marginTop">
+				<i class="sensorSummaryInfo__briefIcon icon-button icon-light icon-teeny icon-nomotion md md-cancel"></i>
+				<p class="subText">{{currentStatus}}</p>
+			</div>
 		</div>
 	</div>
+
+	<div id="chart-{{_id}}"></div>
 </template>
 
 <template name="irSensorSummaryBrief">
-	<h4 class="sensorSummary--title">{{nickname}}</h4>
-	<div class="sensorSummary--info">
-		<i class="sensorSummary--icon icon-button icon-light icon-motion md md-map"></i>
-		<p class="sensorSummary--subtext subText">{{lastReadingTimestamp}}</p>
+	<h4 class="panelTitle">{{nickname}}</h4>
+	<div class="sensorSummary">
+		<i class="sensorSummary__icon icon-button icon-light icon-motion md md-map"></i>
 
-		<div class="sensorSummary--statusHolder">
-			<div class="sensorSummary--status">
-				<i class="sensorSummary--statusIcon icon-button icon-light icon-teeny icon-nomotion md md-cancel"></i>
-				<p class="sensorSummary--status--subText subText">{{currentStatus}}</p>
+		<div class="sensorSummaryInfo u-flex">
+			<div class="sensorSummaryInfo__status">
+				<p class="subText">{{lastReadingTimestamp}}</p>
+			</div>
+
+			<div class="sensorSummaryInfo__brief u-marginRight">
+				<i class="sensorSummaryInfo__briefIcon icon-button icon-light icon-teeny icon-nomotion md md-cancel"></i>
+				<p class="subText">{{currentStatus}}</p>
 			</div>
 		</div>
 	</div>
