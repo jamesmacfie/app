@@ -1,6 +1,10 @@
 <template name="title">
 	<header class="navbar {{navbarCls}}" style="{{navbarStyles}}">
-		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		{{#if prev}}
+			<i class="md md-chevron-left navbar_i js-previousPage"></i>
+		{{else}}
+			<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		{{/if}}
 		<h1 class="title">{{title}}</h1>
 	</header>
 </template>
