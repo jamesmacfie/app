@@ -1,13 +1,15 @@
 <template name="sensorList">
-	<div class="panel panel-padded">
-		{{#if sensorCount}}
-				{{#each sensors}}
-					{{> sensorSummary}}
-				{{/each}}
-				{{ > sensorSummaryEditModals}}
-				<a href="{{pathFor 'sensorInsert'}}">Insert another?</a>
+	{{#if sensorCount}}
+		{{#each sensors}}
+			<div class="panel u-shadow">
+				{{> sensorSummary}}
+			</div>
+		{{/each}}
+
 		{{else}}
-				<a href="{{pathFor 'sensorInsert'}}">No sensors. Insert one?</a>
-		{{/if}}
-	</div>
+		<div class="panel u-shadow">
+			<p>You don't have any sensors!. <a href="{{pathFor 'sensorInsert'}}" class="js-addSensor">Insert one?</a></p>
+		</div>
+	{{/if}}
+	<div class="button button--floating js-addSensor"><i class="md md-add"></i></div>
 </template>
