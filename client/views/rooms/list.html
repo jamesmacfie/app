@@ -6,8 +6,23 @@
 					{{> roomSummary}}
 				</div>
 			{{/each}}
-		<a href="{{pathFor 'roomInsert'}}">Insert another?</a>
 	{{else}}
-		<a href="{{pathFor 'roomInsert'}}">No rooms. Insert one?</a>
+		<div class="panel u-shadow">
+			<p>No rooms. <span class="js-addRoom">Insert one?</span></p>
+		</div>
 	{{/if}}
+	<div class="button button--floating js-addRoom"><i class="md md-add"></i></div>
+
+
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Modal Header</h4>
+			<p>A bunch of text</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Agree</a>
+		</div>
+	</div>
+
+
 </template>

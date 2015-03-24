@@ -3,6 +3,8 @@
 @import 'base';
 // @import 'positioning';
 @import 'type';
+
+@import 'zindex';
 //
 @import 'icons';
 @import 'util';
@@ -11,7 +13,7 @@
 //
 @import 'btn';
 // @import 'dropdown';
-// @import 'modal';
+@import 'modal';
 // @import 'inputs';
 // @import 'messages';
 // @import 'images';

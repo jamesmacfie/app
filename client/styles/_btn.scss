@@ -1,6 +1,8 @@
 .button {
+	@include z-depth-1;
+
 	background-color: $hotPink;
-	box-shaodw: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 	cursor: pointer;
 	text-align: center;
 	text-transform: uppercase

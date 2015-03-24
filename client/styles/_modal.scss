@@ -1,18 +1,53 @@
-/**
- * CONTENTS
- *
- * Overrides.............Bootstrap overrides for modals
- */
+.modal {
+	@include z-depth-1;
 
-/*------------------------------------*\
-	#OVERRIDES
-\*------------------------------------*/
-
-.modal-content {
+	background-color: #eee;
 	border-radius: $borderRadius;
-	color: $almostDead;
+	display: none;
+	left: 0;
+	padding: 0;
+	margin: auto;
+	overflow-y: auto;
+	position: fixed;
+	right: 0;
+	width: 55%;
+	will-change: top, opacity;
+	z-index: 1000;
 }
 
-.modal-header, .modal-body, .modal-footer {
-	padding: 10px;
+.modalContent {
+	padding: $defaultSpacing;
 }
+
+.overlay {
+	background: #000;
+	bottom: 0;
+	display: none;
+	left: 0;
+	height: 115%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	will-change: opacity;
+	z-index:999;
+}
+
+// /**
+//  * CONTENTS
+//  *
+//  * Overrides.............Bootstrap overrides for modals
+//  */
+//
+// /*------------------------------------*\
+// 	#OVERRIDES
+// \*------------------------------------*/
+//
+// .modal-content {
+// 	border-radius: $borderRadius;
+// 	color: $almostDead;
+// }
+//
+// .modal-header, .modal-body, .modal-footer {
+// 	padding: 10px;
+// }
