@@ -1,53 +1,96 @@
-/**
- * CONTENTS
- *
- * Container............The container for the image thumbs
- * Images...............The images (thumbnails)
- */
-
-/*------------------------------------*\
-	#CONTAINER
-\*------------------------------------*/
-
-.thumbHolder {
+.thumbContainer {
+	display: flex;
 	list-style: none;
 	margin: 0;
-	overflow-x: auto;
-	overflow-y: hidden;
 	padding: 0;
-	white-space:nowrap;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
-/*------------------------------------*\
-	#CONTAINER
+.thumbHolder {
+	border: 2px solid #aeaeae;
+	border-radius: $borderRadius;
+	cursor: pointer;
+	height: 100px;
+	margin-bottom: $defaultSpacing;
+	width: 100px;
 
-	1.	For the list
-	2.	When the user can interact with a thumbnail in some way
-	3.	A 'selected' state
-\*------------------------------------*/
+	&.is-selected {
+		border: 2px solid $primary;
+		position: relative;
 
-.thumbHolder--item { /* 1. */
-	display: inline;
-	padding-right: $defaultSpacing;
-
-	&:last-child {
-		padding-right: 0;
+		&:after {
+			@include z-depth-1();
+			color: $primary;
+			content: "\f023";
+			font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+			font-size: 52px;
+			left: 0;
+			line-height: 100px - 2px;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: 100px - 2px;
+		}
 	}
 }
 
 .thumb {
-	border-radius: $borderRadius;
-	height: $thumbnailDimension;
-	width: $thumbnailDimension;
+	display: inline-block;
+	height: 100%;
+	width: 100%;
 }
 
-.thumb-selectable { /* 2. */
-	cursor: pointer;
-}
-
-.thumb-selected { /* 2. */
-	border: 3px solid $primary;
-	height: $thumbnailDimension + $defaultSpacing - 3px;
-	padding: 3px;
-	width: $thumbnailDimension + $defaultSpacing - 3px;
-}
+// /**
+//  * CONTENTS
+//  *
+//  * Container............The container for the image thumbs
+//  * Images...............The images (thumbnails)
+//  */
+//
+// /*------------------------------------*\
+// 	#CONTAINER
+// \*------------------------------------*/
+//
+// .thumbHolder {
+// 	list-style: none;
+// 	margin: 0;
+// 	overflow-x: auto;
+// 	overflow-y: hidden;
+// 	padding: 0;
+// 	white-space:nowrap;
+// }
+//
+// /*------------------------------------*\
+// 	#CONTAINER
+//
+// 	1.	For the list
+// 	2.	When the user can interact with a thumbnail in some way
+// 	3.	A 'selected' state
+// \*------------------------------------*/
+//
+// .thumbHolder--item { /* 1. */
+// 	display: inline;
+// 	padding-right: $defaultSpacing;
+//
+// 	&:last-child {
+// 		padding-right: 0;
+// 	}
+// }
+//
+// .thumb {
+// 	border-radius: $borderRadius;
+// 	height: $thumbnailDimension;
+// 	width: $thumbnailDimension;
+// }
+//
+// .thumb-selectable { /* 2. */
+// 	cursor: pointer;
+// }
+//
+// .thumb-selected { /* 2. */
+// 	border: 3px solid $primary;
+// 	height: $thumbnailDimension + $defaultSpacing - 3px;
+// 	padding: 3px;
+// 	width: $thumbnailDimension + $defaultSpacing - 3px;
+// }

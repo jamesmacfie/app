@@ -1,3 +1,49 @@
 <template name="roomInsert">
-	<p>Add room</p>
+	<main class="panel panel--transparent">
+		<div class="formGroup">
+			<label class="label label--FORullWidth">Name</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText"/>
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Description</label>
+			<textarea class="textarea textarea--fullWidth input--transparent u-lightText"></textarea>
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Image</label>
+			<ul class="thumbContainer">
+				<li class="thumbHolder js-takePhoto">
+					<img class="thumb" src="/images/roomBackgrounds/takePhoto--thumb.jpg" />
+				</li>
+				<li class="thumbHolder is-selected js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/default--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/cups--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/leaf--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/vespa--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/rocks--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/cow--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/table--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/trees--thumb.jpg" />
+				</li>
+				<li class="thumbHolder js-selectImage">
+					<img class="thumb" src="/images/roomBackgrounds/car--thumb.jpg" />
+				</li>
+			</ul>
+		</div>
+	</main>
 </template>

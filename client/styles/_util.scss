@@ -25,3 +25,18 @@
 .u-marginTop {
 	margin-top: $defaultSpacing;
 }
+
+.u-lightText {
+	color: #fff;
+}
+
+.u-fullWidth {
+	width: 100%;
+}
+
+.u-fixTop {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+}
