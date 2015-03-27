@@ -35,6 +35,12 @@
 	height: 120px;
 }
 
+.navbar__actionText {
+	color: $primary;
+	line-height: 56px;
+	padding: 0 $defaultSpacing * 2;
+}
+
 
 /*------------------------------------*\
 	#TABS

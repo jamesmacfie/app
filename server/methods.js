@@ -38,9 +38,11 @@ Meteor.methods({
 		insertRoom: function(room) {
 			var roomData = _.extend(room, {
 					users: [this.userId]
-			});
+				}),
+				id;
 
-			Rooms.insert(roomData);
+			id = Rooms.insert(roomData);
+			return id;
 		},
 		updateRoom: function(room, query, id) {
 			// Man, def need some sort of validation here

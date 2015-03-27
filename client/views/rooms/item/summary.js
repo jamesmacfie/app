@@ -1,14 +1,12 @@
 'use strict';
 (function() {
-	var backgroundImageStyle = function() {
-		if (this.image) {
-			var image = Images.findOne(this.image);
-			return 'background-image: url(\'/images/roomBackgrounds/' + image.url + '\');';
-		}
-	};
-
 	Template.roomSummary.helpers({
-		backgroundImageStyle: backgroundImageStyle,
+		backgroundImageStyle: function() {
+			if (this.image) {
+				var image = Images.findOne(this.image);
+				return 'background-image: url(\'/images/roomBackgrounds/' + image.url + '\');';
+			}
+		},
 		sensorCount: function() {
 			return !!Sensors.find({
 				_id: {

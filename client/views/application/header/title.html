@@ -6,5 +6,8 @@
 			<i class="md md-menu navbar_i js-toggleMainMenu"></i>
 		{{/if}}
 		<h1 class="title">{{title}}</h1>
+		{{#if action}}
+			<span class="actionText navbar__actionText {{action.cls}}">{{action.text}}</span>
+		{{/if}}
 	</header>
 </template>

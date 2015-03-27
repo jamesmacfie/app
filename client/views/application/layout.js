@@ -19,11 +19,11 @@
 // 		history.back();
 // 	}
 // })
-Template.layout.helpers({
-	titleDataAttr: function() {
-		return this.title.toLowerCase();
-	}
-});
+// Template.layout.helpers({
+// 	titleDataAttr: function() {
+// 		return this.title.toLowerCase();
+// 	}
+// });
 
 Template.layout.events({
 	'click .js-toggleMainMenu': function() {

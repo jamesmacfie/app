@@ -1,14 +1,25 @@
 <template name="roomInsert">
-	<main class="panel panel--transparent">
+	<main class="panel panel--transparent u-clearfix">
 		<div class="formGroup">
 			<label class="label label--FORullWidth">Name</label>
-			<input type="text" class="input input--fullWidth input--transparent u-lightText"/>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name"/>
 		</div>
 
 		<div class="formGroup">
 			<label class="label label--fullWidth">Description</label>
-			<textarea class="textarea textarea--fullWidth input--transparent u-lightText"></textarea>
+			<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description"></textarea>
 		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Show on Homepage</label>
+			<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description"></textarea>
+		</div>
+
+		{{#if hasMoreThanOneNetwork}}
+
+		{{else}}
+		<input type="hidden" name="network" value="{{singleNetworkId}}"/>
+		{{/if}}
 
 		<div class="formGroup">
 			<label class="label label--fullWidth">Image</label>
@@ -45,5 +56,6 @@
 				</li>
 			</ul>
 		</div>
+		<button class="button button--action u-pullRight js-insertRoom">Save</button>
 	</main>
 </template>

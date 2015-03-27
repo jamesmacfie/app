@@ -1,6 +1,11 @@
 .page {
-	margin-top: 56px;
+	min-height: calc(100vh - 20px); /* Where does this 20px come from? */
+	padding-top: 56px;
 	position: relative;
+}
+
+.page--navLargeBackground {
+	padding-top: 120px;
 }
 
 // /**
