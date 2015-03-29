@@ -1,5 +1,6 @@
 <template name="roomInsert">
 	<main class="panel panel--transparent u-clearfix">
+		{{> flashMessages}}
 		<div class="formGroup">
 			<label class="label label--FORullWidth">Name</label>
 			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name"/>
@@ -11,7 +12,7 @@
 		</div>
 
 		{{#if hasMoreThanOneNetwork}}
-
+			<p>Need to add in dropdown here for more than one network</p>
 		{{else}}
 		<input type="hidden" name="network" value="{{singleNetworkId}}"/>
 		{{/if}}
@@ -27,5 +28,7 @@
 			<label class="label label--fullWidth">Image</label>
 			{{> imageThumbs}}
 		</div>
+
+		<button class="button button--action js-insertRoom">Add</button>
 	</main>
 </template>

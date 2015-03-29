@@ -1,0 +1,22 @@
+.alert {
+	padding: $defaultSpacing $defaultSpacing * 2; 
+	margin-bottom: $defaultSpacing * 2;
+	border-radius: $borderRadius;
+}
+
+.alert-dismissable {
+	.close { /* Need to change HTML for all this*/
+		background: none;
+		border: none;
+		color: #333;
+		cursor: pointer;
+		float: right;
+		font-size: 18px;
+		padding: 0;
+		-webkit-appearance: none;
+	}
+}
+
+.alert-error {
+	background-color: $hotPink;
+}

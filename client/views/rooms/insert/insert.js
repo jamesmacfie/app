@@ -28,18 +28,27 @@ Template.roomInsert.events({
 		jQuery(event.currentTarget).addClass('is-selected');
 	},
 	'click .js-insertRoom': function(event, view) {
-		//Need to enter validation
-		var name = $(view.find('[name="name"]')).val(),
-			description = $(view.find('[name="description"]')).val(),
+		var name = $(view.find('[name="name"]')).val().trim(),
+			description = $(view.find('[name="description"]')).val().trim(),
 			network = $(view.find('[name="network"]')).val(),
 			homepageShow = $(view.find('[name="showOnHomepage"]')).is(':checked'),
 			image = $(view.find('.js-selectImage.is-selected')),
 			imageId,
 			obj;
 
+		// Validation
+		if (!name.length) {
+			FlashMessages.sendError('You need to enter a name for this room.', {
+				autoHide: false
+			});
+			return;
+		}
+
 		if (image) {
 			imageId = image.attr('data-id');
 		}
+
+
 
 		obj = {
 			name: name,
