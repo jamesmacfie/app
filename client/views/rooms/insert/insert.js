@@ -28,19 +28,17 @@ Template.roomInsert.events({
 		jQuery(event.currentTarget).addClass('is-selected');
 	},
 	'click .js-insertRoom': function(event, view) {
-		debugger;
 		//Need to enter validation
 		var name = $(view.find('[name="name"]')).val(),
 			description = $(view.find('[name="description"]')).val(),
 			network = $(view.find('[name="network"]')).val(),
-			homepageShow = true, //Temp
-			image = $(view.find('.js-imageSelected')),
+			homepageShow = $(view.find('[name="showOnHomepage"]')).is(':checked'),
+			image = $(view.find('.js-selectImage.is-selected')),
 			imageId,
 			obj;
 
 		if (image) {
-			imageId = '9bdZjzWNzyYDxp2To';
-			//imageId = image.attributes['data-id'].value;
+			imageId = image.attr('data-id');
 		}
 
 		obj = {
@@ -53,10 +51,13 @@ Template.roomInsert.events({
 			}
 		};
 
-		Meteor.call('insertRoom', obj, function(id) {
-			debugger;
+		Meteor.call('insertRoom', obj, function(error, roomId) {
+			if (error) {
+				console.log('Shit, error inserting room');
+				return;
+			}
+			Router.go('room', {_id: roomId});
 		});
-		//		Router.go('rooms/' + roomId);
 	}
 
 });

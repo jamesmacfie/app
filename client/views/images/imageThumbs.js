@@ -8,6 +8,7 @@
 			selectedImage = this.selectedImage;
 		},
 		images: function() {
+			console.log(this.showCamera);
 			return Images.find();
 		}
 	});

@@ -1,3 +1,5 @@
+'use strict';
+
 (function($) {
 	$.fn.extend({
 		openModal: function(options) {

@@ -5,7 +5,7 @@ Meteor.reactivePublish('userImages', function() {
 			return i._id;
 		},
 		defaultImageIds = Images.find({
-			'default': true,
+			default: true,
 		}, {
 			sort: {
 				createdAt: -1

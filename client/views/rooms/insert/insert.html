@@ -10,11 +10,6 @@
 			<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description"></textarea>
 		</div>
 
-		<div class="formGroup">
-			<label class="label label--fullWidth">Show on Homepage</label>
-			<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description"></textarea>
-		</div>
-
 		{{#if hasMoreThanOneNetwork}}
 
 		{{else}}
@@ -22,40 +17,15 @@
 		{{/if}}
 
 		<div class="formGroup">
-			<label class="label label--fullWidth">Image</label>
-			<ul class="thumbContainer">
-				<li class="thumbHolder js-takePhoto">
-					<img class="thumb" src="/images/roomBackgrounds/takePhoto--thumb.jpg" />
-				</li>
-				<li class="thumbHolder is-selected js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/default--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/cups--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/leaf--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/vespa--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/rocks--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/cow--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/table--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/trees--thumb.jpg" />
-				</li>
-				<li class="thumbHolder js-selectImage">
-					<img class="thumb" src="/images/roomBackgrounds/car--thumb.jpg" />
-				</li>
-			</ul>
+			<div class="checkboxHolder">
+				<input type="checkbox" id="showOnHomepage" name="showOnHomepage" />
+				<label for="showOnHomepage" class="label">Show room on homepage</label>
+			</div>
 		</div>
-		<button class="button button--action u-pullRight js-insertRoom">Save</button>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Image</label>
+			{{> imageThumbs}}
+		</div>
 	</main>
 </template>

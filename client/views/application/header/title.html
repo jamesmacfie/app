@@ -9,5 +9,14 @@
 		{{#if action}}
 			<span class="actionText navbar__actionText {{action.cls}}">{{action.text}}</span>
 		{{/if}}
+		{{#if actionMenu}}
+			<i class="md md-more-vert navbar_i actionMenuLink js-openActionMenu" data-activates='titleActionMenu'>
+				<ul id='titleActionMenu' class="actionMenu">
+					{{#each actionMenu}}
+						<li class="actionMenuItem {{cls}}">{{text}}</li>
+					{{/each}}
+				</ul>
+			</i>
+		{{/if}}
 	</header>
 </template>

@@ -96,3 +96,35 @@
 	left: 50%;
 	transform: translateX(-50%);
 }
+
+/*------------------------------------*\
+	#ACTION MENU
+\*------------------------------------*/
+.actionMenuLink {
+	display: block;
+	position: relative;
+}
+
+.actionMenu {
+	@include z-depth-1();
+
+	background-color: #fff;
+	border-radius: $borderRadius;
+	display: none;
+	margin: $defaultSpacing / 2 0 0 0;
+	padding: $defaultSpacing;
+	position: absolute;
+	right: $defaultSpacing * 2;
+}
+
+.actionMenuItem {
+	color: #333;
+	font-size: 16px;
+	list-style: none;
+	padding-bottom: $defaultSpacing;
+	white-space: nowrap;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}

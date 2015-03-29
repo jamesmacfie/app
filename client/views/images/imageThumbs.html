@@ -1,6 +1,10 @@
 <template name="imageThumbs">
-	{{setSelectedImage}}
-	<ul class="thumbHolder">
+	<ul class="thumbContainer">
+		{{#if showCamera}}
+			<li class="thumbHolder js-takePhoto">
+				<img class="thumb" src="/images/roomBackgrounds/takePhoto--thumb.jpg" />
+			</li>
+		{{/if}}
 		{{#each images}}
 			{{ > imageThumb }}
 		{{/each}}
@@ -8,7 +12,7 @@
 </template>
 
 <template name="imageThumb">
-	<li class="thumbHolder--item">
-		<img class="thumb thumb-selectable js-selectImage {{selectedClass}}" data-id="{{_id}}" src="/images/roomBackgrounds/{{thumbUrl}}" />
+	<li class="thumbHolder js-selectImage" data-id="{{_id}}">
+		<img class="thumb" src="/images/roomBackgrounds/{{thumbUrl}}" />
 	</li>
 </template>
