@@ -3,10 +3,11 @@
 (function() {
 	var selectedImage;
 
+	Template.imageThumbs.onCreated (function() {
+		selectedImage = this.data.selectedImage;
+	});
+
 	Template.imageThumbs.helpers({
-		setSelectedImage: function() {
-			selectedImage = this.selectedImage;
-		},
 		images: function() {
 			console.log(this.showCamera);
 			return Images.find();
@@ -20,7 +21,7 @@
 			}
 
 			if (this._id === selectedImage) {
-				return 'thumb-selected js-imageSelected';
+				return 'is-selected';
 			}
 
 			return '';
