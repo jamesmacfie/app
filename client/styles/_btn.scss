@@ -20,6 +20,18 @@
 	background-color: $primary;
 }
 
+
+.button--transparent {
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	color: $link;
+
+	&:hover, &:active {
+		color: darken($link, 10%);
+	}
+}
+
 .button--floating {
 	border-radius: 50%;
 	bottom: $defaultSpacing * 2;

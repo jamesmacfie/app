@@ -1,14 +1,18 @@
 <template name="roomList">
+	<header class="navbar u-fixTop">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">Your rooms</h1>
+	</header>
 	{{> flashMessages}}
 	{{#if hasRooms}}
-			{{#each rooms}}
+			{{#each .}}
 				<div class="panel u-shadow">
 					{{> roomSummary}}
 				</div>
 			{{/each}}
 	{{else}}
 		<div class="panel u-shadow">
-			<p>No rooms. <span class="js-addRoom">Insert one?</span></p>
+			<p>No rooms. <span class="panel__a js-addRoom">Insert one?</span></p>
 		</div>
 	{{/if}}
 	<div class="button button--floating js-addRoom"><i class="md md-add"></i></div>

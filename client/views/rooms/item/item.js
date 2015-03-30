@@ -19,6 +19,6 @@ Template.room.events({
 		});
 	},
 	'click .js-removeRoom': function(event, view) {
-		console.log('remove room - show modal or something');
+		$('#removeRoomModal').openModal();
 	}
 });

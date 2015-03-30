@@ -1,4 +1,14 @@
 <template name="room">
+	<header class="navbar navbar--transparent navbar--largeBackground u-fixTop" style="{{navbarStyles}}">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">{{room.name}}</h1>
+		<i class="md md-more-vert navbar_i actionMenuLink js-openActionMenu" data-activates='titleActionMenu'>
+			<ul id='titleActionMenu' class="actionMenu">
+				<li class="actionMenuItem js-editRoom">Edit</li>
+				<li class="actionMenuItem js-removeRoom">Remove</li>
+			</ul>
+		</i>
+	</header>
 	{{#if sensorCount}}
 		{{#each sensors}}
 			<div class="panel u-shadow">
@@ -11,4 +21,6 @@
 		</div>
 	{{/if}}
 	<div class="button button--floating js-editRoom"><i class="md md-mode-edit"></i></div>
+
+	{{ > roomRemove room}}
 </template>

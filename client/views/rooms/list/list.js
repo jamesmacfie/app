@@ -2,7 +2,7 @@
 
 Template.roomList.helpers({
 	hasRooms: function() {
-			return !!Rooms.find().count();
+		return !!this.count();
 	}
 });
 

@@ -1,6 +1,10 @@
 <template name="sensorList">
+	<header class="navbar u-fixTop">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">Your sensors</h1>
+	</header>
 	{{#if sensorCount}}
-		{{#each sensors}}
+		{{#each .}}
 			<div class="panel u-shadow">
 				{{> sensorSummary}}
 			</div>
@@ -8,7 +12,7 @@
 
 		{{else}}
 		<div class="panel u-shadow">
-			<p>You don't have any sensors!. <a href="{{pathFor 'sensorInsert'}}" class="js-addSensor">Insert one?</a></p>
+			<p>You don't have any sensors. <a href="{{pathFor 'sensorInsert'}}" class="js-addSensor">Insert one?</a></p>
 		</div>
 	{{/if}}
 	<div class="button button--floating js-addSensor"><i class="md md-add"></i></div>

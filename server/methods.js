@@ -48,6 +48,11 @@ Meteor.methods({
 			// Man, def need some sort of validation here
 			return Rooms.update(id, query);
 		},
+		removeRoom: function(id) {
+			Rooms.remove({
+				_id: id
+			});
+		},
 		insertRoomSensor: function(sensorId, roomId) {
 			var room = Rooms.findOne(roomId);
 

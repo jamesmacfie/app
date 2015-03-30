@@ -1,36 +1,38 @@
 <template name="roomEdit">
+	<header class="navbar {{navbarCls}} u-fixTop" style="{{navbarStyles}}">
+		<i class="md md-chevron-left navbar_i js-previousPage"></i>
+		<h1 class="title">Edit room</h1>
+	</header>
 	<main class="panel panel--transparent u-clearfix">
 		{{> flashMessages}}
-		{{#with room}}
-			<div class="formGroup">
-				<label class="label label--FullWidth">Name</label>
-				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
+		<div class="formGroup">
+			<label class="label label--FullWidth">Name</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Description</label>
+			<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description">{{description}}</textarea>
+		</div>
+
+		{{#if hasMoreThanOneNetwork}}
+		<p>Need to add in dropdown here for more than one network</p>
+		{{else}}
+		<input type="hidden" name="network" value="{{singleNetworkId}}"/>
+		{{/if}}
+
+		<div class="formGroup">
+			<div class="checkboxHolder">
+				<input type="checkbox" id="showOnHomepage" name="showOnHomepage" checked="{{homepage.show}}"/>
+				<label for="showOnHomepage" class="label">Show room on homepage</label>
 			</div>
+		</div>
 
-			<div class="formGroup">
-				<label class="label label--fullWidth">Description</label>
-				<textarea class="textarea textarea--fullWidth input--transparent u-lightText" name="description">{{description}}</textarea>
-			</div>
+		<div class="formGroup">
+			<label class="label label--fullWidth">Image</label>
+			{{> imageThumbs selectedImage=image}}
+		</div>
 
-			{{#if hasMoreThanOneNetwork}}
-			<p>Need to add in dropdown here for more than one network</p>
-			{{else}}
-			<input type="hidden" name="network" value="{{singleNetworkId}}"/>
-			{{/if}}
-
-			<div class="formGroup">
-				<div class="checkboxHolder">
-					<input type="checkbox" id="showOnHomepage" name="showOnHomepage" checked="{{homepage.show}}"/>
-					<label for="showOnHomepage" class="label">Show room on homepage</label>
-				</div>
-			</div>
-
-			<div class="formGroup">
-				<label class="label label--fullWidth">Image</label>
-				{{> imageThumbs selectedImage=image}}
-			</div>
-		{{/with}}
-
-		<button class="button button--action js-updateRoom">Update</button>
+		<button class="button button--action right js-updateRoom">Update</button>
 	</main>
 </template>

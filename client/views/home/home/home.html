@@ -1,4 +1,8 @@
 <template name="home">
+	<header class="navbar u-fixTop">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">Home</h1>
+	</header>
 	{{#autumnTabs name="" tabs=tabs}}
 		{{#tabContent slug="sensors"}}
 			{{#with ..}}

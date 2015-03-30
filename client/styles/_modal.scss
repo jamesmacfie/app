@@ -3,6 +3,7 @@
 
 	background-color: #eee;
 	border-radius: $borderRadius;
+	color: #333;
 	display: none;
 	left: 0;
 	padding: 0;
@@ -16,7 +17,14 @@
 }
 
 .modalContent {
+	@include clearfix;
+	
 	padding: $defaultSpacing;
+}
+
+.modalTitle {
+	font-weight: bold;
+	margin: 0;
 }
 
 .overlay {

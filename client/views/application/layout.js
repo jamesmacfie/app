@@ -32,5 +32,12 @@ Template.layout.events({
 
 		mainMenu.toggleClass('isVisible');
 		overlay.toggle();
+	},
+	'click .js-previousPage': function(e, view) {
+		history.back();
+		//Router.go(view.data.prev);
+	},
+	'click .js-openActionMenu': function(e) {
+		$(e.target).openActionMenu();
 	}
 });
