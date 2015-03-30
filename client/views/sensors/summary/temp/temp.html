@@ -12,7 +12,7 @@
 				</div>
 				<div class="gridRow u-marginTop">
 					<div class="gridCell">
-						<h5 class="sensorSummary__metaValue tempMin">{{latestTemp}}&#186;C</h5>
+						<h5 class="sensorSummary__metaValue tempMin">{{minTemp}}&#186;C</h5>
 						<p class="subText">Min</p>
 					</div>
 					<div class="gridCell">
@@ -20,12 +20,12 @@
 						<p class="subText">Avg</p>
 					</div>
 					<div class="gridCell">
-						<h5 class="sensorSummary__metaValue tempMax">{{latestTemp}}&#186;C</h5>
+						<h5 class="sensorSummary__metaValue tempMax">{{maxTemp}}&#186;C</h5>
 						<p class="subText">Max</p>
 					</div>
 				</div>
 			</div>
-			<div id="chart-{{_id}}"></div>
+			<div class="ct-chart" id="chart-{{_id}}"></div>
 
 			<div class="sensorSummaryInfo__brief u-marginTop">
 				<i class="sensorSummaryInfo__briefIcon icon-button icon-light icon-teeny icon-warming md md-map"></i>

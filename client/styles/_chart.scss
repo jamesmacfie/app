@@ -25,6 +25,10 @@
 	1.	The selectors for Chartist are a bit... eager.
 \*------------------------------------*/
 .ct-chart {
+	.ct-line-primary {
+		stroke: $primary!important; /* 1. */
+	}
+
 	.ct-line-white {
 		stroke: map-get($lineChartWhite, color)!important; /* 1. */
 	}

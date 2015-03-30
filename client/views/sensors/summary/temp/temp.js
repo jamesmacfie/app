@@ -31,17 +31,61 @@ Template.tempSensorSummary.helpers({
 			latest = DataPoints.findOne({
 				sensor: sensorId
 			},
-		{
-			sort: {
-				createdAt : -1
-			}
-		});
+			{
+				sort: {
+					createdAt : -1
+				}
+			});
 
 		if (latest) {
 			try {
 				return parseFloat(latest.value, 2);
 			} catch(e) {
 				console.error(latest.value + ' is not a valid number');
+				return 0;
+			}
+		}
+
+		return '--';
+	},
+	minTemp: function() {
+		var sensorId = this._id,
+			min = DataPoints.findOne({
+				sensor: sensorId
+			},
+			{
+				sort: {
+					value : 1
+				}
+			});
+
+		if (min) {
+			try {
+				return parseFloat(min.value, 2);
+			} catch(e) {
+				console.error(min.value + ' is not a valid number');
+				return 0;
+			}
+		}
+
+		return '--';
+	},
+	maxTemp: function() {
+		var sensorId = this._id,
+			max = DataPoints.findOne({
+				sensor: sensorId
+			},
+		{
+			sort: {
+				value : -1
+			}
+		});
+
+		if (max) {
+			try {
+				return parseFloat(max.value, 2);
+			} catch(e) {
+				console.error(max.value + ' is not a valid number');
 				return 0;
 			}
 		}
@@ -135,12 +179,12 @@ Template.tempSensorSummary.rendered = function() {
 				showGrid: false
 			},
 			axisY: {
-				offset: 0,
+				offset: 2,
 				showLabel: false,
 				showGrid: false
 			},
 			classNames: {
-				line: 'ct-line ct-line-white'
+				line: 'ct-line ct-line-primary'
 			},
 			fullWidth: true,
 			showPoint: false

@@ -50,27 +50,27 @@ Template.sensorSummary.events({
 	}
 });
 
-Template.sensorSummaryEditModals.events({
-	'click .js-saveSensor': function(event, view) {
-		var id = view.find('#editSensor input[name="_id"]').value,
-			name = view.find('#editSensor input[name="name"]').value;
-
-		Sensors.update({
-			_id: id
-		}, {
-			$set: {
-				name: name
-			}
-		});
-
-		jQuery('#editSensor').modal('hide');
-	},
-	'click .js-removeSensor': function(event, view) {
-		var id = view.find('#removeSensor input[name="_id"]').value,
-			roomId = view.find('#removeSensor input[name="room_id"]').value;
-
-		Meteor.call('removeRoomSensor', id, roomId, function() {
-			$('.modal').hide();
-		});
-	}
-});
+// Template.sensorSummaryEditModals.events({
+// 	'click .js-saveSensor': function(event, view) {
+// 		var id = view.find('#editSensor input[name="_id"]').value,
+// 			name = view.find('#editSensor input[name="name"]').value;
+//
+// 		Sensors.update({
+// 			_id: id
+// 		}, {
+// 			$set: {
+// 				name: name
+// 			}
+// 		});
+//
+// 		jQuery('#editSensor').modal('hide');
+// 	},
+// 	'click .js-removeSensor': function(event, view) {
+// 		var id = view.find('#removeSensor input[name="_id"]').value,
+// 			roomId = view.find('#removeSensor input[name="room_id"]').value;
+//
+// 		Meteor.call('removeRoomSensor', id, roomId, function() {
+// 			$('.modal').hide();
+// 		});
+// 	}
+// });

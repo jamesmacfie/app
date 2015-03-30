@@ -1,0 +1,12 @@
+.gridRow {
+	display: flex;
+	width: 100%;
+}
+
+.gridCell {
+	flex: 1;
+}
+
+.gridCell--oneThird {
+	width: calc(1 / 3);
+}
