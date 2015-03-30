@@ -172,6 +172,14 @@ Template.tempSensorSummary.rendered = function() {
 			})
 			]
 		},
+
+
+		/**
+		 * TODO:
+		 * label with range either side
+		 * Sort out the dot class
+		 * Remove curves
+		 */
 		options = {
 			axisX: {
 				offset: 0,
@@ -179,15 +187,15 @@ Template.tempSensorSummary.rendered = function() {
 				showGrid: false
 			},
 			axisY: {
-				offset: 2,
+				offset: 5,
 				showLabel: false,
 				showGrid: false
 			},
 			classNames: {
-				line: 'ct-line ct-line-primary'
+				line: 'ct-line ct-line-green'
 			},
 			fullWidth: true,
-			showPoint: false
+			showPoint: true
 		};
 
 		new Chartist.Line('#chart-' + id, data, options);

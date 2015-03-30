@@ -18,6 +18,12 @@
 	}
 }
 
+//TEMP
+.ct-point {
+	stroke: #6cb735!important;
+	stroke-width: 5px!important;
+}
+
 
 /*------------------------------------*\
 	#MODIFIERS
@@ -25,8 +31,8 @@
 	1.	The selectors for Chartist are a bit... eager.
 \*------------------------------------*/
 .ct-chart {
-	.ct-line-primary {
-		stroke: $primary!important; /* 1. */
+	.ct-line-green {
+		stroke: #6cb735!important; /* 1. */
 	}
 
 	.ct-line-white {
