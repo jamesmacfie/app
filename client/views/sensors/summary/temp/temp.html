@@ -10,13 +10,17 @@
 					<h2 class="tempSummary__value text-wowza">{{latestTemp}}&#186;C</h2>
 					<p class="subText">Current temperature</p>
 				</div>
-				<div class="sensorSummaryInfo__meta">
-					<div class="tempSummary--minMax">
-						<h5 class="sensorSummary__metaValue">{{latestTemp}}&#186;C</h5>
+				<div class="gridRow u-marginTop">
+					<div class="gridCell">
+						<h5 class="sensorSummary__metaValue tempMin">{{latestTemp}}&#186;C</h5>
 						<p class="subText">Min</p>
 					</div>
-					<div class="tempSummary--minMax">
-						<h5 class="sensorSummary__metaValue">{{latestTemp}}&#186;C</h5>
+					<div class="gridCell">
+						<h5 class="sensorSummary__metaValue tempAvg">{{latestTemp}}&#186;C</h5>
+						<p class="subText">Avg</p>
+					</div>
+					<div class="gridCell">
+						<h5 class="sensorSummary__metaValue tempMax">{{latestTemp}}&#186;C</h5>
 						<p class="subText">Max</p>
 					</div>
 				</div>

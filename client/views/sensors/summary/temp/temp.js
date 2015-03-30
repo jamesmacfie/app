@@ -103,8 +103,6 @@ Template.tempSensorSummaryBrief.helpers({
 
 
 Template.tempSensorSummary.rendered = function() {
-	return;
-	
 	var id =  this.data._id;
 
 	Meteor.call('getGraphData', id, function(err, result) {

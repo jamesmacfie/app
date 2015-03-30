@@ -1,4 +1,4 @@
-.sensorSummary, .tempSummary {
+.sensorSummary {
 	display: flex;
 	width: 100%;
 }
@@ -66,6 +66,26 @@
 .sensorSummaryInfo__briefIcon {
 	display: block;
 	margin-right: $defaultSpacing / 2;
+}
+
+.tempSummary {
+	flex-direction: column;
+}
+
+.tempMin, .tempAvg, .tempMax {
+	font-weight: 400;
+}
+
+.tempMin {
+	color: #2696e2;
+}
+
+.tempAvg {
+	color: #6cb735;
+}
+
+.tempMax {
+	color: $hotPink;
 }
 
 // /**
