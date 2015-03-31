@@ -9,10 +9,11 @@
 	width: 100%;
 }
 
-.input, .textarea {
+.input, .textarea, .select {
 	background-color: transparent;
 	border: none;
 	border-bottom: 1px solid #aeaeae;
+	border-radius: 0;
 	font-size: 18px;
 	min-height: 40px;
 	padding: 0;
@@ -28,7 +29,7 @@
 	padding-bottom: $defaultSpacing;
 }
 
-.input--fullWidth, .textarea--fullWidth {
+.input--fullWidth, .textarea--fullWidth, .select--fullWidth {
 	margin-bottom: $defaultSpacing;
 	width: 100%;
 }

@@ -7,6 +7,13 @@
 			{{#each menuItems}}
 				{{ > menuItem}}
 			{{/each}}
+			{{#if isInRole 'admin'}}
+				<li>
+					<a class="mainMenu--item--link" href="{{pathFor 'adminAddSensor'}}">
+						<i class="md md-lock-outline mainMenu--item--icon"></i>Admin - add sensor
+					</a>
+				</li>
+			{{/if}}
 		</ul>
 		<a class="mainManu--logout" href="/logout">Logout</a>
 	</nav>

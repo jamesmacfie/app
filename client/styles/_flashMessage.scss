@@ -1,5 +1,5 @@
 .alert {
-	padding: $defaultSpacing $defaultSpacing * 2; 
+	padding: $defaultSpacing $defaultSpacing * 2;
 	margin-bottom: $defaultSpacing * 2;
 	border-radius: $borderRadius;
 }
@@ -19,4 +19,8 @@
 
 .alert-error {
 	background-color: $hotPink;
+}
+
+.alert-success {
+	background-color: #6cb735;
 }

@@ -1,0 +1,25 @@
+<template name="adminAddSensor">
+	<header class="navbar u-fixTop">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">Add a new sensor</h1>
+	</header>
+	<main class="panel panel--transparent u-clearfix">
+		{{> flashMessages}}
+
+		<div class="formGroup">
+			<label class="label label--FullWidth">Type</label>
+			<select class="select select--fullWidth select--transparent u-lightText" name="type">
+				{{#each .}}
+					<option value={{_id}}>{{name}}</option>
+				{{/each}}
+			</select>
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Module Id</label>
+			<input type="number" class="input input--fullWidth input--transparent u-lightText" name="moduleId" value={{moduleId}} />
+		</div>
+
+		<button class="button button--action right js-insertSensor">Add</button>
+	</main>
+</template>

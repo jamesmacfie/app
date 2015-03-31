@@ -52,6 +52,7 @@
 				"UI": false,
 				"FlashMessages": false,
 				"Package": false,
-				"ReactiveTabs": false
+				"ReactiveTabs": false,
+				"Roles": false
 		}
 }
