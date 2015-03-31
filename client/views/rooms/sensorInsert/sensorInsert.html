@@ -1,0 +1,21 @@
+<template name="roomSensorInsert">
+	<div class="modal" id="roomSensorInsertModal">
+		<div class="modalContent">
+			<h3 class="modalTitle">Add a sensor to this room</h3>
+			{{> flashMessages}}
+			<p>Choose a sensor</p>
+			<div class="formGroup">
+				<label class="label label--FullWidth">Sensor</label>
+				<select class="select select--fullWidth select--transparent" name="sensor">
+					{{#each selectableSensors}}
+						<option value={{_id}}>{{name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="u-textRight">
+				<button class="button button--transparent js-cancelInsert">Cancel</button>
+				<button class="button js-confirmInsert">Add</button>
+			</div>
+		</div>
+	</div>
+</template>
