@@ -211,8 +211,16 @@ Meteor.methods({
 						createdAt: 1
 					}
 				}).fetch();
-				startingMoment = new moment(dataPoints[0].createdAt);
-				timespanIncrements = new moment().diff(startingMoment, 'm');
+
+				if (!dataPoints.length) {
+					dataPoints.push(startDatapoint);
+					startingMoment = new moment(startDatapoint.createdAt);
+					timespanIncrements = new moment().diff(startingMoment, 'm');
+				} else {
+					startingMoment = new moment(dataPoints[0].createdAt);
+					timespanIncrements = new moment().diff(startingMoment, 'm');
+				}
+
 
 				for (var i = 0; i < timespanIncrements; i += 2) {
 					currentDate = startingMoment.add(2, 'm').toDate();

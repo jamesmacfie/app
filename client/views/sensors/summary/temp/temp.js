@@ -172,32 +172,35 @@ Template.tempSensorSummary.rendered = function() {
 			})
 			]
 		},
-
-
-		/**
-		 * TODO:
-		 * label with range either side
-		 * Sort out the dot class
-		 * Remove curves
-		 */
+		min = _.min(data.series[0]) - 15,
+		max = _.max(data.series[0]) + 15,
 		options = {
+			low: min,
+			high: max,
+			lineSmooth: false,
 			axisX: {
 				offset: 0,
 				showLabel: false,
 				showGrid: false
 			},
 			axisY: {
-				offset: 5,
-				showLabel: false,
-				showGrid: false
+				offset: 10,
+				showLabel: true,
+				showGrid: false,
+				labelOffset: {
+					x: 5,
+					y: 0
+				},
 			},
 			classNames: {
-				line: 'ct-line ct-line-green'
+				line: 'ct-line ct-line-green',
+				point: 'ct-point ct-point-green',
 			},
 			fullWidth: true,
 			showPoint: true
 		};
-
+debugger;
+console.log(data);
 		new Chartist.Line('#chart-' + id, data, options);
 	});
 };
