@@ -199,8 +199,8 @@ Template.tempSensorSummary.rendered = function() {
 			fullWidth: true,
 			showPoint: true
 		};
-debugger;
-console.log(data);
+
+
 		new Chartist.Line('#chart-' + id, data, options);
 	});
 };
