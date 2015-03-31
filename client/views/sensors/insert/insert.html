@@ -1,3 +1,29 @@
 <template name="sensorInsert">
-	insert
+	<div class="modal" id="sensorInsertModal">
+		<div class="modalContent">
+			<h3 class="modalTitle">Add a new sensor</h3>
+			<p>Sidenote - this should/will be done via a hardware connection. Not very user friendly here.</p>
+			{{> flashMessages}}
+			<div class="formGroup">
+				<label class="label label--FullWidth">Module ID</label>
+				<input type="text" class="input input--fullWidth input--transparent" name="moduleId" />
+			</div>
+			<div class="formGroup">
+				<label class="label label--FullWidth">Hub</label>
+				{{#if hasMoreThanOneHub}}
+					<select class="select select--fullWidth select--transparent" name="hub">
+						{{#each hubs}}
+						<option value={{_id}}>{{name}}</option>
+						{{/each}}
+					</select>
+				{{else}}
+					<input type="hidden" name="hub" val="{{hub._id}}"/>
+				{{/if}}
+			</div>
+			<div class="u-textRight">
+				<button class="button button--transparent js-cancelAdd">Cancel</button>
+				<button class="button js-confirmAdd">Add</button>
+			</div>
+		</div>
+	</div>
 </template>

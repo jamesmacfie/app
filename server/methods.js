@@ -87,27 +87,36 @@ Meteor.methods({
 				}
 			});
 		},
-		insertSensor: function(sensor) {
-			// Does this module already exist
-			var existingSensor = Sensors.findOne({
-					moduleId: sensor.moduleId
+		insertSensor: function(moduleId, hubId) {
+			var sensor = Sensors.findOne({
+					moduleId: moduleId
 				}),
-				hub = Hubs.findOne(sensor.hub),
-				sensorId;
+				sensorHub,
+				hub = Hubs.findOne(hubId);
 
-			if (existingSensor) {
-				return false;
+			if (!sensor) {
+				return new Meteor.Error(400, 'There\'s no sensor with that ID.');
 			}
 
-			delete sensor.hub;
+			sensorHub = Hubs.findOne({
+				sensors: {
+					$in: [sensor._id] 
+				}
+			});
 
-			sensorId = Sensors.insert(sensor);
+			if (sensorHub) {
+				return new Meteor.Error(400, 'That sensor has already been assigned.');
+			}
+			if (!hub) {
+				return new Meteor.Error(400, 'Please select a hub that this sensor will talk to.');
+			}
 
 			Hubs.update(hub._id, {
 				$push: {
-					sensors: sensorId
+					sensors: sensor._id
 				}
 			});
+
 		},
 		insertDataPoint: function(params) {
 			console.log('insertDataPoint');
@@ -271,7 +280,7 @@ Meteor.methods({
 			}
 
 			if (!type) {
-				return new Meteor.Error(400, 'You must enter the module ID');
+				return new Meteor.Error(400, 'You must enter the type');
 			}
 
 			var sensor = Sensors.findOne({
