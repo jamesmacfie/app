@@ -11,14 +11,15 @@
 	overflow-y: auto;
 	position: fixed;
 	right: 0;
-	width: 55%;
+	min-width: 55%;
+	max-width: 80%;
 	will-change: top, opacity;
 	z-index: 1000;
 }
 
 .modalContent {
 	@include clearfix;
-	
+
 	padding: $defaultSpacing;
 }
 

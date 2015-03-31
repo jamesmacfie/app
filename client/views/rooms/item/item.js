@@ -20,5 +20,8 @@ Template.room.events({
 	},
 	'click .js-removeRoom': function(event, view) {
 		$('#removeRoomModal').openModal();
+	},
+	'click .js-addSensor': function(event, view) {
+		$('#roomSensorInsertModal').openModal();
 	}
 });

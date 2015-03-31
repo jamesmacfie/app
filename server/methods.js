@@ -53,24 +53,25 @@ Meteor.methods({
 				_id: id
 			});
 		},
-		insertRoomSensor: function(sensorId, roomId) {
-			var room = Rooms.findOne(roomId);
+		insertRoomSensor: function(roomId, sensorId) {
+			var room = Rooms.findOne(roomId),
+				sensor = Sensors.findOne(sensorId);
 
 			if (!room) {
-				return;
+				throw new Error('No room with the ID ' + roomId + 'exists');
 			}
 
-			if (room.sensors === undefined) {
-				Rooms.update(room._id, {
-					$set: {
-						sensors: []
-					}
-				});
+			if (!sensor) {
+				throw new Error('No sensor with the ID ' + sensorId + 'exists');
+			}
+
+			if (room.sensors.indexOf(sensorId) !== -1) {
+				return new Meteor.Error(400, 'That sensor already exists in this room.');
 			}
 
 			Rooms.update(room._id, {
 				$push: {
-					sensors: sensorId
+					sensors: sensor._id
 				}
 			});
 		},
@@ -100,7 +101,7 @@ Meteor.methods({
 
 			sensorHub = Hubs.findOne({
 				sensors: {
-					$in: [sensor._id] 
+					$in: [sensor._id]
 				}
 			});
 
