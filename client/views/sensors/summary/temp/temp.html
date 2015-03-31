@@ -1,5 +1,11 @@
 <template name="tempSensorSummary">
-	<h4 class="panelTitle">{{nickname}}</h4>
+	<h4 class="panelTitle u-pullLeft">{{nickname}}</h4>
+
+	<i class="md md-more-vert panelTitleIcon u-pullRight actionMenuLink js-openActionMenu" data-activates='sensorMenu_{{_id}}'>
+		<ul id='sensorMenu_{{_id}}' class="actionMenu">
+			<li class="actionMenuItem js-removeSensor">Remove</li>
+		</ul>
+	</i>
 
 	<div class="sensorSummary">
 		<i class="sensorSummary__icon icon-button icon-light icon-temp md md-home"></i>
@@ -33,10 +39,13 @@
 			</div>
 		</div>
 	</div>
+
+	{{> roomSensorRemove .}}
 </template>
 
 <template name="tempSensorSummaryBrief">
 	<h4 class="panelTitle">{{nickname}}</h4>
+
 	<div class="sensorSummary">
 		<i class="sensorSummary__icon icon-button icon-light icon-temp md md-home"></i>
 
