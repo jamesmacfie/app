@@ -4,12 +4,13 @@
 	var selectedImage;
 
 	Template.imageThumbs.onCreated (function() {
-		selectedImage = this.data.selectedImage;
+		if (this.data) {
+			selectedImage = this.data.selectedImage;
+		}
 	});
 
 	Template.imageThumbs.helpers({
 		images: function() {
-			console.log(this.showCamera);
 			return Images.find();
 		}
 	});
