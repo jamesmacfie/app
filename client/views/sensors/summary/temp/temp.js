@@ -94,6 +94,14 @@ Template.tempSensorSummary.helpers({
 	}
 });
 
+Template.tempSensorSummary.events({
+	'click .js-removeSensor': function(event, view) {
+		var modal = $('#roomSensorRemoveModal');
+		modal.data('id', view.data._id);
+		modal.openModal();
+	}
+});
+
 Template.tempSensorSummaryBrief.helpers({
 	nickname: function() {
 		if (this.name) {

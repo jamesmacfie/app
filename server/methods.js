@@ -204,11 +204,12 @@ Meteor.methods({
 							createdAt: 1
 						}
 					});
-					startDatapoint.createdAt = oneHourAgo;
-				}
 
-				if (!startDatapoint) {
-					return [];
+					if (!startDatapoint) {
+						return [];
+					}
+
+					startDatapoint.createdAt = oneHourAgo;
 				}
 
 				dataPoints = DataPoints.find({

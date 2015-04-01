@@ -114,11 +114,17 @@
 	margin: $defaultSpacing / 2 0 0 0;
 	padding: $defaultSpacing;
 	position: absolute;
-	right: $defaultSpacing * 2;
+	right: 0;
+	will-change: opacity, right, width;
+}
+
+.navbar__actionMenu {
+	right: $defaultSpacing;
 }
 
 .actionMenuItem {
 	color: #333;
+	cursor: pointer;
 	font-size: 16px;
 	list-style: none;
 	padding-bottom: $defaultSpacing;
