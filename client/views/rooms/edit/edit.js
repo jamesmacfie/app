@@ -16,7 +16,7 @@ Template.roomEdit.events({
 		jQuery(event.currentTarget).addClass('is-selected');
 	},
 	'click .js-updateRoom': function(event, view) {
-		var _id = view.data.room._id,
+		var _id = view.data._id,
 			name = $(view.find('[name="name"]')).val().trim(),
 			description = $(view.find('[name="description"]')).val().trim(),
 			homepageShow = $(view.find('[name="showOnHomepage"]')).is(':checked'),
