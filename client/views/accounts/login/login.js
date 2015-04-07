@@ -1,16 +1,14 @@
 'use strict';
 
 Template.login.events({
-	'submit #login-form' : function(event, template) {
+	'click .js-login' : function(event, template) {
 		function trimInput(val) {
 			return val.replace(/^\s*|\s*$/g, '');
 		}
 
-		event.preventDefault();
-
 		// retrieve the input field values
-		var email = trimInput(template.find('#login-email').value),
-			password = trimInput(template.find('#login-password').value);
+		var email = trimInput(template.find('[name="email"]').value),
+			password = trimInput(template.find('[name="password"]').value);
 
 		if (!email.length && !password.length) {
 			FlashMessages.sendError('Please enter your email address and password.');

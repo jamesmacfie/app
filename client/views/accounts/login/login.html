@@ -1,25 +1,17 @@
 <template name="login">
-	<main class="page page-full page-dark">
-		<div class="container-fluid">
-			<div class="panel-form">
-				<i class="mammothIcon"></i>
-
-				<form id="login-form" action="action">
-					{{> flashMessages}}
-					<div class="iconInput">
-						<i class="md md-email iconInput--icon"></i>
-						<label for="login-email" class="hidden">Email address</label>
-						<input class="input-transparent input-ogre input-fatass iconInput--input" id="login-email" type="email" placeholder="Email address" value="{{emailAddress}}"/>
-					</div>
-					<div class="iconInput">
-						<i class="md md-lock iconInput--icon"></i>
-						<label for="login-password" class="hidden">Password</label>
-						<input class="input-transparent input-ogre input-fatass iconInput--input" id="login-password" type="password" placeholder="Password"/>
-					</div>
-					<input type="submit" class="btn btn-primary btn-badass" id="login-button" value="Sign in" />
-				</form>
-				<p><a href="#">Forgotten password</a> or you <a href="{{pathFor 'signUp'}}"> need an account?</a></p>
-			</div>
+	<main class="panel panel--transparent">
+		<i class="mammothIcon"></i>
+		{{> flashMessages}}
+		<div class="formGroup">
+			<label class="label label--fullWidth" for="email">Email address</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" />
 		</div>
+		<div class="formGroup">
+			<label class="label label--fullWidth" for="password">Password</label>
+			<input type="password" class="input input--fullWidth input--transparent u-lightText" name="password" />
+		</div>
+		<button class="button button--action right js-login">Login</button>
+
+		<p class="u-lightText"><a href="#" class="panel__a">Forgotten password</a> or you <a href="{{pathFor 'signUp'}}" class="panel__a"> need an account?</a></p>
 	</main>
 </template>
