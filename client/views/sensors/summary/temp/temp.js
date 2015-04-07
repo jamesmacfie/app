@@ -22,7 +22,7 @@ Template.tempSensorSummary.helpers({
 			return 'No sensor readings have been taken yet';
 		}
 
-		timestamp =  new moment(latest.createdAt).format('h:mm a');
+		timestamp = new moment(latest.createdAt).format('h:mm a');
 
 		return 'Last reading taken at ' + timestamp;
 	},

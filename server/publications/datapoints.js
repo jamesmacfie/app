@@ -45,6 +45,49 @@ Meteor.publish('latestDataPoint', function(id) {
 	});
 });
 
+Meteor.publish('activityDataPoints', function() {
+	var networkHubs = _.flatten(Networks.find({
+			users: {
+				$in: [this.userId]
+			}
+		}).map(function mapNetworkHubsId(n) {
+			return n._hubs;
+		})
+	),
+	hubSensors = _.flatten(Hubs.find({
+			network: {
+				$in: networkHubs
+			}
+		}).map(function mapHubSensor(h) {
+			return h.sensors;
+		})
+	),
+	sensorIds = Sensors.find({
+		_id: {
+			$in: hubSensors
+		}
+	}, {
+		sort: {
+			name: 1,
+			createdAt: -1
+		}
+	}).map(function(s) {
+		return s._id;
+	});
+
+	return DataPoints.find(
+		{
+			sensor: {
+				$in: sensorIds
+			}
+		}, {
+			limit: 50,
+			sort: {
+				createdAt: -1
+			}
+		});
+});
+
 /* This needs to be cleaned up somewhat */
 Meteor.publish('userDataPoints', function() {
 	/* Temp -> last hour */

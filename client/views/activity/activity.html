@@ -1,0 +1,18 @@
+<template name="activity">
+	<header class="navbar u-fixTop">
+		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
+		<h1 class="title">Your rooms</h1>
+	</header>
+	{{> flashMessages}}
+	{{#if hasDataPoints}}
+		{{#each .}}
+			<div class="panel u-shadow">
+				{{> datapoint }}
+			</div>
+		{{/each}}
+	{{else}}
+		<div class="panel u-shadow">
+			<p>None of your sensors have output any data.</p>
+		</div>
+	{{/if}}
+</template>
