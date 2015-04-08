@@ -2,15 +2,17 @@
 	<main class="panel panel--transparent">
 		<i class="mammothIcon"></i>
 		{{> flashMessages}}
-		<div class="formGroup">
-			<label class="label label--fullWidth" for="email">Email address</label>
-			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" />
+		<div class="u-clearfix">
+			<div class="formGroup">
+				<label class="label label--fullWidth" for="email">Email address</label>
+				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" />
+			</div>
+			<div class="formGroup">
+				<label class="label label--fullWidth" for="password">Password</label>
+				<input type="password" class="input input--fullWidth input--transparent u-lightText" name="password" />
+			</div>
+			<button class="button button--action u-pullRight js-login">Login</button>
 		</div>
-		<div class="formGroup">
-			<label class="label label--fullWidth" for="password">Password</label>
-			<input type="password" class="input input--fullWidth input--transparent u-lightText" name="password" />
-		</div>
-		<button class="button button--action right js-login">Login</button>
 
 		<p class="u-lightText"><a href="#" class="panel__a">Forgotten password</a> or you <a href="{{pathFor 'signUp'}}" class="panel__a"> need an account?</a></p>
 	</main>

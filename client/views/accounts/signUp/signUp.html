@@ -1,26 +1,22 @@
 <template name="signUp">
-	<main class="page page-full page-dark">
-		<div class="container-fluid">
-			<div class="panel-form">
-				<i class="mammothIcon"></i>
-
-				<form id="signUp-form" action="action">
-					{{> flashMessages}}
-					<p>Enter your email address and a password to create your account.</p>
-					<div class="iconInput">
-						<i class="md md-email iconInput--icon"></i>
-						<label for="signUp-email" class="hidden">Email address</label>
-						<input class="input-transparent input-ogre input-fatass iconInput--input" id="signUp-email" type="email" placeholder="Email address"/>
-					</div>
-					<div class="iconInput">
-						<i class="md md-lock iconInput--icon"></i>
-						<label for="signUp-password" class="hidden">Password</label>
-						<input class="input-transparent input-ogre input-fatass iconInput--input" id="signUp-password" type="password" placeholder="Password"/>
-					</div>
-					<input type="submit" class="btn btn-primary btn-badass" id="signUp-button" value="Create Account" />
-				</form>
-				<p><a href="{{pathFor 'login'}}">Return to login</a></p>
+	<main class="panel panel--transparent">
+		<i class="mammothIcon"></i>
+		{{> flashMessages}}
+		<p class="u-lightText">Enter your email address and a password to create your account.</p>
+		<div class="u-clearfix">
+			<div class="formGroup">
+				<label class="label label--fullWidth" for="email">Email address</label>
+				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" />
 			</div>
+			<div class="formGroup">
+				<label class="label label--fullWidth" for="password">Password</label>
+				<input type="password" class="input input--fullWidth input--transparent u-lightText" name="password" />
+			</div>
+			<div class="u-pullRight">
+				<button class="button button--transparent js-cancelSignup">Cancel</button>
+				<button class="button button--action right js-confirmSignup">Create Account</button>
+			</div>
+
 		</div>
 	</main>
 </template>

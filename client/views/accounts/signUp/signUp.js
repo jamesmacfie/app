@@ -1,16 +1,17 @@
 'use strict';
 
 Template.signUp.events({
-	'submit #signUp-form' : function(event, template) {
+	'click .js-cancelSignup': function() {
+		Router.go('login');
+	},
+	'click .js-confirmSignup' : function(event, template) {
 		function trimInput(val) {
 			return val.replace(/^\s*|\s*$/g, '');
 		}
 
-		event.preventDefault();
-
 		// retrieve the input field values
-		var email = trimInput(template.find('#signUp-email').value),
-			password = trimInput(template.find('#signUp-password').value);
+		var email = trimInput(template.find('[name="email"]').value),
+			password = trimInput(template.find('[name="password"]').value);
 
 		if (!email.length && !password.length) {
 			FlashMessages.sendError('Please enter an email address and password.');
