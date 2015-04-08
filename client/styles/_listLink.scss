@@ -1,0 +1,18 @@
+.listLink {
+	cursor: pointer;
+	min-height: 50px;
+	position: relative;
+}
+
+.listLinkTitle {
+	color: #fff;
+	margin: 0 0 $defaultSpacing;
+}
+
+.listLinkIcon {
+	color: #fff;
+	font-size: 32px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
