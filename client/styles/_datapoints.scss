@@ -1,0 +1,16 @@
+.dataPointSummary {
+	border-bottom: 1px solid #e5e5e5;
+	padding: $defaultSpacing 0;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.dataPointSummary__infoText {
+	margin-bottom: $defaultSpacing;
+}
