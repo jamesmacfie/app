@@ -1,0 +1,20 @@
+<template name="networkEdit">
+	<header class="navbar u-fixTop">
+		<i class="md md-chevron-left navbar_i js-previousPage"></i>
+		<h1 class="title">Edit network</h1>
+	</header>
+	<main class="panel panel--transparent u-clearfix">
+		{{> flashMessages}}
+		<div class="formGroup">
+			<label class="label label--FullWidth">Name</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--fullWidth">Users</label>
+			<p class="subText">Still need to do this bit</p>
+		</div>
+
+		<button class="button button--action u-pullRight js-updateNetwork">Update</button>
+	</main>
+</template>
