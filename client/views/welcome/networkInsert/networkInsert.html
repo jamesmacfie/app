@@ -1,0 +1,16 @@
+<template name="welcomeNetworkInsert">
+	<main class="panel panel--transparent">
+		<i class="mammothIcon"></i>
+
+		<div class="u-clearfix">
+			<h2 class="u-lightText u-textCenter">Welcome</h2>
+			<p class="u-lightText u-textCenter">Thanks for signing up - now that your hub’s plugged in, we just need to give your sensor network a name.</p>
+			{{> flashMessages}}
+			<div class="formGroup u-paddingTop">
+				<label class="label label--largeText label--fullWidth u-darkText" for="name">Your network's name</label>
+				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" />
+			</div>
+			<button class="button button--transparent u-lightText u-pullRight js-confirmInsert">ok</button>
+		</div>
+	</main>
+</template>

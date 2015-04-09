@@ -1,39 +1,42 @@
 'use strict';
 
 Meteor.methods({
-		insertNetwork: function(network) {
-			console.log(this.userId);
-			var networkData = _.extend(network, {
-					users: [this.userId]
+		insertNetwork: function(name) {
+			Networks.insert({
+				name: name,
+				users: [this.userId]
 			});
-
-			Networks.insert(networkData);
 		},
 		insertHub: function(hubDetails) {
-				var network = Networks.findOne(hubDetails.network),
-					hub,
-					hubId;
+			console.log(hubDetails);
+			if (!hubDetails.name || !hubDetails.name.length) {
+				return new Meteor.Error(400, 'Please give your new hub a memorable name.');
+			}
 
-				hub = Hubs.findOne({
-					hubId: hubDetails.hubId
-				});
+			var hub = Hubs.findOne({
+					hubId: parseInt(hubDetails.hubId)
+				}),
+				hubNetwork;
 
-				if (hub) {
-					console.log('Hub already exists'); // Better error message
-					return;
+			if (!hub) {
+				return new Meteor.Error(400, 'We can\'t find a hub with that ID. Please check the hub Id and try again.');
+			}
+
+			hubNetwork = Networks.findOne({
+				hubs: {
+					$in: [hub._id]
 				}
+			});
 
-				hubId = Hubs.insert({
-					hubId: hubDetails.hubId,
-					name: hubDetails.name
-				});
+			if (hubNetwork) {
+				return new Meteor.Error(400, 'That hub has already been added to another network. Please check the hub Id and try again.');
+			}
 
-				Networks.update(network._id, {
-					$push: {
-						hubs: hubId
-					}
-				});
-
+			Networks.update(hubDetails.networkId, {
+				$push: {
+					hubs: hub._id
+				}
+			});
 		},
 		insertRoom: function(room) {
 			var roomData = _.extend(room, {

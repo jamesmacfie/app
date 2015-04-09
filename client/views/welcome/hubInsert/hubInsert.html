@@ -1,0 +1,22 @@
+<template name="welcomeHubInsert">
+	<main class="panel panel--transparent">
+		<i class="mammothIcon"></i>
+
+		<div class="u-clearfix">
+			<h2 class="u-lightText u-textCenter">Let's add a hub</h2>
+			<p class="u-lightText u-textCenter">{{networkName}} is all set up and ready for data. Which hub do you want attached to this network?</p>
+			{{> flashMessages}}
+			<div class="formGroup u-paddingTop">
+				<label class="label label--largeText label--fullWidth u-darkText" for="hubId">Hub code</label>
+				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="hubId" />
+			</div>
+			<div class="formGroup">
+				<label class="label label--largeText label--fullWidth u-darkText" for="name">Hub name</label>
+				<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" />
+			</div>
+			<input type="hidden" name="networkId" value="{{networkId}}" />
+
+			<button class="button button--transparent u-lightText u-pullRight js-confirmInsert">ok</button>
+		</div>
+	</main>
+</template>

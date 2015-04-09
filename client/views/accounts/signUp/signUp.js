@@ -31,7 +31,7 @@ Template.signUp.events({
 					FlashMessages.sendError(['That user already has an account. <a href="', Router.path('login'), '?emailAddress=', email, '">Login here</a>.'].join(''));
 				}
 			} else {
-				Router.go('newAccount');
+				Router.go('welcomeNetworkInsert');
 			}
 
 		});

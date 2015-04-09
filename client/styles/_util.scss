@@ -37,6 +37,22 @@
 	margin-top: $defaultSpacing;
 }
 
+.u-paddingBottom {
+	padding-bottom: $defaultSpacing;
+}
+
+.u-paddingLeft {
+	padding-left: $defaultSpacing;
+}
+
+.u-paddingRight {
+	padding-right: $defaultSpacing;
+}
+
+.u-paddingTop {
+	padding-top: $defaultSpacing;
+}
+
 .u-darkText {
 	color: #333;
 }
@@ -64,12 +80,16 @@
 	float: right;
 }
 
+.u-textCenter {
+	text-align: center;
+}
+
 .u-textLeft {
 	text-align: left;
 }
 
 .u-textRight {
-	text-align: left;
+	text-align: right;
 }
 
 .u-clearfix{
