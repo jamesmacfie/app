@@ -10,6 +10,10 @@
 	background-color: transparent;
 }
 
+.panel--noMargin {
+	margin: 0;
+}
+
 .panel__a {
 	color: $primary;
 	cursor: pointer;

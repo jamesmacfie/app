@@ -28,7 +28,8 @@ Template.welcomeNetworkInsert.events({
 				});
 				return;
 			}
-			Router.go('home');
+			
+			Router.go('welcomeHubInsert');
 		});
 	}
 });

@@ -23,7 +23,7 @@ Template.login.events({
 
 		Meteor.loginWithPassword(email, password, function(err){
 			if (err) {
-				if (err.reason === 'User not found.') {
+				if (err.reason === 'User not found') {
 					FlashMessages.sendError('No user with that email address exists.');
 				} else if (err.reason === 'Incorrect password') {
 					FlashMessages.sendError('The entered password is incorrect.');
