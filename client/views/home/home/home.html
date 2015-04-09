@@ -6,22 +6,30 @@
 	{{#autumnTabs name="" tabs=tabs}}
 		{{#tabContent slug="sensors"}}
 			{{#with ..}}
-				{{#each sensors}}
-					<div class="panel u-shadow">
-						{{> sensorSummaryBrief}}
-					</div>
-				{{/each}}
+				{{#if hasRooms}}
+					{{#each sensors}}
+						<div class="panel u-shadow">
+							{{> sensorSummaryBrief}}
+						</div>
+					{{/each}}
+				{{else}}
+					{{ > homeNoSensors}}
+				{{/if}}
 			{{/with}}
 		{{/tabContent}}
 
 		{{#tabContent slug="rooms"}}
 			{{#if Template.subscriptionsReady}}
 				{{#with ..}}
-					{{#each rooms}}
-						<div class="panel u-shadow">
-							{{> roomSummary}}
-						</div>
-					{{/each}}
+					{{#if hasRooms}}
+						{{#each rooms}}
+							<div class="panel u-shadow">
+								{{> roomSummary}}
+							</div>
+						{{/each}}
+					{{else}}
+						{{ > homeNoRooms}}
+					{{/if}}
 				{{/with}}
 			{{else}}
 				{{ > spinner}}

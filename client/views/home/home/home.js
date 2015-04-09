@@ -9,12 +9,12 @@ Template.home.helpers({
 	tabs: function() {
 		return [
 			{
-				name: 'Rooms',
-				slug: 'rooms'
-			},
-			{
 				name: 'Sensors',
 				slug: 'sensors'
+			},
+			{
+				name: 'Rooms',
+				slug: 'rooms'
 			}
 		];
 	},
@@ -22,8 +22,11 @@ Template.home.helpers({
 		return !!Networks.find().count();
 	},
 	hasRooms: function() {
-		return Rooms.find({
-			'homepage.show': true
-		}).count();
+		// What am I doing with the 'show on homepage' flag?
+		return Rooms.find().count();
+	},
+	hasSensors: function() {
+		// Do we have a'show on homepage' flag?
+		return Sensors.find().count();
 	}
 });
