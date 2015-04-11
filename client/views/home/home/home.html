@@ -3,37 +3,10 @@
 		<i class="md md-menu navbar_i js-toggleMainMenu"></i>
 		<h1 class="title">Home</h1>
 	</header>
-	{{#autumnTabs name="" tabs=tabs}}
-		{{#tabContent slug="sensors"}}
-			{{#with ..}}
-				{{#if hasRooms}}
-					{{#each sensors}}
-						<div class="panel u-shadow">
-							{{> sensorSummaryBrief}}
-						</div>
-					{{/each}}
-				{{else}}
-					{{ > homeNoSensors}}
-				{{/if}}
-			{{/with}}
-		{{/tabContent}}
 
-		{{#tabContent slug="rooms"}}
-			{{#if Template.subscriptionsReady}}
-				{{#with ..}}
-					{{#if hasRooms}}
-						{{#each rooms}}
-							<div class="panel u-shadow">
-								{{> roomSummary}}
-							</div>
-						{{/each}}
-					{{else}}
-						{{ > homeNoRooms}}
-					{{/if}}
-				{{/with}}
-			{{else}}
-				{{ > spinner}}
-			{{/if}}
-		{{/tabContent}}
-	{{/autumnTabs}}
-</template>
+	{{#if hasSensors}}
+		{{> homeData}}
+	{{else}}
+		{{> homeNoData}}
+	{{/if}}
+	</template>

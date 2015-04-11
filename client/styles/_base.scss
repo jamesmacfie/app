@@ -34,3 +34,11 @@ a {
 	color: #fff;
 	text-decoration: none;
 }
+
+.primaryLink {
+	color: $primary;
+
+	&:hover, &:active, &:focus {
+		color: darken($primary, 10%);
+	}
+}

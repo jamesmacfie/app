@@ -1,3 +1,7 @@
-<template name="homeNoRooms">
-	<p>No rooms :(</p>
+<template name="homeNoRoomsTab">
+	<img class="mammothIcon home__mammothIcon" src="images/home/noRooms.png" />
+	<div class="u-marginLeft u-marginRight">
+		<p class="u-textCenter">It looks like you haven't created any rooms</p>
+		<a class="button u-lightText u-pullRight u-marginTop" href="{{pathFor 'roomInsert'}}">Add one now</a>
+	</div>
 </template>
