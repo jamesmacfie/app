@@ -1,0 +1,23 @@
+<template name="hubList">
+	<header class="navbar u-fixTop">
+		<i class="md md-chevron-left navbar_i js-previousPage"></i>
+		<h1 class="title">Your hubs</h1>
+	</header>
+	<main class="panel panel--transparent u-clearfix">
+		{{#if hasHubs}}
+			{{#each .}}
+				<div class="listLink js-listLink" data-ref="hubEdit" data-id="{{_id}}">
+					<i class="md md-chevron-right listLinkIcon"></i>
+					<h4 class="listLinkTitle">{{name}}</h4>
+					<p class="subText">{{hubSummary}}</p>
+				</div>
+			{{/each}}
+		{{else}}
+			<div class="panel u-shadow">
+				<p>There are no hubs assigned to your networks. <a class="panel__a js-hubInsert" href="{{pathFor hubInsert}}">Add one?</a></p>
+			</div>
+		{{/if}}
+		{{ > hubInsert}}
+		<div class="button button--floating js-hubInsert"><i class="md md-add"></i></div>
+	</main>
+</template>

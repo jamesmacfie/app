@@ -14,7 +14,7 @@ Template.networkList.helpers({
 			sensorCount += h.sensors.length;
 		});
 
-		return [hubCount, hubCount > 1 ? 'hubs' : 'hub', 'and', sensorCount, sensorCount > 1 ? 'sensors' : 'sensor'].join(' ');
+		return [hubCount, hubCount > 1 || hubCount === 0 ? 'hubs' : 'hub', 'and', sensorCount, sensorCount > 1  || sensorCount === 0 ? 'sensors' : 'sensor'].join(' ');
 	}
 });
 

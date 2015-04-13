@@ -1,7 +1,14 @@
 .listLink {
+	border-bottom: 1px solid #aeaeae;
 	cursor: pointer;
+	margin-bottom: $defaultSpacing * 2;
 	min-height: 50px;
+	padding-bottom: $defaultSpacing * 2;
 	position: relative;
+
+	&:last-child {
+		border-bottom: none;
+	}
 }
 
 .listLinkTitle {

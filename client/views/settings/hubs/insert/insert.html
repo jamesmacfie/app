@@ -1,0 +1,28 @@
+<template name="hubInsert">
+	<div class="modal" id="hubInsertModal">
+		<div class="modalContent">
+			<h3 class="modalTitle">Add a hub</h3>
+			{{> flashMessages}}
+			<div class="formGroup u-paddingTop">
+				<label class="label label--fullWidth" for="hubId">Hub code</label>
+				<input type="text" class="input input--fullWidth input--transparent" name="hubId" />
+			</div>
+			<div class="formGroup">
+				<label class="label label--fullWidth" for="name">Hub name</label>
+				<input type="text" class="input input--fullWidth input--transparent" name="name" />
+			</div>
+			<div class="formGroup">
+				<label class="label label--FullWidth">Network</label>
+				<select class="select select--fullWidth select--transparent" name="network">
+					{{#each networks}}
+						<option value={{_id}}>{{name}}</option>
+					{{/each}}
+				</select>
+			</div>
+			<div class="u-pullRight">
+				<button class="button button--transparent js-cancelInsert">Cancel</button>
+				<button class="button js-confirmInsert">Add</button>
+			</div>
+		</div>
+	</div>
+</template>
