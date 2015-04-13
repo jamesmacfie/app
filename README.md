@@ -71,6 +71,7 @@ meteor run android-device --mobile-server my_app_name.meteor.com
 ## Things to still do
 - Comment and document
 - Add more sensor types and associated graph data
+- Create admin app
 - Optimise and secure (currently very open and account data is easily intercepted)
 - Add other repos for Arduino code
 - Complete the simple hub app
