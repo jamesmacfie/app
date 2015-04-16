@@ -1,0 +1,38 @@
+<template name="profileEdit">
+	<header class="navbar u-fixTop">
+		<i class="md md-chevron-left navbar_i js-previousPage"></i>
+		<h1 class="title">Your profile</h1>
+	</header>
+	<main class="panel panel--transparent u-clearfix">
+		{{> flashMessages}}
+		<div class="formGroup">
+			<label class="label label--FullWidth">Name</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
+		</div>
+		<div class="formGroup">
+			<label class="label label--FullWidth">Email address</label>
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" value={{email}} />
+		</div>
+
+		<h5 class="u-lightText u-marginLess">Password</h5>
+		<p class="subText u-marginBottom">If you want to change your password, enter your old password and then the one you want to change it to</p>
+
+		<div class="formGroup">
+			<label class="label label--FullWidth">Current password</label>
+			<input type="password" class="input input--fullWidth input--transparent u-lightText" name="password" value={{password}} />
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--FullWidth">New password</label>
+			<input type="password" class="input input--fullWidth input--transparent u-lightText" name="newpassword" value={{password}} />
+		</div>
+
+		<div class="formGroup">
+			<label class="label label--FullWidth">New password (again)</label>
+			<input type="password" class="input input--fullWidth input--transparent u-lightText" name="newpassword2" value={{password}} />
+		</div>
+
+		<button class="button button--action u-pullRight js-updateProfile">Update</button>
+
+	</main>
+</template>
