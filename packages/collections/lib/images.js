@@ -10,6 +10,11 @@ var images = new SimpleSchema({
 	default: {
 		type: Boolean
 	},
+	type: {
+		type: String,
+		min: 1,
+		max: 1
+	},
 	users: {
 		type: [String],
 		regEx: SimpleSchema.RegEx.Id,

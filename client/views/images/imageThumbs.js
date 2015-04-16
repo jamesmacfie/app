@@ -11,7 +11,10 @@
 
 	Template.imageThumbs.helpers({
 		images: function() {
-			return Images.find();
+			console.log(this.type)
+			return Images.find({
+				type: this.type || 'r'
+			});
 		}
 	});
 
