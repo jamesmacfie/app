@@ -4,22 +4,8 @@
 		<h1 class="title">Settings</h1>
 	</header>
 	<main class="panel panel--transparent u-clearfix">
-		<div class="listLink js-listLink" data-ref="hubList">
-			<i class="md md-chevron-right listLinkIcon"></i>
-			<h4 class="listLinkTitle">Your profile</h4>
-			<p class="subText">Edit your email profile details</p>
-		</div>
-		<div class="listLink js-listLink" data-ref="networkList">
-			<i class="md md-chevron-right listLinkIcon"></i>
-			<h4 class="listLinkTitle">Networks</h4>
-			<p class="subText">View the networks you belong to</p>
-		</div>
-		<div class="listLink js-listLink" data-ref="profileEdit">
-			<i class="md md-chevron-right listLinkIcon"></i>
-			<h4 class="listLinkTitle">Your profile</h4>
-			<p class="subText">View or change your profile details</p>
-		</div>
-
-
+		{{ > listLink title="Networks" description="View the networks you belong to" route="networkList"}}
+		{{ > listLink title="Hubs" description="View your networks hubs" route="hubList"}}
+		{{ > listLink title="Your profile" description="View or change your profile details" route="profileEdit"}}
 	</main>
 </template>
