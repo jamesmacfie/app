@@ -4,6 +4,9 @@ Template.hubList.helpers({
 	hasHubs: function() {
 		return !!Hubs.find().count();
 	},
+	hubRouteParams: function() {
+		return JSON.stringify({_id: this._id});
+	},
 	hubSummary: function() {
 		var network = Networks.findOne({
 			hubs: {
@@ -17,23 +20,6 @@ Template.hubList.helpers({
 });
 
 Template.hubList.events({
-	'click .js-listLink': function() {
-		// TODO - this all has to be abstracted out to a common event on the layout
-		var target = $(event.target),
-			routerRef,
-			routerId;
-
-		if (!target.data('ref')) {
-			target = target.parent('.js-listLink');
-		}
-
-		routerRef = target.data('ref');
-		routerId = target.data('id');
-
-		Router.go(routerRef, {
-			_id: routerId
-		});
-	},
 	'click .js-hubInsert': function() {
 		$('#hubInsertModal').openModal();
 	}

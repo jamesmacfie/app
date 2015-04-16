@@ -3,14 +3,20 @@
 Template.listLink.events({
 	'click .js-listLink': function() {
 		var target = $(event.target),
-		routerRef;
+			routerRef,
+			routeParams = {}
 
-		if (target.data('ref')) {
-			routerRef = target.data('ref');
-		} else {
-			routerRef = target.parent('.js-listLink').data('ref');
+		if (!target.data('route')) {
+			target = target.parent('.js-listLink');
 		}
 
-		Router.go(routerRef);
+		routerRef = target.data('route');
+
+		if (target.data('routeparamproperty')) {
+			routeParams[target.data('routeparamproperty')] = target.data('routeparamvalue');
+		}
+
+
+		Router.go(routerRef, routeParams);
 	}
 });

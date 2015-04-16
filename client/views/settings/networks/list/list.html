@@ -5,11 +5,7 @@
 	</header>
 	<main class="panel panel--transparent u-clearfix">
 		{{#each .}}
-		<div class="listLink js-listLink" data-ref="networkEdit" data-id="{{_id}}">
-			<i class="md md-chevron-right listLinkIcon"></i>
-			<h4 class="listLinkTitle">{{name}}</h4>
-			<p class="subText">{{hubSummary}}</p>
-		</div>
+			{{ > listLink title=name description=hubSummary route="networkEdit" routeParamProperty="_id" routeParamValue=_id }}
 		{{/each}}
 	</main>
 </template>

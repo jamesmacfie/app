@@ -6,11 +6,7 @@
 	<main class="panel panel--transparent u-clearfix">
 		{{#if hasHubs}}
 			{{#each .}}
-				<div class="listLink js-listLink" data-ref="hubEdit" data-id="{{_id}}">
-					<i class="md md-chevron-right listLinkIcon"></i>
-					<h4 class="listLinkTitle">{{name}}</h4>
-					<p class="subText">{{hubSummary}}</p>
-				</div>
+				{{ > listLink title=name description=hubSummary route="hubEdit" routeParamProperty="_id" routeParamValue=_id }}
 			{{/each}}
 		{{else}}
 			<div class="panel u-shadow">
