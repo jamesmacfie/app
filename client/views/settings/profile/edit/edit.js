@@ -50,7 +50,6 @@ Template.profileEdit.events({
 			obj.password = newpassword;
 		}
 
-		debugger;
 		// Actually update the profile - how do?
 		Meteor.call('updateAccount', obj, function(err, result) {
 			FlashMessages.clear();

@@ -1,6 +1,12 @@
 'use strict';
 
 Template.menu.helpers({
+	profileImage: function() {
+		var currentUser = Meteor.user(),
+			image = Images.findOne(currentUser.profile.image);
+			
+		return image.url;
+	},
 	menuItems: function() {
 		function getActiveClass(name) {
 			var currentRoute = Router.current(),
