@@ -10,8 +10,15 @@ Template.signUp.events({
 		}
 
 		// retrieve the input field values
-		var email = trimInput(template.find('[name="email"]').value),
-			password = trimInput(template.find('[name="password"]').value);
+		var name = trimInput(template.find('[name="name"]').value),
+			email = trimInput(template.find('[name="email"]').value),
+			password = trimInput(template.find('[name="password"]').value),
+			obj = {};
+
+		if (!name.length) {
+			FlashMessages.sendError('Please enter your name.');
+			return;
+		}
 
 		if (!email.length && !password.length) {
 			FlashMessages.sendError('Please enter an email address and password.');
@@ -24,7 +31,13 @@ Template.signUp.events({
 			return;
 		}
 
-		Accounts.createUser({email: email, password : password}, function(err){
+		obj.email = email;
+		obj.password = password;
+		obj.profile = {
+			name: name
+		};
+
+		Accounts.createUser(obj, function(err){
 			if (err) {
 				// Inform the user that account creation failed
 				if (err.reason === 'Email already exists.') {
