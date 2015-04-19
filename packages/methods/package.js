@@ -12,6 +12,7 @@ Package.onUse(function (api) {
 	]);
 
 	api.addFiles([
+		'lib/accounts.js',
 		'lib/datapoints.js',
 		'lib/fakedata.js',
 		'lib/hubs.js',

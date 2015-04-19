@@ -7,16 +7,16 @@
 		{{> flashMessages}}
 		<div class="formGroup">
 			<label class="label label--FullWidth">Name</label>
-			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{profile.name}} />
 		</div>
 		<div class="formGroup">
 			<label class="label label--FullWidth">Email address</label>
-			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" value={{email}} />
+			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="email" value={{emailAddress}} />
 		</div>
 
 		<div class="formGroup">
 			<label class="label label--fullWidth">Avatar</label>
-			{{> imageThumbs type="u"}}
+			{{> imageThumbs selectedImage=profile.image type="u"}}
 		</div>
 
 		<h5 class="u-lightText u-marginLess">Password</h5>

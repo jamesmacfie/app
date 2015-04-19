@@ -1,12 +1,24 @@
 'use strict';
 
+Template.profileEdit.helpers({
+	emailAddress: function() {
+		return this.emails[0].address;
+	}
+});
+
 Template.profileEdit.events({
-	'click .jsUpateProfile': function(event, view) {
+	'click .js-updateProfile': function(event, view) {
 		var name = $(view.find('[name="name"]')).val().trim(),
-			email = $(view.find('[name="emmail"]')).val().trim(),
+			email = $(view.find('[name="email"]')).val().trim(),
 			currentpassword = $(view.find('[name="password"]')).val().trim(),
 			newpassword = $(view.find('[name="newpassword"]')).val().trim(),
-			newpassword2 = $(view.find('[name="newpassword2"]')).val().trim();
+			newpassword2 = $(view.find('[name="newpassword2"]')).val().trim(),
+			image = $(view.find('.js-selectImage.is-selected')).attr('data-id'),
+			obj = {
+				name: name,
+				image: image,
+				email: email
+			};
 
 		// Validation
 		if (!name.length) {
@@ -32,10 +44,31 @@ Template.profileEdit.events({
 				FlashMessages.sendError('Your new passwords do not match', { // Shitty error message?
 					autoHide: false
 				});
+				return;
 			}
+
+			obj.password = newpassword;
 		}
 
+		debugger;
 		// Actually update the profile - how do?
+		Meteor.call('updateAccount', obj, function(err, result) {
+			FlashMessages.clear();
+			if (err) {
+				FlashMessages.sendError('An unknown server error occurred', {
+					autoHide: false
+				});
+				return;
+			}
 
+			if (_.isObject(result) && result.error) {
+				FlashMessages.sendError(result.reason, {
+					autoHide: false
+				});
+				return;
+			}
+
+			history.back();
+		});
 	}
 });
