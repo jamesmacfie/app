@@ -2,6 +2,11 @@
 	<header class="navbar u-fixTop">
 		<i class="md md-chevron-left navbar_i js-previousPage"></i>
 		<h1 class="title">Edit Hub</h1>
+		<i class="md md-more-vert navbar_i actionMenuLink js-openActionMenu" data-activates='titleActionMenu'>
+			<ul id='titleActionMenu' class="actionMenu navbar__actionMenu">
+				<li class="actionMenuItem js-removeHub">Remove</li>
+			</ul>
+		</i>
 	</header>
 	<main class="panel panel--transparent u-clearfix">
 		{{> flashMessages}}
@@ -9,7 +14,9 @@
 			<label class="label label--FullWidth">Name</label>
 			<input type="text" class="input input--fullWidth input--transparent u-lightText" name="name" value={{name}} />
 		</div>
-		
+
 		<button class="button button--action u-pullRight js-updateNetwork">Update</button>
+
+		{{ > hubRemove .}}
 	</main>
 </template>

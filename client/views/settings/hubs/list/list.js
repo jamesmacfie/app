@@ -15,6 +15,10 @@ Template.hubList.helpers({
 		}),
 		sensorCount = this.sensors.length;
 
+		if (!network) {
+			 return;
+		}
+
 		return ['Belongs to', network.name, 'and has', sensorCount, sensorCount > 1 || sensorCount === 0 ? 'sensors' : 'sensor'].join(' ');
 	}
 });

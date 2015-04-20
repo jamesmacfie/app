@@ -18,10 +18,10 @@ Template.room.events({
 			_id: view.data.room._id
 		});
 	},
-	'click .js-removeRoom': function(event, view) {
+	'click .js-removeRoom': function() {
 		$('#removeRoomModal').openModal();
 	},
-	'click .js-addSensor': function(event, view) {
+	'click .js-addSensor': function() {
 		$('#roomSensorInsertModal').openModal();
 	}
 });

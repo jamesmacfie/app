@@ -6,7 +6,6 @@ Meteor.methods({
 			return new Meteor.Error(400, 'Please give your new hub a memorable name.');
 		}
 
-console.log('ID', hubDetails.hubId );
 		var hub = Hubs.findOne({
 			hubId: parseInt(hubDetails.hubId)
 		}),
@@ -37,5 +36,22 @@ console.log('ID', hubDetails.hubId );
 				hubs: hub._id
 			}
 		});
-	}
+	},
+	removeHub: function(id) {
+		var network = Networks.findOne({
+			hubs: {
+				$in: [id]
+			}
+		});
+
+		if (!network) {
+			return new Meteor.Error(400, 'That hub doesn\'t belong to any network so can\'t be removed');
+		}
+
+		Networks.update(network._id, {
+			$pull: {
+				hubs: id
+			}
+		});
+	},
 });

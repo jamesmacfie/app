@@ -1,19 +1,15 @@
 'use strict';
 
-Template.roomRemove.helpers({
-
-});
-
-Template.roomRemove.events({
+Template.hubRemove.events({
 	'click .js-cancelRemove': function(event, view) {
 		$(view.find('.modal')).closeModal();
 	},
 	'click .js-confirmRemove': function(event, view) {
 		var _id = view.data._id;
-		Meteor.call('removeRoom', _id, function(error) {
+		Meteor.call('removeHub', _id, function(error) {
 			$(view.find('.modal')).closeModal();
 			if (error) {
-				console.log('Shit, error removing room');
+				console.log('Shit, error removing hub');
 				return;
 			}
 
