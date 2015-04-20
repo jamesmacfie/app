@@ -13,6 +13,9 @@ Template.signUp.events({
 		var name = trimInput(template.find('[name="name"]').value),
 			email = trimInput(template.find('[name="email"]').value),
 			password = trimInput(template.find('[name="password"]').value),
+			images = Images.find({
+				type: 'u'
+			}).fetch(),
 			obj = {};
 
 		if (!name.length) {
@@ -34,8 +37,11 @@ Template.signUp.events({
 		obj.email = email;
 		obj.password = password;
 		obj.profile = {
-			name: name
+			name: name,
+			image: images[Math.floor(Math.random() * images.length)]
 		};
+
+
 
 		Accounts.createUser(obj, function(err){
 			if (err) {

@@ -1,5 +1,12 @@
 'use strict';
 
+Meteor.publish('avatarImages', function() {
+	return Images.find({
+		'default': true,
+		type: 'u'
+	});
+});
+
 Meteor.reactivePublish('userImages', function() {
 	var idMapper = function(i) {
 			return i._id;

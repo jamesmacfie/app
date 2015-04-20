@@ -4,7 +4,7 @@ Template.menu.helpers({
 	profileImage: function() {
 		var currentUser = Meteor.user(),
 			image = Images.findOne(currentUser.profile.image);
-			
+
 		return image.url;
 	},
 	menuItems: function() {
