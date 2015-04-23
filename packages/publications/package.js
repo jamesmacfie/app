@@ -8,7 +8,8 @@ Package.describe({
 Package.onUse(function (api) {
 	api.use([
 		'autumn-collections',
-		'mongo'
+		'mongo',
+		'mrt:reactive-publish'
 	]);
 
 	api.addFiles([

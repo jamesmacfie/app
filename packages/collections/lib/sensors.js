@@ -13,6 +13,15 @@ var sensor = new SimpleSchema({
 		min: 1,
 		max: 1
 	},
+	lastConnectionAt: {
+		type: Date,
+		optional: true
+	},
+	lastConnectionBy: {
+		type: String,
+		regEx: SimpleSchema.RegEx.Id,
+		optional: true
+	},
 	createdAt: {
 		type: Date,
 		autoValue: function() {
