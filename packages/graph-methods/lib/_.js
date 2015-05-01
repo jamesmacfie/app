@@ -25,7 +25,7 @@ Meteor.methods({
 					//console.log('Checking against ', currentDataPoint, ' & ', nextDataPoint);
 
 					if (date >= currentDataPoint.createdAt && date <= nextDataPoint.createdAt) {
-						return currentDataPoint.value;
+						return parseFloat(currentDataPoint.value);
 					}
 				}
 
