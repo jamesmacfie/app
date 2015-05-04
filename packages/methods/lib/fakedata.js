@@ -24,5 +24,32 @@ Meteor.methods({
 				createdAt: new moment().subtract(i, 'm').toDate()
 			});
 		}
+	},
+
+	insertFakeIrData: function(id) {
+		moment().utc();
+		var irSensor = Sensors.findOne({
+				_id: id
+			}),
+			hourSubtract = Math.floor(Math.random() * 10),
+			minuteSubtract = Math.floor(Math.random() * 60),
+			randomDate = new moment().subtract(hourSubtract, 'h').subtract(minuteSubtract, 'm');
+
+		if (!irSensor) {
+			throw new Error('No sensor found');
+		}
+
+		DataPoints.insert({
+			sensor: id,
+			value: 1,
+			createdAt: randomDate.toDate()
+		});
+
+		DataPoints.insert({
+			sensor: id,
+			value: 0,
+			createdAt: randomDate.add(10, 's').toDate()
+		});
+
 	}
 });
