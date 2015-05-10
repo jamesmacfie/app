@@ -48,6 +48,24 @@ Template.tempSensorSummary.helpers({
 
 		return '--';
 	},
+	avgTemp: function() {
+		var sensorId = this._id,
+			datapoints = DataPoints.find({
+				sensor: sensorId
+			}).fetch(),
+			datapointTotal;
+
+		if (!datapoints.length) {
+			return '--';
+		}
+
+		datapointTotal = datapoints.reduce(function(total, dp) {
+			return total + parseFloat(dp.value);
+		}, 0);
+
+
+		return Math.round(datapointTotal / datapoints.length);
+	},
 	minTemp: function() {
 		var sensorId = this._id,
 			min = DataPoints.findOne({

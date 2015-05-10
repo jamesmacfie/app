@@ -9,8 +9,6 @@
 			currentDataPoint = dps[i];
 			nextDataPoint = dps[i + 1];
 
-			console.log('checking', currentDataPoint);
-
 			if (date >= currentDataPoint.createdAt && nextDataPoint === undefined) {
 				return currentDataPoint.value;
 			}
