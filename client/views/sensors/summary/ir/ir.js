@@ -56,91 +56,44 @@ Template.irSensorSummary.helpers({
 });
 
 Template.irSensorSummary.rendered = function() {
-	var id =  this.data._id;
-
-	Meteor.call('getGraphData', id, function(err, result) {
-		if (err) {
-			console.log(err);
-			return;
-		}
-
-		var labels = _.pluck(result, 'date').map(function(i) {
-				return new moment(i).format('ha');
-			}),
-			series = _.pluck(result, 'value');
-
-		var data = {
-				labels: labels,
-				series: [series]
-			},
-			options = {
-				low: 0,
-				high: 60,
-				axisX: {
-					showLabel: true,
-					showGrid: false
-				},
-				axisY: {
-					showLabel: false,
-					showGrid: false,
-				},
-				classNames: {
-					bar: 'ct-bar ct-bar-green'
-				}
-			};
-
-		new Chartist.Bar('#chart-' + id, data, options);
-
-
-		// if (!result.length) {
-		// 	return;
-		// }
-		//
-		// // Create a simple line chart
-		// var data = {
-		// 	labels: result.map(function() { return ''; }),
-		// 	series: [
-		// 	result.map(function(d) {
-		// 		try {
-		// 			return parseFloat(d, 2);
-		// 		} catch(e) {
-		// 			console.error(d + ' is not a valid number');
-		// 			return 0;
-		// 		}
-		// 	})
-		// 	]
-		// },
-		// min = _.min(data.series[0]) - 15,
-		// max = _.max(data.series[0]) + 15,
-		// options = {
-		// 	low: min,
-		// 	high: max,
-		// 	lineSmooth: false,
-		// 	axisX: {
-		// 		offset: 0,
-		// 		showLabel: false,
-		// 		showGrid: false
-		// 	},
-		// 	axisY: {
-		// 		offset: 10,
-		// 		showLabel: true,
-		// 		showGrid: false,
-		// 		labelOffset: {
-		// 			x: 5,
-		// 			y: 0
-		// 		},
-		// 	},
-		// 	classNames: {
-		// 		line: 'ct-line ct-line-green',
-		// 		point: 'ct-point ct-point-green',
-		// 	},
-		// 	fullWidth: true,
-		// 	showPoint: true
-		// };
-		//
-		//
-		// new Chartist.Line('#chart-' + id, data, options);
-	});
+	// var id =  this.data._id;
+	//
+	// Meteor.call('getGraphData', id, function(err, result) {
+	// 	if (err) {
+	// 		console.log(err);
+	// 		return;
+	// 	}
+	//
+	// 	var labels = _.pluck(result, 'date').map(function(i) {
+	// 			return new moment(i).format('ha');
+	// 		}),
+	// 		series = _.pluck(result, 'count');
+	//
+	// 	var data = {
+	// 			labels: labels,
+	// 			series: [series]
+	// 		},
+	// 		options = {
+	// 			low: 0,
+	// 			high: 60,
+	// 			axisX: {
+	// 				labelOffset: {
+	// 					x: 20
+	// 				},
+	// 				showLabel: true,
+	// 				showGrid: false
+	// 			},
+	// 			axisY: {
+	// 				showLabel: false,
+	// 				showGrid: false
+	// 			},
+	// 			classNames: {
+	// 				bar: 'ct-bar ct-bar-green'
+	// 			}
+	// 		};
+	//
+	// 		new Chartist.Bar('#chart-' + id, data, options);
+	// });
 };
 
 Template.irSensorSummaryBrief.helpers({

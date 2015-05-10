@@ -21,7 +21,6 @@ meteorhacks:aggregate
 meteorhacks:subs-manager
 accounts-base
 mrt:flash-messages
-meteorhacks:kadira
 meteorhacks:zones
 templates:tabs
 alanning:roles
