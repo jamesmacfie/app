@@ -1,15 +1,12 @@
 'use strict';
 
-Template.login.events({
-	'click .js-login' : function(event, template) {
-		function trimInput(val) {
-			return val.replace(/^\s*|\s*$/g, '');
-		}
 
-		// retrieve the input field values
-		var email = trimInput(template.find('[name="email"]').value),
-			password = trimInput(template.find('[name="password"]').value);
+(function() {
+	function trimInput(val) {
+		return val.replace(/^\s*|\s*$/g, '');
+	}
 
+	function login(email, password) {
 		if (!email.length && !password.length) {
 			FlashMessages.sendError('Please enter your email address and password.');
 			return;
@@ -34,4 +31,24 @@ Template.login.events({
 			return false;
 		});
 	}
-});
+
+
+	Template.login.events({
+		'keyup .js-loginEnter': function(event, template) {
+			if (event.keyCode !== 13) {
+				return;
+			}
+			var email = trimInput(template.find('[name="email"]').value),
+				password = trimInput(template.find('[name="password"]').value);
+
+			login(email, password);
+		} ,
+		'click .js-login' : function(event, template) {
+			var email = trimInput(template.find('[name="email"]').value),
+				password = trimInput(template.find('[name="password"]').value);
+
+			login(email, password);
+		}
+	});
+
+})()
