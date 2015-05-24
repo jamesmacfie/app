@@ -2,9 +2,9 @@
 
 Meteor.methods({
 	// Should be insert, not add.
-	adminAddSensor: function(moduleId, type) {
-		if (!moduleId || !moduleId.length) {
-			return new Meteor.Error(400, 'You must enter the module ID');
+	adminAddSensor: function(shortId, type) {
+		if (!shortId || !shortId.length) {
+			return new Meteor.Error(400, 'You must enter the sensor ID');
 		}
 
 		if (!type) {
@@ -12,12 +12,12 @@ Meteor.methods({
 		}
 
 		var sensor = Sensors.findOne({
-			moduleId: parseInt(moduleId)
+			shortId: parseInt(shortId)
 		}),
 		sensorType = SensorTypes.findOne(type);
 
 		if (sensor) {
-			return new Meteor.Error(400, 'A sensor with that module ID already exists');
+			return new Meteor.Error(400, 'A sensor with that ID already exists');
 		}
 
 		if (!sensorType) {
@@ -25,7 +25,7 @@ Meteor.methods({
 		}
 
 		return Sensors.insert({
-			moduleId: moduleId,
+			shortId: shortId,
 			type: sensorType.character
 		});
 	}

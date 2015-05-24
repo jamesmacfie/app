@@ -7,7 +7,7 @@ Template.roomSensorRemove.helpers({
 		}
 
 		var sensorType = SensorTypes.findOne({
-			character: this.type
+			code: this.type
 		});
 		return 'this ' + sensorType.name + ' sensor';
 	},

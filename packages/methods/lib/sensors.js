@@ -1,9 +1,9 @@
 'use strict';
 
 Meteor.methods({
-	insertSensor: function(moduleId, hubId) {
+	insertSensor: function(shortId, hubId) {
 		var sensor = Sensors.findOne({
-			moduleId: moduleId
+			shortId: shortId
 		}),
 		sensorHub,
 		hub = Hubs.findOne(hubId);

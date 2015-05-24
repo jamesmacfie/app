@@ -8,7 +8,7 @@ Template.irDataPoint.helpers({
 
 		var sensor = Sensors.findOne(this.sensor);
 
-		return 'Motion (module ID: ' + sensor.moduleId + ')';
+		return 'Motion (ID: ' + sensor.shortId + ')';
 	},
 	getValueText: function() {
 		return !!parseInt(this.value) ? 'Motion detected' : 'No motion detected';

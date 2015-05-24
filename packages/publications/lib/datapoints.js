@@ -122,9 +122,9 @@ Meteor.publish('userDataPoints', function() {
 	// sensors.forEach(function(s) {
 	// 	console.log(s);
 	// 	// var dp;
-	// 	// if (s.type === 't') {
+	// 	// if (s.type === 'temperature') {
 	// 	// 	dp = getLastTempDataPoint(s._id);
-	// 	// } else if (s.type === 'i') {
+	// 	// } else if (s.type === 'motion') {
 	// 	// 	dp = getLastIRDataPoint(s._id);
 	// 	// }
 	// 	//

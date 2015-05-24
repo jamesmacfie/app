@@ -1,7 +1,7 @@
 Sensors = new Mongo.Collection('sensors');
 
 var sensor = new SimpleSchema({
-	moduleId: {
+	shortId: {
 		type: Number,
 	},
 	name: {
@@ -10,8 +10,6 @@ var sensor = new SimpleSchema({
 	},
 	type: {
 		type: String,
-		min: 1,
-		max: 1
 	},
 	lastConnectionAt: {
 		type: Date,

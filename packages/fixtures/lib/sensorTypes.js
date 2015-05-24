@@ -2,12 +2,12 @@
 
 if (SensorTypes.find().count() === 0) {
 	SensorTypes.insert({
-		character: 'i',
+		code: 'movement',
 		name: 'Movement (IR)'
 	});
 
 	SensorTypes.insert({
-		character: 't',
+		code: 'temperature',
 		name: 'Temperature'
 	});
 }

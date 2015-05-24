@@ -3,9 +3,9 @@
 Template.sensorSummary.helpers({
 	getTemplate: function() {
 		switch(this.type) {
-			case 't':
+			case 'temperature':
 				return 'tempSensorSummary';
-			case 'i':
+			case 'motion':
 				return 'irSensorSummary';
 		}
 	}
@@ -25,9 +25,9 @@ Template.sensorSummary.events({
 		function generateRemoveMessage(sensor) {
 			var typeName;
 
-			if (sensor.type === 't') {
+			if (sensor.type === 'temperature') {
 				typeName = 'temperature sensor';
-			} else if (sensor.type === 'i') {
+			} else if (sensor.type === 'motion') {
 				typeName = 'motion sensor';
 			} else {
 				typeName = 'sensor';

@@ -4,13 +4,13 @@ Meteor.methods({
 	insertDataPoint: function(params) {
 		try {
 			var sensor = Sensors.findOne({
-				moduleId: parseInt(params.moduleId)
+				shortId: parseInt(params.shortId)
 			}),
-			moduleId = params.moduleId,
+			shortId = params.shortId,
 			value = params.value;
 
 			if (!sensor) {
-				console.log('No sensor with the mooduleId `' + moduleId + '` found');
+				console.log('No sensor with the mooduleId `' + shortId + '` found');
 				return;
 			}
 

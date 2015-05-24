@@ -8,7 +8,7 @@ Template.tempDatapoint.helpers({
 
 		var sensor = Sensors.findOne(this.sensor);
 
-		return 'Temperature (module ID: ' + sensor.moduleId + ')';
+		return 'Temperature (ID: ' + sensor.shortId + ')';
 	},
 	displayTime: function() {
 		var time = new moment(this.createdAt);

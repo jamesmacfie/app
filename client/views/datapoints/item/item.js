@@ -4,9 +4,9 @@ Template.datapoint.helpers({
 	getTemplate: function() {
 		var sensor = Sensors.findOne(this.sensor);
 		switch(sensor.type) {
-			case 't':
+			case 'temperature':
 				return 'tempDatapoint';
-			case 'i':
+			case 'motion':
 				return 'irDatapoint';
 		}
 	}

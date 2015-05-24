@@ -2,17 +2,17 @@
 
 if (Sensors.find().count() === 0) {
 	Sensors.insert({
-		moduleId: 1,
-		type: 't'
+		shortId: 1,
+		type: 'temperature'
 	});
 
 	Sensors.insert({
-		moduleId: 2,
-		type: 't'
+		shortId: 2,
+		type: 'temperature'
 	});
 
 	Sensors.insert({
-		moduleId: 3,
-		type: 'i'
+		shortId: 3,
+		type: 'motion'
 	});
 }

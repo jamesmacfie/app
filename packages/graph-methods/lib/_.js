@@ -219,9 +219,9 @@
 
 			var sensor = Sensors.findOne(sensorId);
 
-			if (sensor.type === 't') {
+			if (sensor.type === 'temperature') {
 				return getTempGraphData(sensor);
-			} else if (sensor.type === 'i') {
+			} else if (sensor.type === 'motion') {
 				return getIRGraphData(sensor);
 			}
 		}

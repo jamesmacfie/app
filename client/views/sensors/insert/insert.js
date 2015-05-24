@@ -19,11 +19,11 @@ Template.sensorInsert.events({
 	'click .js-confirmAdd': function(event, view) {
 		FlashMessages.clear();
 
-		var moduleId = parseInt($(view.find('[name="moduleId"]')).val()),
+		var shortId = parseInt($(view.find('[name="shortId"]')).val()),
 			hub =  $(view.find('[name="hub"]')).val();
 
-		if (!moduleId || isNaN(moduleId))  {
-			FlashMessages.sendError('Please enter the sensors module ID', {
+		if (!shortId || isNaN(shortId))  {
+			FlashMessages.sendError('Please enter the sensors ID', {
 				autoHide: false
 			});
 			return;
@@ -37,7 +37,7 @@ Template.sensorInsert.events({
 		}
 
 
-		Meteor.call('insertSensor', moduleId, hub, function(err, result) {
+		Meteor.call('insertSensor', shortId, hub, function(err, result) {
 			FlashMessages.clear();
 			if (err) {
 				FlashMessages.sendError('An unknown server error occurred', {
