@@ -11,11 +11,15 @@ Template.roomSensorInsert.helpers({
 				name: 1
 			}
 		}).fetch().map(function(i) {
-			var sensorType = SensorTypes.findOne({
-				code: i.type
+			var sensorNames = SensorTypes.find({
+				code: {
+					$in: i.type
+				}
+			}).map(function(t) {
+				return t.name;
 			});
 			return _.defaults(i, {
-				name: sensorType.name + ' (ID: ' + i.shortId + ')'
+				name: '(ID: ' + i.shortId + ') ' + sensorNames.join(', ')
 			});
 		});
 	},

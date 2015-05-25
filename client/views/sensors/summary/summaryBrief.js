@@ -6,7 +6,7 @@ Template.sensorSummaryBrief.onCreated(function() {
 
 Template.sensorSummaryBrief.helpers({
 	getTemplate: function() {
-		switch(this.type) {
+		switch(this) {
 			case 'temperature':
 				return 'tempSensorSummaryBrief';
 			case 'motion':

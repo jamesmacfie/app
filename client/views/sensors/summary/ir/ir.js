@@ -58,7 +58,7 @@ Template.irSensorSummary.helpers({
 Template.irSensorSummary.rendered = function() {
 	// var id =  this.data._id;
 	//
-	// Meteor.call('getGraphData', id, function(err, result) {
+	// Meteor.call('getGraphData', 'motion', id, function(err, result) {
 	// 	if (err) {
 	// 		console.log(err);
 	// 		return;

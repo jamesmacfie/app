@@ -4,23 +4,10 @@ DataPoints = new Mongo.Collection('dataPoints');
 var dataPoint = new SimpleSchema({
 	sensor: {
 		type: String,
-		regEx: SimpleSchema.RegEx.Id,
-		autoform: {
-			options: function () {
-				'use strict';
-
-				var sensors = Sensors.find(),
-				options = [];
-
-				sensors.forEach(function (element) {
-					options.push({
-						label: element.name, value: element._id
-					});
-				});
-
-				return options;
-			}
-		}
+		regEx: SimpleSchema.RegEx.Id
+	},
+	type: {
+		type: String
 	},
 	value: {
 		type: String

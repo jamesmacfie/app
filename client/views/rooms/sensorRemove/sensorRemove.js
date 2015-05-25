@@ -6,10 +6,14 @@ Template.roomSensorRemove.helpers({
 			return 'the sensor \'' + this.name + '\'';
 		}
 
-		var sensorType = SensorTypes.findOne({
-			code: this.type
+		var sensorNames = SensorTypes.find({
+			code: {
+				$in: this.type
+			}
+		}).fetch().map(function(s) {
+			return s.name;
 		});
-		return 'this ' + sensorType.name + ' sensor';
+		return 'this ' + sensorNames.join('/') + ' sensor';
 	},
 	roomName: function() {
 		// Not the best way here of getting the current room...

@@ -2,7 +2,7 @@
 
 Template.sensorSummary.helpers({
 	getTemplate: function() {
-		switch(this.type) {
+		switch(this) {
 			case 'temperature':
 				return 'tempSensorSummary';
 			case 'motion':

@@ -9,7 +9,7 @@ var sensor = new SimpleSchema({
 		optional: true
 	},
 	type: {
-		type: String,
+		type: [String],
 	},
 	lastConnectionAt: {
 		type: Date,

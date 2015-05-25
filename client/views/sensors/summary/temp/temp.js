@@ -10,7 +10,8 @@ Template.tempSensorSummary.helpers({
 	},
 	lastReadingTimestamp: function() {
 		var latest = DataPoints.findOne({
-			sensor: this._id
+			sensor: this._id,
+			type: 'temperature'
 		}, {
 			sort: {
 				createdAt: -1
@@ -29,7 +30,8 @@ Template.tempSensorSummary.helpers({
 	latestTemp: function() {
 		var sensorId = this._id,
 			latest = DataPoints.findOne({
-				sensor: sensorId
+				sensor: sensorId,
+				type: 'temperature'
 			},
 			{
 				sort: {
@@ -51,7 +53,8 @@ Template.tempSensorSummary.helpers({
 	avgTemp: function() {
 		var sensorId = this._id,
 			datapoints = DataPoints.find({
-				sensor: sensorId
+				sensor: sensorId,
+				type: 'temperature'
 			}).fetch(),
 			datapointTotal;
 
@@ -69,7 +72,8 @@ Template.tempSensorSummary.helpers({
 	minTemp: function() {
 		var sensorId = this._id,
 			min = DataPoints.findOne({
-				sensor: sensorId
+				sensor: sensorId,
+				type: 'temperature'
 			},
 			{
 				sort: {
@@ -91,7 +95,8 @@ Template.tempSensorSummary.helpers({
 	maxTemp: function() {
 		var sensorId = this._id,
 			max = DataPoints.findOne({
-				sensor: sensorId
+				sensor: sensorId,
+				type: 'temperature'
 			},
 		{
 			sort: {
@@ -130,7 +135,8 @@ Template.tempSensorSummaryBrief.helpers({
 	},
 	lastReadingTimestamp: function() {
 		var latest = DataPoints.findOne({
-			sensor: this._id
+			sensor: this._id,
+			type: 'temperature'
 		}, {
 			sort: {
 				createdAt: -1
@@ -148,15 +154,15 @@ Template.tempSensorSummaryBrief.helpers({
 	},
 	latestTemp: function() {
 		var sensorId = this._id,
-			latest = DataPoints.find({
-				sensor: sensorId
+			latest = DataPoints.findOne({
+				sensor: sensorId,
+				type: 'temperature'
 			},
 			{
 				sort: {
 					createdAt : -1
 				},
-				limit: 1
-			}).fetch()[0];
+			});
 
 		if (latest) {
 			try {
@@ -175,7 +181,7 @@ Template.tempSensorSummaryBrief.helpers({
 Template.tempSensorSummary.rendered = function() {
 	var id =  this.data._id;
 
-	Meteor.call('getGraphData', id, function(err, result) {
+	Meteor.call('getGraphData', 'temperature', id, function(err, result) {
 		if (err) {
 			console.log(err);
 			return;

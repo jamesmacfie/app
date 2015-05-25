@@ -1,3 +1,5 @@
 <template name="sensorSummary">
-	{{> Template.dynamic template = getTemplate}}
+	{{#each type}}
+		{{> UI.dynamic template=getTemplate data=..}}
+	{{/each}}
 </template>

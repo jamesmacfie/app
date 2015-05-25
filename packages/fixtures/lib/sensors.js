@@ -3,16 +3,16 @@
 if (Sensors.find().count() === 0) {
 	Sensors.insert({
 		shortId: 1,
-		type: 'temperature'
+		type: ['temperature']
 	});
 
 	Sensors.insert({
 		shortId: 2,
-		type: 'temperature'
+		type: ['temperature']
 	});
 
 	Sensors.insert({
 		shortId: 3,
-		type: 'motion'
+		type: ['motion']
 	});
 }

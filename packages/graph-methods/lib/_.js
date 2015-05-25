@@ -210,7 +210,7 @@
 	}
 
 	Meteor.methods({
-			getGraphData: function(sensorId) {
+			getGraphData: function(sensorId, type) {
 			/* Please tidy this up. Super gross */
 
 			if (!Meteor.autumnUser.canAccessSensor(this.userId, sensorId)) {
@@ -219,9 +219,9 @@
 
 			var sensor = Sensors.findOne(sensorId);
 
-			if (sensor.type === 'temperature') {
+			if (type === 'temperature') {
 				return getTempGraphData(sensor);
-			} else if (sensor.type === 'motion') {
+			} else if (type === 'motion') {
 				return getIRGraphData(sensor);
 			}
 		}

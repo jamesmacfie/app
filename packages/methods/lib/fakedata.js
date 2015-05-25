@@ -21,6 +21,7 @@ Meteor.methods({
 			DataPoints.insert({
 				sensor: id,
 				value: Math.ceil(Math.random() * options.range) + options.start,
+				type: 'temperature',
 				createdAt: new moment().subtract(i, 'm').toDate()
 			});
 		}
@@ -42,6 +43,7 @@ Meteor.methods({
 		DataPoints.insert({
 			sensor: id,
 			value: 1,
+			type: 'motion',
 			createdAt: randomDate.toDate()
 		});
 

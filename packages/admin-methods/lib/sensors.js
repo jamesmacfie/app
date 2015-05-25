@@ -26,7 +26,7 @@ Meteor.methods({
 
 		return Sensors.insert({
 			shortId: shortId,
-			type: sensorType.character
+			type: [sensorType.character]
 		});
 	}
 });
